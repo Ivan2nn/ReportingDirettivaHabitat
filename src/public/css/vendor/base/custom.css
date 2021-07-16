@@ -1,0 +1,133 @@
+.imagecontour {
+ padding: 10px; 
+ border: solid 1px #EFEFEF;
+ background-color: #FFFFFF;
+ }
+ 
+.effect2
+{
+  position: relative;
+}
+.effect2:before, .effect2:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+.effect2:after
+{
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+.row .focus-box {
+    display: inline-block;
+    float: none !important;
+    margin-right: -4px;
+    vertical-align: top;
+    margin-bottom: 25px;
+}
+
+.focus-box .service-icon {
+    width: 145px;
+    height: 145px;
+    margin: auto;
+    border-radius: 50%;
+    border: 10px solid #ececec;
+    margin-bottom: 20px;
+    position: relative;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.focus-box .service-icon .pixeden {
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+}
+
+.our-focus-widget-image {
+    width: 100%;
+    height: 100%;
+}
+
+.section-header {
+    text-align: center;
+    padding-bottom: 75px;
+}
+
+.red-border-bottom::before {
+    position: absolute;
+    margin: auto;
+    z-index: 1;
+    content: "";
+    width: 75%;
+    height: 2px;
+    background: #e96656;
+    bottom: -9px;
+    left: 12.5%;
+}
+
+.section-context a {
+  color: blue;
+}
+
+.ibox {
+  clear: both;
+  margin-bottom: 25px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.ibox-title {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #ffffff;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 3px 0 0;
+  color: inherit;
+  margin-bottom: 0;
+  padding: 14px 15px 7px;
+  min-height: 48px;
+}
+
+.ibox-content {
+  clear: both;
+}
+
+.ibox-content {
+  background-color: #ffffff;
+  color: inherit;
+  padding: 15px 20px 20px 20px;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 0;
+}
+
+.input-font-mimi-big {
+  font-size: 20px;
+}
+
+.list-group {
+  padding-left: 0;
+  margin-bottom: 20px;
+}

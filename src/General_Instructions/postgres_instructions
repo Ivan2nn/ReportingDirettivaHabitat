@@ -1,0 +1,12 @@
+per entrare dentro postgres
+
+1) fai il cambio sul superuser: su -i -u postgres
+
+2) entri: psql
+
+3) scegli il database : \c database_name
+
+4) importare un csv dentro una tabella: \copy cellcodes_iv_report(cellname) FROM '/home/ivan/cellcode_species_new.csv' DELIMITER ',' CSV HEADER;
+(da notare che il file di prtenza lo abbiamo dovuto mettere sotto ivan perche l'utente postgres non aveva le autorizzazioni)
+
+=MATCH($H$2,$B$2:$B$3494)
