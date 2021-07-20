@@ -53,15 +53,16 @@
                             </div>
                          </div>   
 
-                                <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
-                                    <span class="c-line"></span>
-                                    <span class="c-line"></span>
-                                    <span class="c-line"></span>
-                                </button>
+                        <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
+                            <span class="c-line"></span>
+                            <span class="c-line"></span>
+                            <span class="c-line"></span>
+                        </button>
                   
                     </div>
                 </div>
             </div>
+            
             <div class="c-navbar">
                 <div class="container">
                     <!-- BEGIN: BRAND -->
