@@ -18,10 +18,18 @@ class Species extends Model
     	return $this->hasOne('App\Taxonomy','species_code');
     }
 
-    public function cellcodes()
+    public function cellcodes($report_number = '')
     {
-    	return $this->belongsToMany('App\Cellcode','cellcode_species','species_code','cellcode_id');
+        if (!$report_number) {
+    	    return $this->belongsToMany('App\Cellcode','cellcode_species','species_code','cellcode_id');
+        } else {
+            return $this->belongsToMany('App\Cellcode','cellcode_species','species_code','cellcode_id')->wherePivot('report',$report_number);
+        }
     }
+
+    //public function fromReport($report_number) {
+    //    return $this->wherePivot('report',$report_number);
+    //}
 
     public function biogeographicregions() 
     {

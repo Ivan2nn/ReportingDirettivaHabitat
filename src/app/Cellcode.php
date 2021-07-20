@@ -14,7 +14,7 @@ class Cellcode extends Model
 
     public function species()
     {
-    	return $this->belongsToMany('App\Species','cellcode_species','cellcode_id','species_code');
+    	return $this->belongsToMany('App\Species','cellcode_species','cellcode_id','species_code')->withPivot('report');
     }
 
     public function habitats()
