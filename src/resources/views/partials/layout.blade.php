@@ -27,25 +27,28 @@
                 <div class="container">
                     
                     <div class="c-brand">
-                        <div class="row">
+                        <div class="row c-logo">
                             <div class="col-md-4 col-xs-6">
-                                <a href="http://www.minambiente.it/" class="c-logo">
-                                    <img src="{!! asset('images/MiTE_RGB_orizzontale.jpg') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
-                                    <img src="{!! asset('images/MATTM_New_small.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                <a href="http://www.minambiente.it/">
+                                    <img src="{!! asset('images/MiTE_RGB_orizzontale.jpg') !!}" alt="logo natura" class="img-responsive">
                                 </a>
                             </div>
-                            
+
                             <div class="col-md-4 col-xs-6">
-                                <a href="http://www.isprambiente.gov.it/" class="c-logo">
+                                <a href="http://www.nnb.isprambiente.it">
+                                    <img src="{!! asset('images/logoNaturaItaliaHomeNew.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                </a>
+                                <a href="http://www.isprambiente.gov.it/">
                                     <img src="{!! asset('images/logoISPRA_SNPA.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
-                                    <img src="{!! asset('images/logoISPRA_SNPA_small.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
                                 </a>
                             </div>
                             
                             <div class="col-md-4 col-xs-6">
-                                <a href="http://www.nnb.isprambiente.it" class="c-logo">
+                                <a href="http://www.nnb.isprambiente.it">
                                     <img src="{!! asset('images/logoNaturaItaliaHomeNew.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
-                                    <img src="{!! asset('images/logoNaturaItaliaHomeNew_small.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                </a>
+                                <a href="http://www.isprambiente.gov.it/">
+                                    <img src="{!! asset('images/logoISPRA_SNPA.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
                                 </a>
                             </div>
                          </div>   
