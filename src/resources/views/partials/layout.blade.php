@@ -29,15 +29,16 @@
                     <div class="c-brand">
                         <div class="row">
                             <div class="col-md-4 col-xs-6">
+                                <a href="http://www.minambiente.it/" class="c-logo">
+                                    <img src="{!! asset('images/MiTE_RGB_orizzontale.jpg') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
+                                    <img src="{!! asset('images/MATTM_New_small.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                </a>
+                            </div>
+                            
+                            <div class="col-md-4 col-xs-6">
                                 <a href="http://www.isprambiente.gov.it/" class="c-logo">
                                     <img src="{!! asset('images/logoISPRA_SNPA.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
                                     <img src="{!! asset('images/logoISPRA_SNPA_small.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
-                                </a>
-                            </div>
-                            <div class="col-md-4 col-xs-6">
-                                <a href="http://www.minambiente.it/" class="c-logo">
-                                    <img src="{!! asset('images/MATTM_New.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
-                                    <img src="{!! asset('images/MATTM_New_small.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
                                 </a>
                             </div>
                             
