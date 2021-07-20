@@ -16706,7 +16706,7 @@ General reset
 /* Set default body */
 body {
   color: #5c6873;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   padding: 0px !important;
   margin: 0px !important;
   font-weight: 300;
@@ -19912,7 +19912,9 @@ h1 {
     line-height: 0px; }
     .c-layout-header .c-navbar .c-mega-menu.c-fonts-uppercase > .nav.navbar-nav > li > .c-link {
       font-size: 15px;
-      text-transform: uppercase; }
+      text-transform: uppercase; 
+      font-family: 'Open Sans', sans-serif;
+  }
     .c-layout-header .c-navbar .c-mega-menu.c-fonts-uppercase > .nav.navbar-nav > li .dropdown-menu > li > h3 {
       font-size: 14px;
       text-transform: uppercase; }
@@ -20386,12 +20388,16 @@ h1 {
   /* 992px */
   .c-layout-header.c-layout-header-default {
     background: none;
-    border-bottom: 0; }
+    border-bottom: 0; 
+}
     .c-layout-header.c-layout-header-default .c-navbar {
-      background: none; }
-      .c-layout-header.c-layout-header-default .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-btn-icon,
-      .c-layout-header.c-layout-header-default .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-link {
-        color: #ffffff; }
+      background: none; 
+    }
+    .c-layout-header.c-layout-header-default .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-btn-icon,
+    .c-layout-header.c-layout-header-default .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-link {
+        color: #ffffff;
+    }
+
         .c-layout-header.c-layout-header-default .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-btn-icon:hover,
         .c-layout-header.c-layout-header-default .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-btn-icon:focus,
         .c-layout-header.c-layout-header-default .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-link:hover,

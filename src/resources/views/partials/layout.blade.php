@@ -17,7 +17,11 @@
              
         <link href="{!! asset('output/final.css') !!}" rel="stylesheet" type="text/css"/>
         <!-- END THEME STYLES -->
-        <link rel="shortcut icon" href="{!! asset('favicon.ico') !!}" /> </head>
+        <link rel="shortcut icon" href="{!! asset('favicon.ico') !!}" /> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
 
     <body class="c-layout-header-fixed c-layout-header-mobile-fixed">
         <!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
