@@ -116,6 +116,7 @@ new Vue({
 	el: 'body',
 
 	data: {
+		report_number: 'III',
 		queryName: '',
 		queryCode: '',
 		queryNameCode: '',
@@ -153,7 +154,7 @@ new Vue({
 			vm.filterSpecies = false;
 			vm.loadingNames = true;
 			vm.dataAvailable = false;
-			vm.$http.get('/api/species/' + vm.queryCode).then(function(response) {
+			vm.$http.get('/api/species/' + vm.queryCode + '/' + vm.report_number).then(function(response) {
 				// Inside the response data there are also the taxonomy data, but the google map API cna distinguish by itself
 				vm.$dispatch('final-map-data', response.data);
 				vm.speciesDetails = JSON.parse(response.data)['species'];
