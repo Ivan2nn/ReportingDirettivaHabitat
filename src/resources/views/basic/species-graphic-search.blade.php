@@ -415,5 +415,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_species_generator.js') !!}"></script>
 	 <script src="{!! asset('js/speciesToCellMapping.js') !!}"></script>
-     <script src="{!! asset('js/main.js') !!}?<?=time()?>"></script>
+     <script src="{!! asset('js/main_base_search_III_report.js') !!}?<?=time()?>"></script>
 @endsection
