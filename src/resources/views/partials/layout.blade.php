@@ -164,7 +164,7 @@
         <!-- BEGIN: LAYOUT/FOOTERS/FOOTER-6 -->
         <a name="footer"></a>
         <footer class="c-layout-footer c-layout-footer-6 c-bg-grey-1">
-            <div class="c-postfooter c-bg-dark-2">
+            <div class="c-postfooter">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-sm-12 c-col">

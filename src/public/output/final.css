@@ -22775,8 +22775,8 @@ h1 {
         border-color: #474f59; } }
 
 .c-layout-footer-6 {
-  margin: 0;
-  padding-top: 40px; }
+  margin: 40px 0 0 0;
+}
   .c-layout-footer-6 .c-prefooter {
     padding: 35px 20px 40px;
     margin-bottom: 40px; }
