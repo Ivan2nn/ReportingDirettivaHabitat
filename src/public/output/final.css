@@ -21083,7 +21083,7 @@ h1 {
         }
         .c-layout-header.c-layout-header-6 .c-navbar .c-mega-menu > .nav.navbar-nav > li {
           margin: 0 !important;
-          padding: 20px!important;
+          padding: 20px 15px!important;
         }
           
           .c-layout-header.c-layout-header-6 .c-navbar .c-mega-menu > .nav.navbar-nav > li:first-child > .c-link {

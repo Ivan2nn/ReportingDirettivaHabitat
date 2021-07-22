@@ -123,6 +123,12 @@
                                     </ul>
                                 </li>
                                 <li>
+                                    <a href="#" class="c-link">III Report</a>                
+                                </li>
+                                 <li>
+                                    <a href="#" class="c-link">Piano di monitoraggio</a>                
+                                </li>
+                                <li>
                                     <a href="{{ route('downloads') }}" class="c-link">Download</a>                
                                 </li>
                                 <li>
