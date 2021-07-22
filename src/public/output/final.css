@@ -21301,10 +21301,10 @@ h1 {
       .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li > .c-quick-sidebar-toggler > .c-line {
         background-color: white; }
       .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li > .c-quick-sidebar-toggler:hover > .c-line {
-        background-color: #ff6b57; }
+        background-color: #00B783; }
     .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li.c-active > .c-link,
     .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li:hover > .c-link {
-      color: #ff6b57;
+      color: #00B783;
       background: none; }
     .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li .dropdown-menu > li > h3 {
       color: #ccd1de; }
@@ -21317,7 +21317,7 @@ h1 {
     .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li .dropdown-menu > li.c-active > a,
     .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li .dropdown-menu > li:hover > a {
       background: none;
-      color: #ff6b57; } }
+      color: #00B783; } }
 
 @media (max-width: 991px) {
   /* 991px */
@@ -21350,7 +21350,7 @@ h1 {
         background-color: #ff6b57; }
     .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-light-mobile > .nav.navbar-nav > li.c-active > .c-link,
     .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-light-mobile > .nav.navbar-nav > li:hover > .c-link {
-      color: #ff6b57;
+      color: #00B783;
       background: none; }
     .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-light-mobile > .nav.navbar-nav > li .dropdown-menu > li > h3 {
       color: #3f444a; }
@@ -21363,7 +21363,7 @@ h1 {
     .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-light-mobile > .nav.navbar-nav > li .dropdown-menu > li.c-active > a,
     .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-light-mobile > .nav.navbar-nav > li .dropdown-menu > li:hover > a {
       background: none;
-      color: #ff6b57; } }
+      color: #00B783; } }
 
 @media (max-width: 991px) {
   /* 991px */
