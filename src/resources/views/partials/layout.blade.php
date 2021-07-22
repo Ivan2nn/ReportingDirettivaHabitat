@@ -164,13 +164,52 @@
         <!-- BEGIN: LAYOUT/FOOTERS/FOOTER-6 -->
         <a name="footer"></a>
         <footer class="c-layout-footer c-layout-footer-6 c-bg-grey-1">
-            <div class="c-postfooter c-bg-dark-2">
+            <div class="c-postfooter">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12 c-col">
-                            <p class="c-copyright c-font-grey">2016 &copy; MIMI - eDesign
-                                <span class="c-font-grey-3"></span>
-                            </p>
+                        <div class="col-xs-4">
+                            <h4>Specie</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#" class="">Ricerca base</a>  
+                                </li>
+                                 <li>
+                                    <a href="#" class="">Ricerca avanzata</a>  
+                                </li>
+                                <li>
+                                    <a href="#" class="">Ricerca cartografica</a>  
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Habitat</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#" class="">Ricerca base</a>  
+                                </li>
+                                 <li>
+                                    <a href="#" class="">Ricerca avanzata</a>  
+                                </li>
+                                <li>
+                                    <a href="#" class="">Ricerca cartografica</a>  
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <ul class="list-unstyled">
+                                <li>
+                                     <a href="#" class="">III Report</a>
+                                </li>
+                                 <li>
+                                     <a href="#" class="">Piano di monitoraggio</a> 
+                                </li>
+                                <li>
+                                     <a href="#" class="">Download</a>  
+                                </li>
+                                 <li>
+                                     <a href="#" class="">Links</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

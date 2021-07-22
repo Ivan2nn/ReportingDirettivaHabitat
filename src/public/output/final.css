@@ -22775,8 +22775,8 @@ h1 {
         border-color: #474f59; } }
 
 .c-layout-footer-6 {
-  margin: 0;
-  padding-top: 40px; }
+  margin: 40px 0 0 0;
+}
   .c-layout-footer-6 .c-prefooter {
     padding: 35px 20px 40px;
     margin-bottom: 40px; }
@@ -30324,6 +30324,23 @@ a {
 
 a:active, a:hover, a:focus {
     color: #00B783!important;
+}
+
+h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.c-layout-footer ul {
+    padding-top: 16px;
+}
+
+@media (max-width: 600px){
+   .c-layout-footer .c-postfooter .col-xs-4{
+        width: 100%!important;
+        padding-bottom: 20px;
+    }
+
 }
 
 @media (min-width: 992px) and (max-width: 1203px){
