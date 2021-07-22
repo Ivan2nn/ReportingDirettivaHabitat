@@ -17,7 +17,11 @@
              
         <link href="{!! asset('output/final.css') !!}" rel="stylesheet" type="text/css"/>
         <!-- END THEME STYLES -->
-        <link rel="shortcut icon" href="{!! asset('favicon.ico') !!}" /> </head>
+        <link rel="shortcut icon" href="{!! asset('favicon.ico') !!}" /> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
 
     <body class="c-layout-header-fixed c-layout-header-mobile-fixed">
         <!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
@@ -79,7 +83,7 @@
                         <!-- BEGIN: MEGA MENU -->
                         <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
                         <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
-                            <ul class="nav navbar-nav c-theme-nav">
+                            <ul class="nav navbar-nav">
                                 <li class="c-active">
                                     <a href="{{ route('home') }}" class="c-link dropdown-toggle">Home</a>                
                                 </li>
@@ -117,6 +121,12 @@
                                             <a href="{{ route('habitat-cellcodes-search') }}">Ricerca Cartografica</a>
                                         </li>
                                     </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="c-link">III Report</a>                
+                                </li>
+                                 <li>
+                                    <a href="#" class="c-link">Piano di monitoraggio</a>                
                                 </li>
                                 <li>
                                     <a href="{{ route('downloads') }}" class="c-link">Download</a>                
