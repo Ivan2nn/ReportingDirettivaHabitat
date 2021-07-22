@@ -30325,3 +30325,29 @@ a {
 a:active, a:hover, a:focus {
     color: #00B783!important;
 }
+
+@media (min-width: 992px) and (max-width: 1203px){
+    .container {
+        width: 990px!important;
+    }
+
+    .container, .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
+
+
+@media (min-width: 992px) and (max-width: 1203px) {
+    .c-layout-header.c-layout-header-6 .c-navbar .c-mega-menu > .nav.navbar-nav > li {
+        padding: 20px 8px!important;
+    }
+}
+
+
+
+
+
+
+
