@@ -30326,6 +30326,15 @@ a:active, a:hover, a:focus {
     color: #00B783!important;
 }
 
+h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.c-layout-footer ul {
+    padding-top: 16px;
+}
+
 @media (min-width: 992px) and (max-width: 1203px){
     .container {
         width: 990px!important;

@@ -168,8 +168,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-4">
-                            <h3>Specie</h3>
-                            <ul>
+                            <h4>Specie</h4>
+                            <ul class="list-unstyled">
                                 <li>
                                     <a href="#" class="">Ricerca base</a>  
                                 </li>
@@ -182,8 +182,8 @@
                             </ul>
                         </div>
                         <div class="col-xs-4">
-                            <h3>Habitat</h3>
-                            <ul>
+                            <h4>Habitat</h4>
+                            <ul class="list-unstyled">
                                 <li>
                                     <a href="#" class="">Ricerca base</a>  
                                 </li>
@@ -196,7 +196,7 @@
                             </ul>
                         </div>
                         <div class="col-xs-4">
-                            <ul>
+                            <ul class="list-unstyled">
                                 <li>
                                      <a href="#" class="">III Report</a>
                                 </li>
