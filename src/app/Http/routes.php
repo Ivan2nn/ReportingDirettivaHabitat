@@ -18,7 +18,7 @@ Route::get('test', function(){
 
 });
 
-Route::get('api/species/{species}/{report_number}', 'SpeciesController@showFromReport')->where(['report' => '[^edit]']);
+Route::get('api/species/{species}/{report_number}', 'SpeciesController@showFromReport');
 
 Route::resource('api/species','SpeciesController');
 Route::resource('api/habitat','HabitatController');
