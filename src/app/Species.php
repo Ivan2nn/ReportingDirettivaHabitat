@@ -31,24 +31,40 @@ class Species extends Model
     //    return $this->wherePivot('report',$report_number);
     //}
 
-    public function biogeographicregions() 
+    public function biogeographicregions($report_number= '') 
     {
-        return $this->belongsToMany('App\Biogeographicregion','species_data0712_status_conserve','species_code','biogeographicregion_id');
+        if (!$report_number) {
+            return $this->belongsToMany('App\Biogeographicregion','species_data0712_status_conserve','species_code','biogeographicregion_id');
+        } else {
+            return $this->belongsToMany('App\Biogeographicregion','species_data0712_status_conserve','species_code','biogeographicregion_id')->wherePivot('report',$report_number);
+        }
     }
 
-    public function presences()
+    public function presences($report_number= '')
     {
-        return $this->belongsToMany('App\Presence','species_data0712_presence','species_code','status_presence_id')->withPivot('biogeographicregion_id');
+        if (!$report_number) {
+            return $this->belongsToMany('App\Presence','species_data0712_presence','species_code','status_presence_id')->withPivot('biogeographicregion_id');
+        } else {
+            return $this->belongsToMany('App\Presence','species_data0712_presence','species_code','status_presence_id')->wherePivot('report',$report_number)->withPivot('biogeographicregion_id');
+        }
     }
 
-    public function conservations()
+    public function conservations($report_number = '')
     {
-        return $this->belongsToMany('App\Conservation','species_data0712_status_conserve','species_code','status_conserve_id')->withPivot('biogeographicregion_id');
+        if (!$report_number) {
+            return $this->belongsToMany('App\Conservation','species_data0712_status_conserve','species_code','status_conserve_id')->withPivot('biogeographicregion_id');
+        } else {
+            return $this->belongsToMany('App\Conservation','species_data0712_status_conserve','species_code','status_conserve_id')->wherePivot('report',$report_number)->withPivot('biogeographicregion_id');
+        }
     }
 
-    public function trends()
+    public function trends($report_number = '')
     {
-        return $this->belongsToMany('App\Trend','species_data0712_trend','species_code','trend_id')->withPivot('biogeographicregion_id');
+        if (!$report_number) {
+            return $this->belongsToMany('App\Trend','species_data0712_trend','species_code','trend_id')->withPivot('biogeographicregion_id');
+        } else {
+            return $this->belongsToMany('App\Trend','species_data0712_trend','species_code','trend_id')->wherePivot('report',$report_number)->withPivot('biogeographicregion_id');
+        }
     }
 
     public function modification_codes() {
@@ -72,9 +88,9 @@ class Species extends Model
     }
 
     // This method gives back a formatted array with the values REGBIO[STATUS_PRESERVE]
-    public function getFormattedPresences()
+    public function getFormattedPresences($report_number)
     {
-        $allPresences = $this->presences->map(function($item, $key){
+        $allPresences = $this->presences($report_number)->map(function($item, $key){
             return [
                 Biogeographicregion::where('id',$item->pivot->biogeographicregion_id)->first()->name . '[' . $item->name . ']',
             ];
@@ -83,9 +99,9 @@ class Species extends Model
         return $allPresences;
     }
 
-    public function getFormattedPresence($bioreg)
+    public function getFormattedPresence($report_number, $bioreg)
     {
-        $specificBioregionPresence = $this->presences->filter(function($item, $key) use($bioreg){
+        $specificBioregionPresence = $this->presences($report_number)->get()->filter(function($item, $key) use($bioreg){
             return Biogeographicregion::where('id', $item->pivot->biogeographicregion_id)->first()->name == $bioreg;
         });
 
@@ -96,9 +112,9 @@ class Species extends Model
         }
     }
 
-    public function getFormattedConservations()
+    public function getFormattedConservations($report_number)
     {
-        $allConservations = $this->conservations->map(function($item, $key){
+        $allConservations = $this->conservations($report_number)->map(function($item, $key){
             return [
                 Biogeographicregion::where('id', $item->pivot->biogeographicregion_id)->first()->name . '[' . $item->code . ']',
             ];
@@ -107,9 +123,9 @@ class Species extends Model
         return $allConservations;
     }
 
-    public function getFormattedConservation($bioreg)
+    public function getFormattedConservation($report_number, $bioreg)
     {
-        $specificBioregionConservation = $this->conservations->filter(function($item, $key) use($bioreg){
+        $specificBioregionConservation = $this->conservations($report_number)->get()->filter(function($item, $key) use($bioreg){
         	return Biogeographicregion::where('id', $item->pivot->biogeographicregion_id)->first()->name == $bioreg;
         });
 
@@ -120,9 +136,9 @@ class Species extends Model
         }
     }
 
-    public function getFormattedTrends()
+    public function getFormattedTrends($report_number)
     {
-        $allTrends = $this->trends->map(function($item, $key){
+        $allTrends = $this->trends($report_number)->map(function($item, $key){
             return [
                 Biogeographicregion::where('id',$item->pivot->biogeographicregion_id)->first()->name . '[' . $item->name . ']',
             ];
@@ -131,9 +147,9 @@ class Species extends Model
         return $allTrends;
     }
 
-    public function getFormattedTrend($bioreg)
+    public function getFormattedTrend($report_number, $bioreg)
     {
-        $specificBioregionTrend = $this->trends->filter(function($item, $key) use($bioreg){
+        $specificBioregionTrend = $this->trends($report_number)->get()->filter(function($item, $key) use($bioreg){
         	return Biogeographicregion::where('id',$item->pivot->biogeographicregion_id)->first()->name == $bioreg;
         });
 
@@ -144,16 +160,29 @@ class Species extends Model
         }
     }
 
-    public function isInAnnexII() {
-    	return DB::table('species_annex0712_ii')->where('species_code',$this->species_code)->first() != null;
+    public function isInAnnexII($report_number = '') {
+        if (!$report_number) {
+    	    return DB::table('species_annex0712_ii')->where('species_code',$this->species_code)->first() != null;
+        } else {
+            return DB::table('species_annex0712_ii')->where('species_code',$this->species_code)->where('report',$report_number)->first() != null;
+        }
+
     }
 
-    public function isInAnnexIV() {
-    	return DB::table('species_annex0712_iv')->where('species_code',$this->species_code)->first() != null;
+    public function isInAnnexIV($report_number = '') {
+        if (!$report_number) {
+    	    return DB::table('species_annex0712_iv')->where('species_code',$this->species_code)->first() != null;
+        } else {
+            return DB::table('species_annex0712_iv')->where('species_code',$this->species_code)->where('report',$report_number)->first() != null;
+        }
     }
 
-    public function isInAnnexV() {
-    	return DB::table('species_annex0712_v')->where('species_code',$this->species_code)->first() != null;
+    public function isInAnnexV($report_number = '') {
+        if (!$report_number) {
+    	    return DB::table('species_annex0712_v')->where('species_code',$this->species_code)->first() != null;
+        } else {
+            return DB::table('species_annex0712_v')->where('species_code',$this->species_code)->where('report',$report_number)->first() != null;
+        }
     }
 
     public function annexList() {
@@ -169,14 +198,14 @@ class Species extends Model
     }
 
     // Better to have list of the annexes as an array
-    public function annexes() 
+    public function annexes($report_number) 
     {
     	$finalList = [];
-    	if ($this->isInAnnexII())
+    	if ($this->isInAnnexII($report_number))
     		array_push($finalList, 'II');
-    	if ($this->isInAnnexIV())
+    	if ($this->isInAnnexIV($report_number))
     		array_push($finalList, 'IV');
-    	if ($this->isInAnnexV())
+    	if ($this->isInAnnexV($report_number))
     		array_push($finalList, 'V');
 
     	return $finalList;

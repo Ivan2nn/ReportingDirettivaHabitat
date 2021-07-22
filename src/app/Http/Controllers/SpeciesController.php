@@ -165,18 +165,18 @@ class SpeciesController extends Controller
 
         $outputData['species']['species_name'] = $selectedSpecies->species_name;
         $outputData['species']['species_code'] = $selectedSpecies->species_code;
-        $outputData['species']['species_conservation_alp'] = $selectedSpecies->getFormattedConservation("ALP");
-        $outputData['species']['species_conservation_con'] = $selectedSpecies->getFormattedConservation("CON");
-        $outputData['species']['species_conservation_med'] = $selectedSpecies->getFormattedConservation("MED");
-	$outputData['species']['species_conservation_mmed'] = $selectedSpecies->getFormattedConservation("MMED");
-        $outputData['species']['species_trend_alp'] = $selectedSpecies->getFormattedTrend("ALP");
-        $outputData['species']['species_trend_con'] = $selectedSpecies->getFormattedTrend("CON");
-        $outputData['species']['species_trend_med'] = $selectedSpecies->getFormattedTrend("MED");
-	$outputData['species']['species_trend_mmed'] = $selectedSpecies->getFormattedTrend("MMED");
-	$outputData['species']['species_presence_alp'] = $selectedSpecies->getFormattedPresence("ALP");
-        $outputData['species']['species_presence_con'] = $selectedSpecies->getFormattedPresence("CON");
-        $outputData['species']['species_presence_med'] = $selectedSpecies->getFormattedPresence("MED");
-	$outputData['species']['species_presence_mmed'] = $selectedSpecies->getFormattedPresence("MMED");
+        $outputData['species']['species_conservation_alp'] = $selectedSpecies->getFormattedConservation($report_number, "ALP");
+        $outputData['species']['species_conservation_con'] = $selectedSpecies->getFormattedConservation($report_number, "CON");
+        $outputData['species']['species_conservation_med'] = $selectedSpecies->getFormattedConservation($report_number, "MED");
+	$outputData['species']['species_conservation_mmed'] = $selectedSpecies->getFormattedConservation($report_number, "MMED");
+        $outputData['species']['species_trend_alp'] = $selectedSpecies->getFormattedTrend($report_number, "ALP");
+        $outputData['species']['species_trend_con'] = $selectedSpecies->getFormattedTrend($report_number, "CON");
+        $outputData['species']['species_trend_med'] = $selectedSpecies->getFormattedTrend($report_number, "MED");
+	$outputData['species']['species_trend_mmed'] = $selectedSpecies->getFormattedTrend($report_number, "MMED");
+	$outputData['species']['species_presence_alp'] = $selectedSpecies->getFormattedPresence($report_number, "ALP");
+        $outputData['species']['species_presence_con'] = $selectedSpecies->getFormattedPresence($report_number, "CON");
+        $outputData['species']['species_presence_med'] = $selectedSpecies->getFormattedPresence($report_number, "MED");
+	$outputData['species']['species_presence_mmed'] = $selectedSpecies->getFormattedPresence($report_number, "MMED");
 	$outputData['species']['priority'] = $selectedSpecies->priority;
         $outputData['species']['endemic'] = $selectedSpecies->endemic;
         $outputData['species']['classis'] = ($selectedSpecies->taxonomy->tax_classis) ? $selectedSpecies->taxonomy->tax_classis->class_name : '';
@@ -186,7 +186,7 @@ class SpeciesController extends Controller
         $outputData['species']['phylum'] = ($selectedSpecies->taxonomy->tax_phylum) ? $selectedSpecies->taxonomy->tax_phylum->phylum_name : '';
         $outputData['species']['genus'] = ($selectedSpecies->taxonomy->tax_genus) ? $selectedSpecies->taxonomy->tax_genus->genus_name : '';
         $outputData['species']['bioregions'] = $selectedSpecies->biogeographicregions->pluck('name')->toArray();
-        $outputData['species']['annexes'] = $selectedSpecies->annexes();
+        $outputData['species']['annexes'] = $selectedSpecies->annexes($report_number);
         
         /*if ($selectedSpecies->hasSpecification()) {
             $outputData['species']['lri_specs'] = $selectedSpecies->hasSpecificationLRI() ? $selectedSpecies->specification->lri_category . '[' . $selectedSpecies->specification->lri_criterion . ']' : '';
