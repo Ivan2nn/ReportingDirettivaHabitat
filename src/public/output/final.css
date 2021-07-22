@@ -30335,6 +30335,14 @@ h4 {
     padding-top: 16px;
 }
 
+@media (max-width: 600px){
+   .c-layout-footer .c-postfooter .col-xs-4{
+        width: 100%!important;
+        padding-bottom: 20px;
+    }
+
+}
+
 @media (min-width: 992px) and (max-width: 1203px){
     .container {
         width: 990px!important;
