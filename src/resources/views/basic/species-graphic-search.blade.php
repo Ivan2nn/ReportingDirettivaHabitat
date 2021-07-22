@@ -5,12 +5,6 @@
 <div class="c-content-box c-size-md c-bg-white">
     <div class="container">
 		<div class="row">
-			<div class="btn btn-primary" id="3_report">
-				III Report
-			</div>
-			<div class="btn btn-primary" id="4_report">
-				IV Report
-			</div>
 			<!-- <h1 style="padding: 20px 5px; background-color: #99ccff;">Al momento il sito riporta informazioni riferite a specie e habitat terrestri e di acqua dolce.<br>
 			I dati relativi a specie e habitat marini sono in corso di inserimento</h1> -->
 		</div>
@@ -415,5 +409,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_species_generator.js') !!}"></script>
 	 <script src="{!! asset('js/speciesToCellMapping.js') !!}"></script>
-     <script src="{!! asset('js/main_base_search_IV_report.js') !!}?<?=time()?>"></script>
+     <script src="{!! asset('js/main_base_search_III_report.js') !!}?<?=time()?>"></script>
 @endsection
