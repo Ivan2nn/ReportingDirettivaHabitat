@@ -15,6 +15,8 @@ class Report_III_MiddleWare
      */
     public function handle($request, Closure $next)
     {
+        $request->session()->put('report_number', 'III');
+        $request->session()->save();
         return $next($request);
     }
 }

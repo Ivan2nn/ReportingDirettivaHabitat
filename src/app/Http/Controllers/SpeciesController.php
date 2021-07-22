@@ -148,9 +148,9 @@ class SpeciesController extends Controller
     {
         $selectedSpecies = Species::find($species_code);
         /* We have to retrieve also other informations */
-        $tempCellCodes = $selectedSpecies->cellcodes;
+        $tempCellCodes = $selectedSpecies->cellcodes($report_number)->get();
         $outputData = array('type'=>'FeatureCollection');
-        $contentCell = file_get_contents(public_path() . '/json/griglia.json');
+        $contentCell = file_get_contents(public_path() . '/json/final_griglia.json');
         $json_a = json_decode($contentCell, true);
         $ind = 0;
 
