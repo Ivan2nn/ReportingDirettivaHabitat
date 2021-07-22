@@ -83,7 +83,7 @@
                         <!-- BEGIN: MEGA MENU -->
                         <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
                         <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
-                            <ul class="nav navbar-nav c-theme-nav">
+                            <ul class="nav navbar-nav">
                                 <li class="c-active">
                                     <a href="{{ route('home') }}" class="c-link dropdown-toggle">Home</a>                
                                 </li>
