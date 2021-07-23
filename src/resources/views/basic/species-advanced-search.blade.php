@@ -37,19 +37,19 @@
                               <div id="{{ $kingdom->kingdom_name . '_jstree' }}">
                                 <ul>
                                 @foreach($kingdom->phyla() as $phylum)
-                                  <li data-jstree='{"icon":"../public/images/phylum_vlittle.png"}' rel="phylum">{{ $phylum->phylum_name }}
+                                  <li data-jstree='{"icon":"../images/phylum_vlittle.png"}' rel="phylum">{{ $phylum->phylum_name }}
                                     <ul>
                                     @foreach($phylum->classes() as $class)
-                                      <li data-jstree='{"icon":"../public/images/class_vlittle.png"}' rel="class">{{ $class->class_name }}
+                                      <li data-jstree='{"icon":"../images/class_vlittle.png"}' rel="class">{{ $class->class_name }}
                                         <ul>
                                         @foreach($class->orders() as $order)
-                                        <li data-jstree='{"icon":"../public/images/order_vlittle.png"}' rel="order">{{ $order->order_name }}
+                                        <li data-jstree='{"icon":"../images/order_vlittle.png"}' rel="order">{{ $order->order_name }}
                                           <ul>
                                           @foreach($order->families() as $family)
-                                          <li data-jstree='{"icon":"../public/images/family_vlittle.png"}' rel="family">{{ $family->family_name }}
+                                          <li data-jstree='{"icon":"../images/family_vlittle.png"}' rel="family">{{ $family->family_name }}
                                             <ul>
                                             @foreach($family->genera() as $genus)
-                                              <li data-jstree='{"icon":"../public/images/genus_vlittle.png"}' rel="genus" code='{{ $genus->genus_code }}'>{{ $genus->genus_name }}</li>
+                                              <li data-jstree='{"icon":"../images/genus_vlittle.png"}' rel="genus" code='{{ $genus->genus_code }}'>{{ $genus->genus_name }}</li>
                                             @endforeach
                                             </ul>
                                           </li>
@@ -300,7 +300,7 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_species_generator.js') !!}"></script>
    <script src="{!! asset('js/vendor/switchery.js') !!}"></script>
-	 <script src="{!! asset('js/taxonomy_regbio_status_to_species.js') !!}"></script>
+	 <script src="{!! asset('js/taxonomy_regbio_status_to_species_III_report.js') !!}"></script>
    <script src="{!! asset('js/taxonomy_main.js') !!}"></script>
    
 @endsection
