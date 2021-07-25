@@ -53,7 +53,7 @@ class SpeciesController extends Controller
         /* We have to retrieve also other informations */
         $tempCellCodes = $selectedSpecies->cellcodes;
         $outputData = array('type'=>'FeatureCollection');
-        $contentCell = file_get_contents(public_path() . '/json/griglia.json');
+        $contentCell = file_get_contents(public_path() . '/json/final_griglia.json');
         $json_a = json_decode($contentCell, true);
         $ind = 0;
 
@@ -292,7 +292,7 @@ class SpeciesController extends Controller
     public function getSpeciesGeoJson($tempCellCodes) {
         
         $outputData = array('type'=>'FeatureCollection');
-        $contentCell = file_get_contents(public_path() . '/json/griglia_IV_report_d.json');
+        $contentCell = file_get_contents(public_path() . '/json/final_griglia.json');
         $json_a = json_decode($contentCell, true);
         $ind = 0;
         foreach ($sampleCellCodes as $tempCellCodes) {
