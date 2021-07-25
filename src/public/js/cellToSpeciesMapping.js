@@ -11,7 +11,7 @@ function initialize() {
     });
 
     infoWindow = new google.maps.InfoWindow();
-    map.data.loadGeoJson('json/griglia.json');
+    map.data.loadGeoJson('json/griglia_IV_report_d.json');
     map.data.setStyle(function(feature) {
         var color = 'white';
         if (feature.getProperty('isColorful')) {
