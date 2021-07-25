@@ -54,21 +54,21 @@ class CellCodeController extends Controller
         
     }
 
-    public function getSpeciesFromCellcodes($cellCodeName)
+    public function getSpeciesFromCellcodes($cellCodeName, $report_number)
     {
         $cellCodeData = [];
         $selectedCellCode = Cellcode::where('cellname',$cellCodeName)->first();
-        $species_in_cellcodes = $selectedCellCode->species;
+        $species_in_cellcodes = $selectedCellCode->species()->where('report',$report_number)->get();
         
-        $final_species = $this->get_species_info($species_in_cellcodes)->unique('species_name');
+        $final_species = $this->get_species_info($species_in_cellcodes, $report_number)->unique('species_name');
         $final_species_sorted = $final_species->sortBy('species_name');
         
         return json_encode($final_species_sorted->values()->all());
     }
 
-    public function get_species_info($species_list) {
+    public function get_species_info($species_list, $report_number) {
         $species_info = [];
-        $species_info = $species_list->map(function($item, $key) {
+        $species_info = $species_list->map(function($item, $key) use($report_number) {
             $species = Species::find($item->species_code);
             // ERROR :: If the original database of the species would be full even with duplicate species this could be taken out
             if ($species && $species->taxonomy) {
@@ -76,12 +76,14 @@ class CellCodeController extends Controller
                 return [
                     'species_code' => $species->species_code,
                     'species_name' => $species->species_name,
-                    'species_conservation_alp' => $species->getFormattedConservation("ALP"),
-                    'species_conservation_con' => $species->getFormattedConservation("CON"),
-                    'species_conservation_med' => $species->getFormattedConservation("MED"),
-                    'species_trend_alp' => $species->getFormattedTrend("ALP"),
-                    'species_trend_con' => $species->getFormattedTrend("CON"),
-                    'species_trend_med' => $species->getFormattedTrend("MED"),
+                    'species_conservation_alp' => $species->getFormattedConservation($report_number,"ALP"),
+                    'species_conservation_con' => $species->getFormattedConservation($report_number,"CON"),
+                    'species_conservation_med' => $species->getFormattedConservation($report_number,"MED"),
+                    'species_conservation_mmed' => $species->getFormattedConservation($report_number, "MMED"),
+                    'species_trend_alp' => $species->getFormattedTrend($report_number,"ALP"),
+                    'species_trend_con' => $species->getFormattedTrend($report_number,"CON"),
+                    'species_trend_med' => $species->getFormattedTrend($report_number,"MED"),
+                    'species_trend_mmed' => $species->getFormattedTrend($report_number, "MMED"),
                     'class_name' => $species->taxonomy->tax_classis ? $species->taxonomy->tax_classis->class_name : ' ',
                     'family_name' => $species->taxonomy->tax_family ? $species->taxonomy->tax_family->family_name : ' ',
                     'kingdom_name' => $species->taxonomy->tax_kingdom ? $species->taxonomy->tax_kingdom->kingdom_name : ' ',
@@ -89,7 +91,7 @@ class CellCodeController extends Controller
                     'phylum_name' => $species->taxonomy->tax_phylum ? $species->taxonomy->tax_phylum->phylum_name : ' ',
                     'genus_name' => $species->taxonomy->tax_genus ? $species->taxonomy->tax_genus->genus_name : ' ',
                     'bioregions' => $species->biogeographicregions->pluck('name')->toArray(),
-                    'annexes' => $species->annexes()
+                    'annexes' => $species->annexes($report_number)
                 ];
             }
         });

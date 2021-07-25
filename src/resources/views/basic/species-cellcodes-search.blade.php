@@ -164,5 +164,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_species_generator.js') !!}"></script>
 	<script src="{!! asset('js/cellToSpeciesMapping.js') !!}"></script>
-  <script src="{!! asset('js/main_cells_to_species.js') !!}"></script>
+  <script src="{!! asset('js/main_cells_to_species_III_report.js') !!}"></script>
 @endsection

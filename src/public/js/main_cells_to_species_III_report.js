@@ -16,7 +16,8 @@ Vue.directive('ajax', {
 		e.preventDefault();
 		this.vm.loading = true;
 		this.vm.dataAvailable = false;
-		this.vm.$http.get(this.el.action + this.vm.selectedCell).then((response) => {
+
+		this.vm.$http.get(this.el.action + this.vm.selectedCell  + '/' + this.vm.report_number).then((response) => {
 		//this.vm.$dispatch('final-cell-data', response.data);
 		//console.log(response.data);
 		this.vm.speciesDetails = JSON.parse(response.data);
@@ -102,6 +103,7 @@ this.myVue = new Vue({
 	el: 'body',
 
 	data: {
+		report_number: 'III',
 		species: [],
 		selectedCell: '',
 		loading: false,

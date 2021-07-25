@@ -134,7 +134,7 @@ Route::get('biogeographicregtohabitat', 'BiogeographicregionController@getHabita
 
 Route::get('conservationstatetohabitat', 'StatusConserveController@getHabitatsFromStatusConserve');
 
-Route::get('cellcodes/species/{id}', 'CellCodeController@getSpeciesFromCellcodes');
+Route::get('cellcodes/species/{id}/{report_number}', 'CellCodeController@getSpeciesFromCellcodes');
 
 Route::get('cellcodes/habitat/{id}', 'CellCodeController@getHabitatsFromCellcodes');
 
