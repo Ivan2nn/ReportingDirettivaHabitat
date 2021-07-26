@@ -81,47 +81,47 @@ class Habitat extends Model
         }
     }
 
-    public function scopeBiogeoregAND(Builder $query, $biogeoregName, $biogeoregBoolean) {
+    public function scopeBiogeoregAND(Builder $query, $biogeoregName, $biogeoregBoolean, $report_number) {
         if ($biogeoregBoolean) {
-            return $query->whereHas('biogeographicregions', function($q) use($biogeoregName) {
-                $q->where('name',$biogeoregName);
+            return $query->whereHas('biogeographicregions', function($q) use($biogeoregName, $report_number) {
+                $q->where('name',$biogeoregName)->where('report',$report_number);
             });
         } else {
-            return $query->whereDoesntHave('biogeographicregions', function($q) use($biogeoregName) {
-                $q->where('name',$biogeoregName);
+            return $query->whereDoesntHave('biogeographicregions', function($q) use($biogeoregName, $report_number) {
+                $q->where('name',$biogeoregName)->where('report',$report_number);
             });
         }
     }
 
-    public function scopeConservationAND(Builder $query, $conservationCode, $conservationBoolean) {
+    public function scopeConservationAND(Builder $query, $conservationCode, $conservationBoolean, $report_number) {
         if ($conservationBoolean) {
-            return $query->whereHas('conservations', function($q) use($conservationCode) {
-                $q->where('code',$conservationCode);
+            return $query->whereHas('conservations', function($q) use($conservationCode, $report_number) {
+                $q->where('code',$conservationCode)->where('report',$report_number);
             });
         } else {
-            return $query->whereDoesntHave('conservations', function($q) use($conservationCode) {
-                $q->where('code',$conservationCode);
+            return $query->whereDoesntHave('conservations', function($q) use($conservationCode, $report_number) {
+                $q->where('code',$conservationCode)->where('report',$report_number);
             });
         }
     }
 
-    public function scopeAllBiogeoregAND(Builder $query, $list_of_biogeoreg) {
+    public function scopeAllBiogeoregAND(Builder $query, $list_of_biogeoreg, $report_number) {
         foreach ($list_of_biogeoreg as $elmName => $elmBool) {
-            $query->biogeoregAND($elmName, $elmBool);
+            $query->biogeoregAND($report_number, $elmName, $elmBool);
         }
 
         return $query;
     }
 
-    public function scopeAllConservationAND(Builder $query, $list_of_conservation) {
+    public function scopeAllConservationAND(Builder $query, $list_of_conservation, $report_number) {
         foreach ($list_of_conservation as $elmName => $elmBool) {
-            $query->conservationAND($elmName, $elmBool);
+            $query->conservationAND($report_number, $elmName, $elmBool);
         }
 
         return $query;
     }
 
-    public function scopeAllBiogeoregOR_FalseExcluded(Builder $query, $list_of_biogeoreg) {
+    public function scopeAllBiogeoregOR_FalseExcluded(Builder $query, $list_of_biogeoreg, $report_number) {
         // In case of ND (not defined biogeographic regions) since it's not a code of biogeoregion we have to take it out from
         // the array and works it apart. Of course it can't be used with AND but only with OR .... I want among the 
         // selected species the ones in the ALP and that have not defined biogeoregion; NOT ALP and NOT DEFINED
@@ -139,31 +139,31 @@ class Habitat extends Model
         }
 
         if ($list_of_biogeoreg['ND'] == false) {
-            return $query->whereHas('biogeographicregions', function($q) use($included) {
-                        $q->whereIn('name',$included);
-                    })->whereDoesntHave('biogeographicregions', function($q) use($notIncluded) {
-                        $q->whereIn('name',$notIncluded);
+            return $query->whereHas('biogeographicregions', function($q) use($included, $report_number) {
+                        $q->whereIn('name',$included)->where('report',$report_number);
+                    })->whereDoesntHave('biogeographicregions', function($q) use($notIncluded, $report_number) {
+                        $q->whereIn('name',$notIncluded)->where('report',$report_number);
                     });
         }
 
         if ($list_of_biogeoreg['ND'] == true) {
             return $query
-                ->where(function($qq) use ($notIncluded, $included) {
-                    $qq->whereHas('biogeographicregions', function($q) use($included) {
-                            $q->whereIn('name',$included);
-                        })->whereDoesntHave('biogeographicregions', function($q) use($notIncluded) {
-                            $q->whereIn('name',$notIncluded);
+                ->where(function($qq) use ($notIncluded, $included, $report_number) {
+                    $qq->whereHas('biogeographicregions', function($q) use($included, $report_number) {
+                            $q->whereIn('name',$included)->where('report',$report_number);
+                        })->whereDoesntHave('biogeographicregions', function($q) use($notIncluded, $report_number) {
+                            $q->whereIn('name',$notIncluded)->where('report',$report_number);
                         });
-                })->orWhere(function($qq) {
-                    $qq->whereDoesntHave('biogeographicregions', function($q) {
-                            $q->whereIn('name',['ALP','MED','CON','MMED']);
+                })->orWhere(function($qq) use($report_number) {
+                    $qq->whereDoesntHave('biogeographicregions', function($q) use($report_number) {
+                            $q->whereIn('name',['ALP','MED','CON','MMED'])->where('report',$report_number);
                         }); 
                 });
         }
         
     }
 
-    public function scopeAllBiogeoregOR(Builder $query, $list_of_biogeoreg) {
+    public function scopeAllBiogeoregOR(Builder $query, $list_of_biogeoreg, $report_number) {
         // In case of ND (not defined biogeographic regions) since it's not a code of biogeoregion we have to take it out from
         // the array and works it apart. Of course it can't be used with AND but only with OR .... I want among the 
         // selected species the ones in the ALP and that have not defined biogeoregion; NOT ALP and NOT DEFINED
@@ -181,26 +181,26 @@ class Habitat extends Model
         }
 
         if ($list_of_biogeoreg['ND'] == false) {
-            return $query->whereHas('biogeographicregions', function($q) use($included) {
-                        $q->whereIn('name',$included);
+            return $query->whereHas('biogeographicregions', function($q) use($included, $report_number) {
+                        $q->whereIn('name',$included)->where('report',$report_number);
                     });
         }
 
         if ($list_of_biogeoreg['ND'] == true) {
             return $query
-                ->where(function($qq) use ($notIncluded, $included) {
-                    $qq->whereHas('biogeographicregions', function($q) use($included) {
-                            $q->whereIn('name',$included);
+                ->where(function($qq) use ($notIncluded, $included, $report_number) {
+                    $qq->whereHas('biogeographicregions', function($q) use($included, $report_number) {
+                            $q->whereIn('name',$included)->where('report',$report_number);
                         });
-                })->orWhere(function($qq) {
-                    $qq->whereDoesntHave('biogeographicregions', function($q) {
-                            $q->whereIn('name',['ALP','MED','CON','MMED']);
+                })->orWhere(function($qq) use($report_number) {
+                    $qq->whereDoesntHave('biogeographicregions', function($q) use($report_number) {
+                            $q->whereIn('name',['ALP','MED','CON','MMED'])->where('report',$report_number);
                         }); 
                 });
         }
     }
 
-    public function scopeAllConservationOR(Builder $query, $list_of_conservation) {
+    public function scopeAllConservationOR(Builder $query, $list_of_conservation, $report_number) {
         $included = [];
         $notIncluded = [];
 
@@ -212,14 +212,10 @@ class Habitat extends Model
 
         }
 
-        return $query->whereHas('conservations', function($q) use($included) {
-                    $q->whereIn('code',$included);
-                })->whereDoesntHave('conservations', function($q) use($notIncluded) {
-                    $q->whereIn('code',$notIncluded);
+        return $query->whereHas('conservations', function($q) use($included, $report_number) {
+                    $q->whereIn('code',$included)->where('report',$report_number);
+                })->whereDoesntHave('conservations', function($q) use($notIncluded, $report_number) {
+                    $q->whereIn('code',$notIncluded)->where('report',$report_number);
                 });
-    }
-
-    public function scopeUsingReport(Builder $query, $report_version) {
-        return $query->where('report', $report_version);
     }
 }
