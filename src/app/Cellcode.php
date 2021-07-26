@@ -19,7 +19,7 @@ class Cellcode extends Model
 
     public function habitats()
     {
-        return $this->belongsToMany('App\Habitat','cellcode_habitat','cellcode_id','habitat_code');
+        return $this->belongsToMany('App\Habitat','cellcode_habitat','cellcode_id','habitat_code')->withPivot('report');
     }
 
     public function biogeographicregions()

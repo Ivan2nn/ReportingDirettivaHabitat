@@ -137,7 +137,7 @@ Route::get('conservationstatetohabitat', 'StatusConserveController@getHabitatsFr
 
 Route::get('cellcodes/species/{id}/{report_number}', 'CellCodeController@getSpeciesFromCellcodes');
 
-Route::get('cellcodes/habitat/{id}', 'CellCodeController@getHabitatsFromCellcodes');
+Route::get('cellcodes/habitat/{id}/{report_number}', 'CellCodeController@getHabitatsFromCellcodes');
 
 /*Route::get('api/taxonomy-to-species/{ids}', function($ids) {
 	$pieces = explode(":", $ids);
