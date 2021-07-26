@@ -10,7 +10,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-5">
-				<div class="ibox float-e-margins">
+				{{-- <div class="ibox float-e-margins">
 		            <div class="ibox-title">
 		            	<div class="row">
 		            		<div class="col-sm-8">
@@ -50,8 +50,8 @@
 					 		</div>
 					 	</div>
 		            </div>
-		        </div>
-	            <div class="ibox float-e-margins i-box-mimi">
+		        </div> --}}
+	            {{-- <div class="ibox float-e-margins i-box-mimi">
 		            <div class="ibox-title">
 		                <div class="row">
 		            		<div class="col-sm-8">
@@ -86,7 +86,7 @@
 				 			</div>
 				 		</div>
 		            </div>
-		        </div>
+		        </div> --}}
 				<div class="ibox float-e-margins i-box-mimi">
 		            <div class="ibox-title">
 		                <div class="row">
@@ -94,7 +94,7 @@
 		                		<h4 class="input-font-mimi-big">Ricerca mista</h4>
 							</div>
 							<div class="col-sm-4">
-								<div class="loader" v-if="loadingCodes"></div>
+								<div class="loader" v-if="loadingNameCode"></div>
 							</div>
 		                </div>
 		            </div>
@@ -112,7 +112,7 @@
 				            	>
 			            	</div>
 			            	<div class="col-sm-4">
-			            		<button type="submit" class="btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes"><strong>Cerca</strong></button>
+			            		<button type="submit" class="btn btn-primary btn-lg pull-right" v-show="searchingNameCode" :disabled="loadingNameCode"><strong>Cerca</strong></button>
 			            	</div>
 						</div>	
 						</form>
@@ -134,7 +134,7 @@
 		            <div class="ibox-title">
 		            	<div class="row">
 		            		<div class="col-xs-12">
-		                		<h4 class="input-font-mimi-big">Mappa di Distribuzione Specie <span style="font-size: 14px;">    [disponibile solo per le specie terrestri e di acqua dolce]</span></h4>
+		                		<h4 class="input-font-mimi-big">Mappa di Distribuzione Specie</h4>
 							</div>
 					
 		                </div>
@@ -409,5 +409,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_species_generator.js') !!}"></script>
 	 <script src="{!! asset('js/speciesToCellMapping.js') !!}"></script>
-     <script src="{!! asset('js/main_base_search_III_report.js') !!}?<?=time()?>"></script>
+     <script src="{!! asset('js/species_base_search_III_report.js') !!}?<?=time()?>"></script>
 @endsection
