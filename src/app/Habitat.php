@@ -19,7 +19,7 @@ class Habitat extends Model
 
 	public function cellcodes()
     {
-    	return $this->belongsToMany('App\Cellcode','cellcode_habitat','habitat_code','cellcode_id');
+    	return $this->belongsToMany('App\Cellcode','cellcode_habitat','habitat_code','cellcode_id')->withPivot('report');
     }
 
     public function biogeographicregions() 
@@ -29,22 +29,22 @@ class Habitat extends Model
 
     public function presences()
     {
-        return $this->belongsToMany('App\Presence','habitat_data0712_presence','habitat_code','status_presence_id')->withPivot('biogeographicregion_id');
+        return $this->belongsToMany('App\Presence','habitat_data0712_presence','habitat_code','status_presence_id')->withPivot(['biogeographicregion_id','report']);
     }
 
     public function conservations()
     {
-        return $this->belongsToMany('App\Conservation','habitat_data0712_status_conserve','habitat_code','status_conserve_id')->withPivot('biogeographicregion_id');
+        return $this->belongsToMany('App\Conservation','habitat_data0712_status_conserve','habitat_code','status_conserve_id')->withPivot(['biogeographicregion_id','report']);
     }
 
     public function trends()
     {
-        return $this->belongsToMany('App\Trend','habitat_data0712_trend','habitat_code','trend_id')->withPivot('biogeographicregion_id');
+        return $this->belongsToMany('App\Trend','habitat_data0712_trend','habitat_code','trend_id')->withPivot(['biogeographicregion_id','report']);
     }
 
-    public function getFormattedPresence($bioreg)
+    public function getFormattedPresence($report_number, $bioreg)
     {
-        $specificBioregionPresence = $this->presences->filter(function($item, $key) use($bioreg){
+        $specificBioregionPresence = $this->presences()->where('report',$report_number)->get()->filter(function($item, $key) use($bioreg, $report_number){
         	return Biogeographicregion::where('id', $item->pivot->biogeographicregion_id)->first()->name == $bioreg;
         });
 
@@ -55,9 +55,9 @@ class Habitat extends Model
         }
     }
 
-    public function getFormattedConservation($bioreg)
+    public function getFormattedConservation($report_number, $bioreg)
     {
-        $specificBioregionConservation = $this->conservations->filter(function($item, $key) use($bioreg){
+        $specificBioregionConservation = $this->conservations()->where('report',$report_number)->get()->filter(function($item, $key) use($bioreg){
         	return Biogeographicregion::where('id', $item->pivot->biogeographicregion_id)->first()->name == $bioreg;
         });
 
@@ -68,9 +68,9 @@ class Habitat extends Model
         }
     }
 
-    public function getFormattedTrend($bioreg)
+    public function getFormattedTrend($report_number, $bioreg)
     {
-        $specificBioregionTrend = $this->trends->filter(function($item, $key) use($bioreg){
+        $specificBioregionTrend = $this->trends()->where('report',$report_number)->get()->filter(function($item, $key) use($bioreg){
         	return Biogeographicregion::where('id',$item->pivot->biogeographicregion_id)->first()->name == $bioreg;
         });
 

@@ -118,6 +118,79 @@ class HabitatController extends Controller
         return json_encode($outputData);
     }
 
+    public function showFromReport($habitat_code, $report_number)
+    {
+        $selectedHabitat = Habitat::find($habitat_code);
+        /* We have to retrieve also other informations */
+        $tempCellCodes = $selectedHabitat->cellcodes()->where('report',$report_number)->get();
+        $outputData = array('type'=>'FeatureCollection');
+        $contentCell = file_get_contents(public_path() . '/json/griglia_IV_report_d.json');
+        $json_a = json_decode($contentCell, true);
+        $ind = 0;
+
+        foreach ($tempCellCodes as $sampleCellCode) {
+            foreach ($json_a['features'] as $key => $value) {
+                if ($sampleCellCode->cellname == $value['properties']['CellCode']) {
+                    $outputData['features'][$ind] = $value;
+                    $ind++;
+                }
+            }
+        }
+
+        $outputData['habitat']['habitat_name'] = $selectedHabitat->habitat_name;
+        $outputData['habitat']['habitat_code'] = $selectedHabitat->habitat_code;
+        $outputData['habitat']['macrocategory'] = $selectedHabitat->macrocategory->habitat_macrocategory_id . ' ' . $selectedHabitat->macrocategory->habitat_macrocategory_name;
+        $outputData['habitat']['habitat_priority'] = $selectedHabitat->habitat_priority;
+	$outputData['habitat']['habitat_presence_alp'] = $selectedHabitat->getFormattedPresence($report_number, "ALP");
+        $outputData['habitat']['habitat_presence_con'] = $selectedHabitat->getFormattedPresence($report_number, "CON");
+        $outputData['habitat']['habitat_presence_med'] = $selectedHabitat->getFormattedPresence($report_number, "MED");
+	$outputData['habitat']['habitat_presence_mmed'] = $selectedHabitat->getFormattedPresence($report_number, "MMED");
+        $outputData['habitat']['habitat_conservation_alp'] = $selectedHabitat->getFormattedConservation($report_number, "ALP");
+        $outputData['habitat']['habitat_conservation_con'] = $selectedHabitat->getFormattedConservation($report_number, "CON");
+        $outputData['habitat']['habitat_conservation_med'] = $selectedHabitat->getFormattedConservation($report_number, "MED");
+	$outputData['habitat']['habitat_conservation_mmed'] = $selectedHabitat->getFormattedConservation($report_number, "MMED");
+        $outputData['habitat']['habitat_trend_alp'] = $selectedHabitat->getFormattedTrend($report_number, "ALP");
+        $outputData['habitat']['habitat_trend_con'] = $selectedHabitat->getFormattedTrend($report_number, "CON");
+        $outputData['habitat']['habitat_trend_med'] = $selectedHabitat->getFormattedTrend($report_number, "MED");
+	$outputData['habitat']['habitat_trend_mmed'] = $selectedHabitat->getFormattedTrend($report_number, "MMED");
+        $outputData['habitat']['bioregions'] = $selectedHabitat->biogeographicregions()->where('report',$report_number)->pluck('name')->toArray();
+
+	$tempOutNote = "";        
+	$tempNote = $selectedHabitat->note;
+	$pieces = explode("-", $tempNote);
+	for ($idx = 0; $idx < count($pieces); $idx++) {
+		$tempOutNote .= $pieces[$idx] . '<br>';	
+	}	
+
+    
+
+	$outputData['habitat']['modified'] = $tempOutNote;
+
+	$files_report = glob(public_path() . '/documents/habitat/*.pdf');
+        // iterate through the files and determine 
+        // if the filename contains the search string.
+        foreach($files_report as $file) {
+            $name = pathinfo($file, PATHINFO_FILENAME);
+            $is_there = strpos(strtolower($name), (string)$selectedHabitat->habitat_code);
+            if ($is_there === 0) {
+                $outputData['habitat']['document'] = 'public/documents/habitat/' . $name . '.pdf';
+            }
+        }
+
+        $files_monitoring = glob(public_path() . '/documents/monitoraggio/habitat/*.pdf');
+        // iterate through the files and determine 
+        // if the filename contains the search string.
+        foreach($files_monitoring as $file) {
+            $name = pathinfo($file, PATHINFO_FILENAME);
+            $is_there = strpos(strtolower($name), (string)$selectedHabitat->habitat_code);
+            if ($is_there === 0) {
+                $outputData['habitat']['monitoring'] = 'public/documents/monitoraggio/habitat/' . $name . '.pdf';
+            }
+        }
+        
+        return json_encode($outputData);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -155,7 +228,7 @@ class HabitatController extends Controller
     public function getHabitatGeoJson($tempCellCodes) {
         
         $outputData = array('type'=>'FeatureCollection');
-        $contentCell = file_get_contents(public_path() . '/json/griglia.json');
+        $contentCell = file_get_contents(public_path() . '/json/griglia_IV_report_d.json');
         $json_a = json_decode($contentCell, true);
         $ind = 0;
         foreach ($sampleCellCodes as $tempCellCodes) {

@@ -327,5 +327,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_habitat_generator.js') !!}"></script>
 	 <script src="{!! asset('js/habitatToCellMapping.js') !!}"></script>
-     <script src="{!! asset('js/main_habitat.js') !!}"></script>
+     <script src="{!! asset('js/main_habitat_IV_report.js') !!}"></script>
 @endsection

@@ -19,6 +19,7 @@ Route::get('test', function(){
 });
 
 Route::get('api/species/{species}/{report_number}', 'SpeciesController@showFromReport');
+Route::get('api/habitat/{habitat}/{report_number}', 'HabitatController@showFromReport');
 
 Route::resource('api/species','SpeciesController');
 Route::resource('api/habitat','HabitatController');
