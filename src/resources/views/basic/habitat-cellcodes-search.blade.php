@@ -81,10 +81,10 @@
                   <li class="c-last mimi-legenda-advanced">
             <h4 class="c-font-black">Trend</h4>
             <ul class="c-legenda">
-              <li><img src="{!! asset('public/images/green_up.png') !!}" />In miglioramento</li>
-              <li><img src="{!! asset('public/images/yellow_stable.png') !!}" />Stabile</li>
-              <li><img src="{!! asset('public/images/red_down.png') !!}" />In peggioramento</li>
-              <li><img src="{!! asset('public/images/grey_null.png') !!}" />Sconosciuto</li>
+              <li><img src="{!! asset('images/green_up.png') !!}" />In miglioramento</li>
+              <li><img src="{!! asset('images/yellow_stable.png') !!}" />Stabile</li>
+              <li><img src="{!! asset('images/red_down.png') !!}" />In peggioramento</li>
+              <li><img src="{!! asset('images/grey_null.png') !!}" />Sconosciuto</li>
             </ul>                   
                   </li>
                 </ul>
@@ -149,5 +149,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_habitat_generator.js') !!}"></script>
 	<script src="{!! asset('js/cellToSpeciesMapping.js') !!}"></script>
-  <script src="{!! asset('js/main_cells_to_habitats.js') !!}"></script>
+  <script src="{!! asset('js/main_cells_to_habitats_III_report.js') !!}"></script>
 @endsection

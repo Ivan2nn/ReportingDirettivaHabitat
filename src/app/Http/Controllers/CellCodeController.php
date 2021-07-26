@@ -90,7 +90,7 @@ class CellCodeController extends Controller
                     'order_name' => $species->taxonomy->tax_order ? $species->taxonomy->tax_order->order_name : ' ',
                     'phylum_name' => $species->taxonomy->tax_phylum ? $species->taxonomy->tax_phylum->phylum_name : ' ',
                     'genus_name' => $species->taxonomy->tax_genus ? $species->taxonomy->tax_genus->genus_name : ' ',
-                    'bioregions' => $species->biogeographicregions->pluck('name')->toArray(),
+                    'bioregions' => $species->biogeographicregions()->where('report',$report_number)->get()->pluck('name')->toArray(),
                     'annexes' => $species->annexes($report_number)
                 ];
             }
@@ -99,34 +99,34 @@ class CellCodeController extends Controller
         return $species_info;
     }
 
-    public function getHabitatsFromCellcodes($cellCodeName)
+    public function getHabitatsFromCellcodes($cellCodeName, $report_number)
     {
         $cellCodeData = [];
         $selectedCellCode = Cellcode::where('cellname',$cellCodeName)->first();
-        $habitats_in_cellcodes = $selectedCellCode->habitats;
+        $habitats_in_cellcodes = $selectedCellCode->habitats()->where('report',$report_number)->get();
         
-        $final_habitats = $this->get_habitat_info($habitats_in_cellcodes)->unique('habitat_name');
+        $final_habitats = $this->get_habitat_info($habitats_in_cellcodes, $report_number)->unique('habitat_name');
         $final_habitat_sorted = $final_habitats->sortBy('habitat_code');
 
         return json_encode($final_habitat_sorted->values()->all());
     }
 
-    public function get_habitat_info($habitat_list) {
+    public function get_habitat_info($habitat_list, $report_number) {
         $habitat_info = [];
-        $habitat_info = $habitat_list->map(function($item, $key) {
+        $habitat_info = $habitat_list->map(function($item, $key) use($report_number) {
             $habitat = Habitat::find($item->habitat_code);
             // ERROR :: If the original database of the habitat would be full even with duplicate habitat this could be taken out
             if ($habitat) {
                 return [
                     'habitat_code' => $habitat->habitat_code,
                     'habitat_name' => $habitat->habitat_name,
-                    'habitat_conservation_alp' => $habitat->getFormattedConservation("ALP"),
-                    'habitat_conservation_con' => $habitat->getFormattedConservation("CON"),
-                    'habitat_conservation_med' => $habitat->getFormattedConservation("MED"),
-                    'habitat_trend_alp' => $habitat->getFormattedTrend("ALP"),
-                    'habitat_trend_con' => $habitat->getFormattedTrend("CON"),
-                    'habitat_trend_med' => $habitat->getFormattedTrend("MED"),
-                    'bioregions' => $habitat->biogeographicregions->pluck('name')->toArray(),
+                    'habitat_conservation_alp' => $habitat->getFormattedConservation($report_number, "ALP"),
+                    'habitat_conservation_con' => $habitat->getFormattedConservation($report_number, "CON"),
+                    'habitat_conservation_med' => $habitat->getFormattedConservation($report_number, "MED"),
+                    'habitat_trend_alp' => $habitat->getFormattedTrend($report_number, "ALP"),
+                    'habitat_trend_con' => $habitat->getFormattedTrend($report_number, "CON"),
+                    'habitat_trend_med' => $habitat->getFormattedTrend($report_number, "MED"),
+                    'bioregions' => $habitat->biogeographicregions()->where('report',$report_number)->get()->pluck('name')->toArray(),
                 ];
             }
         });
