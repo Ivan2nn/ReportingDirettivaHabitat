@@ -19,8 +19,8 @@ Vue.directive('ajax', {
 			this.vm.loadingCodes = true;
 		this.vm.isSearching = true;
 		this.vm.dataAvailable = false;
-		console.log(this.el.action + this.vm.queryCode);
-		this.vm.$http.get(this.el.action + this.vm.queryCode).then((response) => {
+		//console.log(this.el.action + this.vm.queryCode);
+		this.vm.$http.get(this.el.action + this.vm.queryCode + '/' + vm.report_number).then((response) => {
 			// Inside the response data there are also the taxonomy data, but the google map API cna distinguish by itself
 
 			this.vm.$dispatch('final-map-data', response.data);
@@ -98,6 +98,7 @@ new Vue({
 	el: 'body',
 
 	data: {
+		report_number: 'IV',
 		queryName: '',
 		queryCode: '',
 		outCode: '',
@@ -131,7 +132,7 @@ new Vue({
 			vm.filterHabitat = false;
 			vm.loadingNames = true;
 			this.dataAvailable = false;
-			vm.$http.get('/api/habitat/' + vm.queryCode).then((response) => {
+			vm.$http.get('/api/habitat/' + vm.queryCode + '/' + vm.report_number).then((response) => {
 				// Inside the response data there are also the taxonomy data, but the google map API cna distinguish by itself
 				this.$dispatch('final-map-data', response.data);
 				this.habitatDetails = JSON.parse(response.data)['habitat'];
