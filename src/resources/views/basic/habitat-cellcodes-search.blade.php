@@ -41,7 +41,7 @@
           <div class="ibox-title">
             <div class="row">
               <div class="col-sm-12">
-                  <h4 class="input-font-mimi-big">Mappa di Distribuzione Habitat <span style="font-size: 14px">    [disponibile solo per gli habitat terrestri e di acqua dolce]</span></h4>
+                  <h4 class="input-font-mimi-big">Mappa di Distribuzione Habitat</h4>
               </div>
             </div>
           </div>

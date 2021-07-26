@@ -13,10 +13,12 @@ Vue.directive('ajax', {
 
 	onSubmit: function(e) {
 		e.preventDefault();
-		if (this.vm.searchingNames)
+		/* if (this.vm.searchingNames)
 			this.vm.loadingNames = true;
 		if (this.vm.searchingCodes)
-			this.vm.loadingCodes = true;
+			this.vm.loadingCodes = true; */
+		if (this.vm.searchingNameCode)
+			this.vm.loadingNameCode = true;
 		this.vm.isSearching = true;
 		this.vm.dataAvailable = false;
 		//console.log(this.el.action + this.vm.queryCode);
@@ -25,8 +27,9 @@ Vue.directive('ajax', {
 
 			this.vm.$dispatch('final-map-data', response.data);
 			this.vm.habitatDetails = JSON.parse(response.data)['habitat'];
-			this.vm.loadingNames = false;
-			this.vm.loadingCodes = false;
+/* 			this.vm.loadingNames = false;
+			this.vm.loadingCodes = false; */
+			this.vm.loadingNameCode = false;
 			this.vm.dataAvailable = true;
 		}, (response) => {
 
@@ -54,6 +57,24 @@ Vue.component('habitat-names', {
 
 Vue.component('habitat-codes', {
 	template: '#habitat-codes-template',
+
+	props: ['list'],
+
+	data: function() {
+		return {
+			list: []
+		};
+	},
+
+	methods: {
+		notify: function (hab, searchedField) {
+			this.$dispatch('child-obj', hab, searchedField);
+      	}
+	}
+});
+
+Vue.component('habitat-names-codes', {
+	template: '#habitat-names-codes-template',
 
 	props: ['list'],
 
@@ -101,6 +122,7 @@ new Vue({
 		report_number: 'IV',
 		queryName: '',
 		queryCode: '',
+		queryNameCode: '',
 		outCode: '',
 		outHabitatName: '',
 		habitats: [],
@@ -110,9 +132,11 @@ new Vue({
 		filterHabitat: true,
 		loadingNames: false,
 		loadingCodes: false,
+		loadingNameCode: false,
 		isSearching: false,
 		searchingNames: false,
-		searchingCodes: false
+		searchingCodes: false,
+		searchingNameCode: false
 	},
 
 	ready: function() {
@@ -167,6 +191,17 @@ new Vue({
 			}
 		},
 
+		searchedNamesCodes: function() {
+			if (this.filterHabitat == true) {
+				vm = this;
+				searchedNamesCodesValues = [];
+				if (this.queryNameCode) {
+					searchedNamesCodesValues = this.habitats.filter(this.filterQueryNamesCodes(this.queryNameCode));
+				}
+				return searchedNamesCodesValues;
+			}
+		},
+
 		document_url: function() {
 			return 'documents/habitat/' + this.queryCode + '.pdf';
 		}
@@ -177,6 +212,7 @@ new Vue({
 		resetQueries: function() {
 			this.queryName = '';
 			this.queryCode = '';
+			this.queryNameCode = '';
 			this.filterHabitat = true;
 			this.outHabitatName = '';
 			this.outCode = '';
@@ -184,6 +220,12 @@ new Vue({
 			this.loadingNames = false;
 			this.searchingNames = false;
 			this.searchingCodes = false;
+			this.searchingNameCode= false;
+			this.loadingNameCode = false;
+		},
+
+		isLetter: function(firstCharacter) {
+			return firstCharacter.toLowerCase() != firstCharacter.toUpperCase();
 		},
 
 		filterQueryNames: function(queryString) {
@@ -196,6 +238,19 @@ new Vue({
 		filterQueryCodes: function(queryString) {
 			return function(element) {
 				return element.habitat_code.toString().startsWith(queryString.toLowerCase());
+			}
+		},
+
+		filterQueryNamesCodes: function(queryString) {
+			return function(element) {
+				if (vm.isLetter(queryString[0])) {
+					vm.isName = true;
+					return element.habitat_name.toLowerCase().startsWith(queryString.toLowerCase());
+				}
+				else {
+					vm.isName = false;
+					return element.habitat_code.toString().startsWith(queryString.toLowerCase());
+				}
 			}
 		},
 
@@ -215,6 +270,21 @@ new Vue({
 				this.searchedCodes = this.habitats.filter(this.filterQueryCodes(this.queryCode));
 			} else {
 				this.searchedCodes = [];
+			}	
+		},
+
+		searchNamesCodes: function() {	
+			vm = this;
+			if (this.queryNameCode) {
+				if (vm.isLetter(this.queryNameCode[0])) {
+					vm.isName = true;
+					this.searchedNamesCodes = this.habitats.filter(this.filterQueryNames(this.queryNameCode));
+				} else {
+					vm.isName = false;
+					this.searchedNamesCodes = this.habitats.filter(this.filterQueryCodes(this.queryNameCode));
+				}
+			} else {
+				this.searchedNamesCodes = [];
 			}	
 		},
 
@@ -293,14 +363,15 @@ new Vue({
 	      	this.queryName = childObj.habitat_name;
 	      	this.queryCode = childObj.habitat_code;
 	      	this.isSearching = true;
+			this.searchingNameCode = true;
 
-	      	if (searchedField == 'names') {
+	      	/* if (searchedField == 'names') {
 	      		this.searchingNames = true;
 	      	}
 
 	      	if (searchedField == 'codes') {
 	      		this.searchingCodes = true;
-	      	}
+	      	} */
     	},
 
     	'final-map-data': function(finalMapData) {

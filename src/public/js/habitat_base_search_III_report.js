@@ -13,29 +13,32 @@ Vue.directive('ajax', {
 
 	onSubmit: function(e) {
 		e.preventDefault();
-		instance = this;
-		if (this.vm.searchingNames)
+		/* if (this.vm.searchingNames)
 			this.vm.loadingNames = true;
 		if (this.vm.searchingCodes)
-			this.vm.loadingCodes = true;
+			this.vm.loadingCodes = true; */
+		if (this.vm.searchingNameCode)
+			this.vm.loadingNameCode = true;
 		this.vm.isSearching = true;
 		this.vm.dataAvailable = false;
-		
-		this.vm.$http.get(this.el.action + this.vm.queryCode + '/' + vm.report_number).then(function(response) {
+		//console.log(this.el.action + this.vm.queryCode);
+		this.vm.$http.get(this.el.action + this.vm.queryCode + '/' + vm.report_number).then((response) => {
 			// Inside the response data there are also the taxonomy data, but the google map API cna distinguish by itself
-			instance.vm.$dispatch('final-map-data', response.data);
-			instance.vm.speciesDetails = JSON.parse(response.data)['species'];
-			instance.vm.loadingNames = false;
-			instance.vm.loadingCodes = false;
-			instance.vm.dataAvailable = true;
-		}, function (response) {
+			//console.log(response.data);
+			this.vm.$dispatch('final-map-data', response.data);
+			this.vm.habitatDetails = JSON.parse(response.data)['habitat'];
+/* 			this.vm.loadingNames = false;
+			this.vm.loadingCodes = false; */
+			this.vm.loadingNameCode = false;
+			this.vm.dataAvailable = true;
+		}, (response) => {
 
 		});
 	}
 });
 
-Vue.component('species-names', {
-	template: '#species-names-template',
+Vue.component('habitat-names', {
+	template: '#habitat-names-template',
 
 	props: ['list'],
 
@@ -46,14 +49,14 @@ Vue.component('species-names', {
 	},
 
 	methods: {
-		notify: function (spec, searchedField) {
-			this.$dispatch('child-obj', spec, searchedField);
+		notify: function (hab, searchedField) {
+			this.$dispatch('child-obj', hab, searchedField);
       	}
 	}
 });
 
-Vue.component('species-codes', {
-	template: '#species-codes-template',
+Vue.component('habitat-codes', {
+	template: '#habitat-codes-template',
 
 	props: ['list'],
 
@@ -64,14 +67,14 @@ Vue.component('species-codes', {
 	},
 
 	methods: {
-		notify: function (spec, searchedField) {
-			this.$dispatch('child-obj', spec, searchedField);
+		notify: function (hab, searchedField) {
+			this.$dispatch('child-obj', hab, searchedField);
       	}
 	}
 });
 
-Vue.component('species-names-codes', {
-	template: '#species-names-codes-template',
+Vue.component('habitat-names-codes', {
+	template: '#habitat-names-codes-template',
 
 	props: ['list'],
 
@@ -82,8 +85,8 @@ Vue.component('species-names-codes', {
 	},
 
 	methods: {
-		notify: function (spec, searchedField) {
-			this.$dispatch('child-obj', spec, searchedField);
+		notify: function (hab, searchedField) {
+			this.$dispatch('child-obj', hab, searchedField);
       	}
 	}
 });
@@ -100,9 +103,9 @@ Vue.component('info-cell', {
 	},
 
 	methods: {
-		notify: function (spec, searchedField) {
-			this.$dispatch('child-obj', spec, searchedField);
-      		}
+		notify: function (hab, searchedField) {
+			this.$dispatch('child-obj', hab, searchedField);
+      	}
 	}
 });
 
@@ -120,47 +123,46 @@ new Vue({
 		queryName: '',
 		queryCode: '',
 		queryNameCode: '',
-		isName: true,
 		outCode: '',
-		outSpeciesName: '',
-		outNameCode: '',
-		species: [],
-		speciesDetails: [],
+		outHabitatName: '',
+		habitats: [],
+		habitatDetails: [],
 		selectedOne: '',
 		dataAvailable: false,
-		filterSpecies: true,
+		filterHabitat: true,
 		loadingNames: false,
 		loadingCodes: false,
+		loadingNameCode: false,
 		isSearching: false,
 		searchingNames: false,
-		searchingCodes: false
+		searchingCodes: false,
+		searchingNameCode: false
 	},
 
 	ready: function() {
 		vm = this;
-		this.$http.get('/species').then(function(response) {
-			vm.species = response.data;
-		}, function(response) {
+		this.$http.get('/habitat').then((response) => {
+			vm.habitats = response.data;
+		}, (response) => {
 			alert('No data avilable');
 		});
 
 		// We keep the filterSpecies boolean true if we land on the page without any data requested from other pages
 		// If we land on the page with a specific species requested from other pages we will not activate the filter on the species
 		// If someone clicks inside the input box we can reactivate the filter cause it means that he wants to make a new search
-		if (vm.outSpeciesName != '') {
-			vm.queryName = vm.outSpeciesName;
+		if (vm.outHabitatName != '') {
+			vm.queryName = vm.outHabitatName;
 			vm.queryCode = vm.outCode;
-			vm.queryNameCode = vm.outNameCode;
-			vm.filterSpecies = false;
+			vm.filterHabitat = false;
 			vm.loadingNames = true;
-			vm.dataAvailable = false;
-			vm.$http.get('/api/species/' + vm.queryCode + '/' + vm.report_number).then(function(response) {
+			this.dataAvailable = false;
+			vm.$http.get('/api/habitat/' + vm.queryCode + '/' + vm.report_number).then((response) => {
 				// Inside the response data there are also the taxonomy data, but the google map API cna distinguish by itself
-				vm.$dispatch('final-map-data', response.data);
-				vm.speciesDetails = JSON.parse(response.data)['species'];
-				vm.dataAvailable = true;
-				vm.loadingNames = false;
-			}, function(response) {
+				this.$dispatch('final-map-data', response.data);
+				this.habitatDetails = JSON.parse(response.data)['habitat'];
+				this.dataAvailable = true;
+				this.loadingNames = false;
+			}, (response) => {
 
 			});
 		}
@@ -168,37 +170,40 @@ new Vue({
 
 	computed: {
 		searchedNames: function() {
-			if (this.filterSpecies == true) {
+			if (this.filterHabitat == true) {
 				vm = this;
 				searchedNamesValues = [];
 				if (this.queryName) {
-					searchedNamesValues = this.species.filter(this.filterQueryNames(this.queryName));
+					searchedNamesValues = this.habitats.filter(this.filterQueryNames(this.queryName));
 				}
 				return searchedNamesValues;
 			}
 		},
 
 		searchedCodes: function() {
-			if (this.filterSpecies == true) {
+			if (this.filterHabitat == true) {
 				vm = this;
 				searchedCodesValues = [];
 				if (this.queryCode) {
-					searchedCodesValues = this.species.filter(this.filterQueryCodes(this.queryCode));
+					searchedCodesValues = this.habitats.filter(this.filterQueryCodes(this.queryCode));
 				}
 				return searchedCodesValues;
 			}
-		}, 
+		},
 
 		searchedNamesCodes: function() {
-			if (this.filterSpecies == true) {
+			if (this.filterHabitat == true) {
 				vm = this;
 				searchedNamesCodesValues = [];
 				if (this.queryNameCode) {
-					searchedNamesCodesValues = this.species.filter(this.filterQueryNamesCodes(this.queryNameCode));
-					console.log(vm.isName);
+					searchedNamesCodesValues = this.habitats.filter(this.filterQueryNamesCodes(this.queryNameCode));
 				}
 				return searchedNamesCodesValues;
 			}
+		},
+
+		document_url: function() {
+			return 'documents/habitat/' + this.queryCode + '.pdf';
 		}
 	},
 
@@ -208,15 +213,15 @@ new Vue({
 			this.queryName = '';
 			this.queryCode = '';
 			this.queryNameCode = '';
-			this.isName = true;
-			this.filterSpecies = true;
-			this.outSpeciesName = '';
+			this.filterHabitat = true;
+			this.outHabitatName = '';
 			this.outCode = '';
-			this.outNameCode = '';
 			this.isSearching = false;
 			this.loadingNames = false;
 			this.searchingNames = false;
 			this.searchingCodes = false;
+			this.searchingNameCode= false;
+			this.loadingNameCode = false;
 		},
 
 		isLetter: function(firstCharacter) {
@@ -224,26 +229,27 @@ new Vue({
 		},
 
 		filterQueryNames: function(queryString) {
-			return function(element) {
-				return element.species_name.toLowerCase().startsWith(queryString.toLowerCase());
+			return function(element) {				
+				var cleanName = element.habitat_name.charAt(0) == '*' ? element.habitat_name.substring(2) : element.habitat_name;
+				return cleanName.toLowerCase().startsWith(queryString.toLowerCase());
 			}
 		},
 
 		filterQueryCodes: function(queryString) {
 			return function(element) {
-				return element.species_code.toString().startsWith(queryString.toLowerCase());
+				return element.habitat_code.toString().startsWith(queryString.toLowerCase());
 			}
 		},
-		
+
 		filterQueryNamesCodes: function(queryString) {
 			return function(element) {
 				if (vm.isLetter(queryString[0])) {
 					vm.isName = true;
-					return element.species_name.toLowerCase().startsWith(queryString.toLowerCase());
+					return element.habitat_name.toLowerCase().startsWith(queryString.toLowerCase());
 				}
 				else {
 					vm.isName = false;
-					return element.species_code.toString().startsWith(queryString.toLowerCase());
+					return element.habitat_code.toString().startsWith(queryString.toLowerCase());
 				}
 			}
 		},
@@ -251,20 +257,17 @@ new Vue({
 		searchNames: function() {	
 			vm = this;
 			if (this.queryName) {
-				this.searchedNames = this.species.filter(this.filterQueryNames(this.queryName));
+				this.searchedNames = this.habitats.filter(this.filterQueryNames(this.queryName)); 
 			} else {
 				this.searchedNames = [];
 			}	
+			
 		},
-
-		notify: function (spec, searchedField) {
-			this.$dispatch('child-obj', spec, searchedField);
-      		},
 
 		searchCodes: function() {	
 			vm = this;
 			if (this.queryCode) {
-				this.searchedCodes = this.species.filter(this.filterQueryCodes(this.queryCode));
+				this.searchedCodes = this.habitats.filter(this.filterQueryCodes(this.queryCode));
 			} else {
 				this.searchedCodes = [];
 			}	
@@ -275,28 +278,28 @@ new Vue({
 			if (this.queryNameCode) {
 				if (vm.isLetter(this.queryNameCode[0])) {
 					vm.isName = true;
-					this.searchedNamesCodes = this.species.filter(this.filterQueryNames(this.queryNameCode));
+					this.searchedNamesCodes = this.habitats.filter(this.filterQueryNames(this.queryNameCode));
 				} else {
 					vm.isName = false;
-					this.searchedNamesCodes = this.species.filter(this.filterQueryCodes(this.queryNameCode));
+					this.searchedNamesCodes = this.habitats.filter(this.filterQueryCodes(this.queryNameCode));
 				}
 			} else {
 				this.searchedNamesCodes = [];
 			}	
 		},
 
-		getSpeciesGeographicPositions: function() {
+		getHabitatGeographicPositions: function() {
 			vm = this;
-			this.$http.get('/species').then(function(response) {
-				vm.species = response.data;
-			}, function (response) {
+			this.$http.get('/habitat').then((response) => {
+				vm.habitat = response.data;
+			}, (response) => {
 				alert('No data available');
 			});
 		},
 
 		itemStatusStyle: function(item, bioreg) {
       		
-      		temp = 'item.species_conservation_' + bioreg;
+      		temp = 'item.habitat_conservation_' + bioreg;
       		
       		if (eval(temp) == 'U2') {
       			return 'red-rectangle';
@@ -322,7 +325,7 @@ new Vue({
 
       	itemTrendStyle: function(item, bioreg) {
       		
-      		var temp = 'item.species_trend_' + bioreg;
+      		var temp = 'item.habitat_trend_' + bioreg;
       		
       		if (eval(temp) == '-') {
       			return "images/red_down.png";
@@ -344,13 +347,12 @@ new Vue({
       			return "../public/images/grey_null.png";
       		};*/
 
-		},
-	
+      	},
 		getCsv: function() {
-				csvGenerator = new CsvGenerator(this.speciesDetails, this.speciesDetails.species_name + '_' + this.speciesDetails.species_code + '.csv');
-				csvGenerator.download(true);
-			}
-		},
+	      		csvGenerator = new CsvGenerator(this.habitatDetails, this.habitatDetails.habitat_name + '_' + this.habitatDetails.habitat_code + '.csv');
+	    		csvGenerator.download(true);
+	      	}
+	},
 
 	events: {
     	'child-obj': function (childObj, searchedField) {
@@ -358,17 +360,18 @@ new Vue({
 	      	// to the instance that registered it
 	      	// searchedField can be 'names' or 'codes'
 	      	this.selectedOne = childObj;
-	      	this.queryName = childObj.species_name;
-	      	this.queryCode = childObj.species_code;
+	      	this.queryName = childObj.habitat_name;
+	      	this.queryCode = childObj.habitat_code;
 	      	this.isSearching = true;
+			this.searchingNameCode = true;
 
-	      	if (searchedField == 'names') {
+	      	/* if (searchedField == 'names') {
 	      		this.searchingNames = true;
 	      	}
 
 	      	if (searchedField == 'codes') {
 	      		this.searchingCodes = true;
-	      	}
+	      	} */
     	},
 
     	'final-map-data': function(finalMapData) {

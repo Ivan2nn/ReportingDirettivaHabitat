@@ -41,7 +41,7 @@
           <div class="ibox-title">
             <div class="row">
               <div class="col-sm-12">
-                  <h4 class="input-font-mimi-big">Mappa di Distribuzione Specie <span style="font-size: 14px">    [disponibile solo per le specie terrestri e di acqua dolce]</span></h4>
+                  <h4 class="input-font-mimi-big">Mappa di Distribuzione Specie</h4>
               </div>
             </div>
           </div>
