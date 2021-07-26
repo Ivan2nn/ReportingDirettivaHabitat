@@ -25,7 +25,7 @@ Vue.directive('ajax', {
 			allMacrocatSelectors.forEach(function(elm) {
 				macrocat_checks["MAC" + elm.className.slice(-1)] = elm.checked;
 			});
-			
+			console.log(this.el.action);
 			this.vm.$http.get(this.el.action, {params: { macrocat_checks: macrocat_checks } }).then((response) => {
 				// Inside the response data there are also the taxonomy data, but the google map API cna distinguish by itself
 				//console.log(JSON.parse(response.data));
@@ -175,6 +175,8 @@ new Vue({
 
 	data: {
 		// Taxonomy packet
+		report_number: 'IV',
+
 		macrocategories: [],
 		habitats: [],
 		loading: false,
@@ -232,7 +234,7 @@ new Vue({
 
 			this.dataAvailable = false;
 
-			this.$http.get('/advancedselectiontohabitat', {params: { macrocat_checks: macrocat_checks, status_checks: status_checks, radio_buttons_biogeoreg_value: radio_buttons_biogeoreg_value, regbio_checks: regbio_checks } }).then((response) => {
+			this.$http.get('/advancedselectiontohabitat', {params: { report_number: vm.report_number, macrocat_checks: macrocat_checks, status_checks: status_checks, radio_buttons_biogeoreg_value: radio_buttons_biogeoreg_value, regbio_checks: regbio_checks } }).then((response) => {
 				// Inside the response data there are also the taxonomy data, but the google map API cna distinguish by itself
 
 				this.habitatDetails = JSON.parse(response.data);
