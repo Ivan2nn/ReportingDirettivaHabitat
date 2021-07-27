@@ -373,5 +373,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_habitat_generator.js') !!}"></script>
 	 <script src="{!! asset('js/habitatToCellMapping.js') !!}"></script>
-     <script src="{!! asset('js/habitat_base_search_III_report.js') !!}"></script>
+     <script src="{!! asset('js/habitat_base_search_IV_report.js') !!}"></script>
 @endsection

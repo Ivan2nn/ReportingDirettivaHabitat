@@ -300,7 +300,7 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_species_generator.js') !!}"></script>
    <script src="{!! asset('js/vendor/switchery.js') !!}"></script>
-	 <script src="{!! asset('js/taxonomy_regbio_status_to_species_III_report.js') !!}"></script>
+	 <script src="{!! asset('js/taxonomy_regbio_status_to_species_IV_report.js') !!}"></script>
    <script src="{!! asset('js/taxonomy_main.js') !!}"></script>
    
 @endsection

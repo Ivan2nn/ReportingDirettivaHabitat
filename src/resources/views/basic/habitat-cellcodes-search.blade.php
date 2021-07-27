@@ -149,5 +149,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_habitat_generator.js') !!}"></script>
 	<script src="{!! asset('js/cellToSpeciesMapping.js') !!}"></script>
-  <script src="{!! asset('js/main_cells_to_habitats_III_report.js') !!}"></script>
+  <script src="{!! asset('js/main_cells_to_habitats_IV_report.js') !!}"></script>
 @endsection
