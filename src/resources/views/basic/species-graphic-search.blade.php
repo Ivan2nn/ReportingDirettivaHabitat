@@ -169,7 +169,30 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-9"> 
+				<div class="col-md-9">
+
+				<table class="table table-striped"> 
+					<thead> 
+						<tr> 
+							<th>Codice</th> 
+							<th>Regno</th> 
+							<th>Classe</th> 
+							<th>Sp. Prioritaria</th> 
+							<th>Sp. Endemica</th> 
+							<th>Allegati DH</th> 
+							<th>Lista rossa IUCN (*)</th> 
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr> 
+							<th scope="row"></th> 
+							<td>Mark</td> 
+							<td>Otto</td> 
+							<td>@mdo</td> 
+						</tr> 
+				</table>
+
+
 					<div class="row">
 						<div class="col-md-5">
 							<div class="c-content-v-center c-info-species-head-theme-bg">
