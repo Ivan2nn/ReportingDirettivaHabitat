@@ -17,7 +17,7 @@
           <div class="ibox-title">
             <div class="row">
               <div class="col-sm-8">
-                  <h4 class="input-font-mimi-big">Ricerca Avanzata</h4>
+                  <h2 class="c-font-bold">Ricerca Avanzata</h2>
               </div>
               <div class="col-sm-4">
                 <div class="loader" v-if="loadingAdvancedData"></div>

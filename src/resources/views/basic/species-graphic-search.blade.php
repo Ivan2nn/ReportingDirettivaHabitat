@@ -21,7 +21,7 @@
 		            <div class="ibox-title">
 		            	<div class="row">
 		            		<div class="col-sm-8">
-		                		<h4 class="input-font-mimi-big">Ricerca specie per nome o per codice</h4>
+		                		<h2 class="c-font-bold">Ricerca specie per nome o per codice</h2>
 							</div>
 							<div class="col-sm-4">
 								<div class="loader" v-if="loadingNames"></div>

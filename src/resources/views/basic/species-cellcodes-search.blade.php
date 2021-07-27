@@ -28,7 +28,7 @@
               {!! csrf_field() !!}
               <div class="row">
                 <div class="col-sm-8">
-                  <input style="height: 42px;" type="text"
+                  <input style="height: 39px;" type="text"
                     class="form-control"
                     v-model="selectedCell"
                     id="cellCodeSelectionBox"
