@@ -154,11 +154,11 @@
 			</div>
 		</div>
 
-            <div class="container c-bg-grey-1 animated bounceInRight" v-if="dataAvailable">
+        <div class="container c-bg-grey-1 animated bounceInRight" v-if="dataAvailable">
 			<div class="row">
                 <div class="col-md-6 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
                     <div class="col-sm-12">
-            			<h2 class="c-font-uppercase c-font-bold c-font-26 c-margin-b-20">Scheda della Specie</h2>
+            			<h2 class="c-font-bold">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
 					</div>
 				</div>
 			</div>

@@ -30410,6 +30410,38 @@ p {
     }
 }
 
+
 .c-layout-header.c-layout-header-6 .c-navbar .c-mega-menu > .nav.navbar-nav > li.active-mimi-menu-link > a {
   border-bottom: 2px solid #00B783;
 }
+
+/* New data table styles */
+
+.table {
+    font-size: 14px!important;
+}
+
+.text-link {
+    color: #00B783!important;
+}
+
+.text-link:hover {
+    color: #098B66!important;
+}
+
+@media (min-width: 1093px) {
+    .download-schede {
+    margin-top: -118px;
+    }
+}
+
+@media (max-width: 1092px) {
+    .download-schede {
+    margin-bottom: 30px;
+    }
+}
+
+.bg-light-mint {
+    background-color: #C8EDE2;
+}
+
