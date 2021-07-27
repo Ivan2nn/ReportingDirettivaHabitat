@@ -137,6 +137,15 @@
 	            	<input type="hidden" v-model="outCode = '{!! $species->species_code !!}'">
 	            	<input type="hidden" v-model="outSpeciesName = '{!! $species->species_name !!}'">
 	            @endif
+
+	            <div class="row" v-if="dataAvailable">
+		        	<div class="col-sm-8">
+		               	<h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
+		               	<a v-bind:href="speciesDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
+	                    <a v-bind:href="speciesDetails.monitoring" target="_blank" class="">Monitoraggio</a>
+					</div>
+				</div>
+	            
 		    </div>
 
 			<div class="col-md-7">
@@ -269,38 +278,7 @@
 
 
 
-
-
 				<div class="col-md-3">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-	                            <div class="c-wrapper c-margin-bottom-10">
-	                                <div class="c-body c-padding-8">
-	                                    <h3 class="c-font-19 c-line-height-18 c-font-white c-font-bold">Download Schede</h3>
-	                                </div>
-	                            </div>
-	                        </div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<table class="table mimi-table-striped">
-	                            <tbody>
-	                                <tr>
-	                                    <td>3° Reporting</td>
-	                                    <td><a v-bind:href="speciesDetails.document" target="_blank" class="btn btn-files-link">Visualizza</a>
-										</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Monitoraggio</td>
-	                                    <td><a v-bind:href="speciesDetails.monitoring" target="_blank" class="btn btn-files-link">Visualizza</a>
-										</td>
-	                                </tr>
-	                            </tbody>
-	                        </table>
-                        </div>
-					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<span class="c-font-30">Legenda</span>
