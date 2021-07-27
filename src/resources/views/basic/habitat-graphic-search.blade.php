@@ -8,12 +8,19 @@
 			I dati relativi a specie e habitat marini sono in corso di inserimento</h1> -->
 		</div>
 		<div class="row">
+			<div class="row" style="padding-left: 15px; padding-right: 15px;">
+			<div class="row c-margin-b-40" style="padding-left: 15px;">
+				<div class="col-md-5">
+				<h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Habitat</h1>
+				<p>Morbi ut elit at arcu aliquet consequat. Ut eget mi gravida, aliquam ligula vitae, posuere lacus.</p>
+			</div>
+		</div>
 			<div class="col-md-5">
-				<div class="ibox float-e-margins">
+				{{-- <div class="ibox float-e-margins">
 		            <div class="ibox-title">
 		            	<div class="row">
 		            		<div class="col-sm-8">
-		                		<h4 class="input-font-mimi-big">Ricerca per Nome</h4>
+		            			<h2 class="c-font-bold">Ricerca habitat per nome</h2>
 							</div>
 							<div class="col-sm-4">
 								<div class="loader" v-if="loadingNames"></div>
@@ -24,7 +31,7 @@
 		                <form method="GET" action="/api/habitat/" v-ajax>
 					            {!! csrf_field() !!}
 	    	            	<div class="row">	
-					            <div class="col-sm-8 has-success">
+					            <div class="col-sm-8">
 									<input type="text"
 									class="form-control input-lg input-font-mimi-normal"
 					                v-model="queryName"
@@ -34,7 +41,7 @@
 					            	>
 								</div>
 								<div class="col-sm-4">
-					            	<button type="submit" class="btn btn-primary btn-lg pull-right" v-show="searchingNames" :disabled="loadingNames"><strong>Cerca</strong></button>
+					            	<button type="submit" class="button-link btn btn-primary btn-lg pull-left" v-show="searchingNames" :disabled="loadingNames">Cerca</button>
 					            </div>
 			            	</div>
 						</form>
@@ -49,7 +56,7 @@
 		            <div class="ibox-title">
 		                <div class="row">
 		            		<div class="col-sm-8">
-		                		<h4 class="input-font-mimi-big">Ricerca per Codice</h4>
+		                		<h2 class="c-font-bold">Ricerca habitat per codice</h2>
 							</div>
 							<div class="col-sm-4">
 								<div class="loader" v-if="loadingCodes"></div>
@@ -60,7 +67,7 @@
 		                <form method="GET" action="/api/habitat/" v-ajax>
 			            {!! csrf_field() !!}
 			            <div class="row">
-							<div class="col-sm-8 has-success">
+							<div class="col-sm-8">
 								<input type="text"
 								class="form-control input-lg input-font-mimi-normal"
 				                v-model="queryCode"
@@ -70,7 +77,7 @@
 				            	>
 			            	</div>
 			            	<div class="col-sm-4">
-			            		<button type="submit" class="btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes"><strong>Cerca</strong></button>
+			            		<button type="submit" class="button-link btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes">Cerca</strong>
 			            	</div>
 						</div>	
 						</form>
@@ -80,7 +87,44 @@
 				 			</div>
 				 		</div>
 		            </div>
+		        </div> --}}
+				<div class="ibox float-e-margins">
+		            <div class="ibox-title">
+		            	<div class="row">
+		            		<div class="col-sm-8">
+		                		<h2 class="c-font-bold">Ricerca habitat per nome o per codice</h2>
+							</div>
+							<div class="col-sm-4">
+								<div class="loader" v-if="loadingNameCode"></div>
+							</div>
+		                </div>
+		            </div>
+		            <div class="ibox-content">
+		                <form method="GET" action="/api/habitat/" v-ajax>
+					            {!! csrf_field() !!}
+	    	            	<div class="row">	
+					            <div class="col-sm-8">
+									<input type="text"
+									class="form-control input-lg input-font-mimi-normal"
+					                v-model="queryNameCode"
+					                v-on:keyup="searchNamesCodes"
+					                v-on:click="resetQueries"
+							:disabled="loadingNames || loadingCodes"
+					            	>
+								</div>
+								<div class="col-sm-4">
+					            	<button type="submit" class="button-link btn btn-primary btn-lg pull-left" v-show="searchingNameCode" :disabled="loadingNameCode">Cerca</button>
+					            </div>
+			            	</div>
+						</form>
+						<div class="row" v-if="!isSearching">
+							<div class="col-sm-8">
+					 			<habitat-names-codes :list="searchedNamesCodes"></habitat-names-codes>
+					 		</div>
+					 	</div>
+		            </div>
 		        </div>
+
 		        @if ($habitat)
 	            	<input type="hidden" v-model="outCode = '{!! $habitat->habitat_code !!}'">
 	            	<input type="hidden" v-model="outHabitatName = '{!! $habitat->habitat_name !!}'">
@@ -91,8 +135,8 @@
 				<div class="ibox float-e-margins">
 		            <div class="ibox-title">
 		            	<div class="row">
-		            		<div class="col-sm-12">
-		                		<h4 class="input-font-mimi-big">Mappa di Distribuzione dell'Habitat <span style="font-size: 14px;">    [disponibile solo per gli habitat terrestri e di acqua dolce]</span></h4>
+		            		<div class="col-sm-12 c-margin-t-5">
+		                		<h3 class="">Mappa di Distribuzione dell`Habitat</h3>
 							</div>
 		                </div>
 		            </div>
@@ -319,6 +363,15 @@
 			</li>
 		    </ul>
 		</template>
+
+		<template id="habitat-names-codes-template">
+	        <ul class="list-group">      
+	            <li class="list-group-item" id="hash" v-for="habitat in list" v-on:click="notify(habitat, 'namescodes')" style="cursor: default;">
+	                <span>@{{ habitat.habitat_name }}</span>
+					<span>:@{{ habitat.habitat_code }}</span> 
+	            </li>
+	        </ul>
+	    </template>
 	</div>
 </div>
 
@@ -327,5 +380,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_habitat_generator.js') !!}"></script>
 	 <script src="{!! asset('js/habitatToCellMapping.js') !!}"></script>
-     <script src="{!! asset('js/main_habitat.js') !!}"></script>
+     <script src="{!! asset('js/habitat_base_search_IV_report.js') !!}"></script>
 @endsection

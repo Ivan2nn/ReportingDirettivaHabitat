@@ -17,7 +17,11 @@
              
         <link href="{!! asset('output/final.css') !!}" rel="stylesheet" type="text/css"/>
         <!-- END THEME STYLES -->
-        <link rel="shortcut icon" href="{!! asset('favicon.ico') !!}" /> </head>
+        <link rel="shortcut icon" href="{!! asset('favicon.ico') !!}" /> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
 
     <body class="c-layout-header-fixed c-layout-header-mobile-fixed">
         <!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
@@ -27,37 +31,42 @@
                 <div class="container">
                     
                     <div class="c-brand">
-                        <div class="row">
+                        <div class="row c-logo">
                             <div class="col-md-4 col-xs-6">
-                                <a href="http://www.isprambiente.gov.it/" class="c-logo">
-                                    <img src="{!! asset('images/logoISPRA_SNPA.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
-                                    <img src="{!! asset('images/logoISPRA_SNPA_small.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                <a href="http://www.minambiente.it/">
+                                    <img src="{!! asset('images/MiTE_RGB_orizzontale.jpg') !!}" alt="logo natura" class="img-responsive">
                                 </a>
                             </div>
+
                             <div class="col-md-4 col-xs-6">
-                                <a href="http://www.minambiente.it/" class="c-logo">
-                                    <img src="{!! asset('images/MATTM_New.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
-                                    <img src="{!! asset('images/MATTM_New_small.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                <a href="http://www.nnb.isprambiente.it">
+                                    <img src="{!! asset('images/logoNaturaItaliaHomeNew.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                </a>
+                                <a href="http://www.isprambiente.gov.it/">
+                                    <img src="{!! asset('images/logoISPRA_SNPA.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
                                 </a>
                             </div>
                             
                             <div class="col-md-4 col-xs-6">
-                                <a href="http://www.nnb.isprambiente.it" class="c-logo">
+                                <a href="http://www.nnb.isprambiente.it">
                                     <img src="{!! asset('images/logoNaturaItaliaHomeNew.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
-                                    <img src="{!! asset('images/logoNaturaItaliaHomeNew_small.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                </a>
+                                <a href="http://www.isprambiente.gov.it/">
+                                    <img src="{!! asset('images/logoISPRA_SNPA.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
                                 </a>
                             </div>
                          </div>   
 
-                                <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
-                                    <span class="c-line"></span>
-                                    <span class="c-line"></span>
-                                    <span class="c-line"></span>
-                                </button>
+                        <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
+                            <span class="c-line"></span>
+                            <span class="c-line"></span>
+                            <span class="c-line"></span>
+                        </button>
                   
                     </div>
                 </div>
             </div>
+            
             <div class="c-navbar">
                 <div class="container">
                     <!-- BEGIN: BRAND -->
@@ -74,7 +83,7 @@
                         <!-- BEGIN: MEGA MENU -->
                         <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
                         <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
-                            <ul class="nav navbar-nav c-theme-nav">
+                            <ul class="nav navbar-nav">
                                 <li class="c-active">
                                     <a href="{{ route('home') }}" class="c-link dropdown-toggle">Home</a>                
                                 </li>
@@ -114,6 +123,12 @@
                                     </ul>
                                 </li>
                                 <li>
+                                    <a href="" class="c-link">III Report</a>                
+                                </li>
+                                 <li>
+                                    <a href="{{ route('piano-di-monitoraggio') }}" class="c-link">Piano di monitoraggio</a>                
+                                </li>
+                                <li>
                                     <a href="{{ route('downloads') }}" class="c-link">Download</a>                
                                 </li>
                                 <li>
@@ -149,13 +164,52 @@
         <!-- BEGIN: LAYOUT/FOOTERS/FOOTER-6 -->
         <a name="footer"></a>
         <footer class="c-layout-footer c-layout-footer-6 c-bg-grey-1">
-            <div class="c-postfooter c-bg-dark-2">
+            <div class="c-postfooter">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12 c-col">
-                            <p class="c-copyright c-font-grey">2016 &copy; MIMI - eDesign
-                                <span class="c-font-grey-3"></span>
-                            </p>
+                        <div class="col-xs-4">
+                            <h4>Specie</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#" class="">Ricerca base</a>  
+                                </li>
+                                 <li>
+                                    <a href="#" class="">Ricerca avanzata</a>  
+                                </li>
+                                <li>
+                                    <a href="#" class="">Ricerca cartografica</a>  
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Habitat</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#" class="">Ricerca base</a>  
+                                </li>
+                                 <li>
+                                    <a href="#" class="">Ricerca avanzata</a>  
+                                </li>
+                                <li>
+                                    <a href="#" class="">Ricerca cartografica</a>  
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <ul class="list-unstyled">
+                                <li>
+                                     <a href="#" class="">III Report</a>
+                                </li>
+                                 <li>
+                                     <a href="#" class="">Piano di monitoraggio</a> 
+                                </li>
+                                <li>
+                                     <a href="#" class="">Download</a>  
+                                </li>
+                                 <li>
+                                     <a href="#" class="">Links</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

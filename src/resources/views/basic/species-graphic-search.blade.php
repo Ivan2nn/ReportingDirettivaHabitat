@@ -5,22 +5,23 @@
 <div class="c-content-box c-size-md c-bg-white">
     <div class="container">
 		<div class="row">
-			<div class="btn btn-primary" id="3_report">
-				III Report
-			</div>
-			<div class="btn btn-primary" id="4_report">
-				IV Report
-			</div>
 			<!-- <h1 style="padding: 20px 5px; background-color: #99ccff;">Al momento il sito riporta informazioni riferite a specie e habitat terrestri e di acqua dolce.<br>
 			I dati relativi a specie e habitat marini sono in corso di inserimento</h1> -->
 		</div>
 		<div class="row">
+			<div class="row c-margin-b-40" style="padding-left: 15px;">
+				<div class="col-md-5">
+				<h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Species</h1>
+				<p>Morbi ut elit at arcu aliquet consequat. Ut eget mi gravida, aliquam ligula vitae, posuere lacus.</p>
+			</div>
+		</div>
+			
 			<div class="col-md-5">
-				<div class="ibox float-e-margins">
+				{{-- <div class="ibox float-e-margins">
 		            <div class="ibox-title">
 		            	<div class="row">
 		            		<div class="col-sm-8">
-		                		<h4 class="input-font-mimi-big">Ricerca per Nome</h4>
+		                		<h2 class="c-font-bold">Ricerca specie per nome o per codice</h2>
 							</div>
 							<div class="col-sm-4">
 								<div class="loader" v-if="loadingNames"></div>
@@ -31,7 +32,7 @@
 		                <form method="GET" action="/api/species/" v-ajax>
 					            {!! csrf_field() !!}
 	    	            	<div class="row">	
-					            <div class="col-sm-8 has-success">
+					            <div class="col-sm-8">
 									<input type="text"
 									class="form-control input-lg input-font-mimi-normal"
 					                v-model="queryName"
@@ -56,12 +57,12 @@
 					 		</div>
 					 	</div>
 		            </div>
-		        </div>
-	            <div class="ibox float-e-margins i-box-mimi">
+		        </div> --}}
+	            {{-- <div class="ibox float-e-margins i-box-mimi">
 		            <div class="ibox-title">
 		                <div class="row">
 		            		<div class="col-sm-8">
-		                		<h4 class="input-font-mimi-big">Ricerca per Codice</h4>
+		                		<h2 class="c-font-bold">Ricerca specie per nome o per codice</h2>
 							</div>
 							<div class="col-sm-4">
 								<div class="loader" v-if="loadingCodes"></div>
@@ -72,7 +73,7 @@
 		                <form method="GET" action="/api/species/" v-ajax>
 			            {!! csrf_field() !!}
 			            <div class="row">
-							<div class="col-sm-8 has-success">
+							<div class="col-sm-8">
 								<input type="text"
 								class="form-control input-lg input-font-mimi-normal"
 				                v-model="queryCode"
@@ -82,7 +83,7 @@
 				            	>
 			            	</div>
 			            	<div class="col-sm-4">
-			            		<button type="submit" class="btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes"><strong>Cerca</strong></button>
+			            		<button type="submit" class="button-link btn btn-primary btn-lg pull-left" v-show="searchingCodes" :disabled="loadingCodes">Cerca</button>
 			            	</div>
 						</div>	
 						</form>
@@ -92,15 +93,16 @@
 				 			</div>
 				 		</div>
 		            </div>
-		        </div>
+		        </div> --}}
 				<div class="ibox float-e-margins i-box-mimi">
 		            <div class="ibox-title">
 		                <div class="row">
 		            		<div class="col-sm-8">
-		                		<h4 class="input-font-mimi-big">Ricerca mista</h4>
+
+		               <h2 class="c-font-bold">Ricerca specie per nome o per codice</h2>
 							</div>
 							<div class="col-sm-4">
-								<div class="loader" v-if="loadingCodes"></div>
+								<div class="loader" v-if="loadingNameCode"></div>
 							</div>
 		                </div>
 		            </div>
@@ -108,7 +110,7 @@
 		                <form method="GET" action="/api/species/" v-ajax>
 			            {!! csrf_field() !!}
 			            <div class="row">
-							<div class="col-sm-8 has-success">
+							<div class="col-sm-8">
 								<input type="text"
 								class="form-control input-lg input-font-mimi-normal"
 				                v-model="queryNameCode"
@@ -118,7 +120,7 @@
 				            	>
 			            	</div>
 			            	<div class="col-sm-4">
-			            		<button type="submit" class="btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes"><strong>Cerca</strong></button>
+			            		<button type="submit" class="button-link btn btn-primary btn-lg pull-left" v-show="searchingNameCode" :disabled="loadingNameCode">Cerca</button>
 			            	</div>
 						</div>	
 						</form>
@@ -139,8 +141,8 @@
 				<div class="ibox float-e-margins">
 		            <div class="ibox-title">
 		            	<div class="row">
-		            		<div class="col-xs-12">
-		                		<h4 class="input-font-mimi-big">Mappa di Distribuzione Specie <span style="font-size: 14px;">    [disponibile solo per le specie terrestri e di acqua dolce]</span></h4>
+		            		<div class="col-xs-12 c-margin-t-25">
+		                		<h3 class="">Mappa di Distribuzione Specie</h3>
 							</div>
 					
 		                </div>
@@ -415,5 +417,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_species_generator.js') !!}"></script>
 	 <script src="{!! asset('js/speciesToCellMapping.js') !!}"></script>
-     <script src="{!! asset('js/main.js') !!}?<?=time()?>"></script>
+     <script src="{!! asset('js/species_base_search_IV_report.js') !!}?<?=time()?>"></script>
 @endsection

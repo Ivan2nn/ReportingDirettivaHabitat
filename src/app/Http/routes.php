@@ -18,6 +18,9 @@ Route::get('test', function(){
 
 });
 
+Route::get('api/species/{species}/{report_number}', 'SpeciesController@showFromReport');
+Route::get('api/habitat/{habitat}/{report_number}', 'HabitatController@showFromReport');
+
 Route::resource('api/species','SpeciesController');
 Route::resource('api/habitat','HabitatController');
 //
@@ -28,8 +31,16 @@ Route::get('/', array('as' => 'home', function () {
 	return view('basic.landing');
 }));
 
+Route::get('/home-III-report', array('as' => 'home-III-report', function () {
+	return view('basic.landing_3_report');
+}));
+
 Route::get('/contesto-riferimento', array('as' => 'contesto-riferimento', function () {
 	return view('basic.reference-context');
+}));
+
+Route::get('/piano-di-monitoraggio', array('as' => 'piano-di-monitoraggio', function () {
+	return view('basic.reference-monitoring');
 }));
 
 Route::get('/downloads', array('as' => 'downloads', function () {
@@ -132,9 +143,9 @@ Route::get('biogeographicregtohabitat', 'BiogeographicregionController@getHabita
 
 Route::get('conservationstatetohabitat', 'StatusConserveController@getHabitatsFromStatusConserve');
 
-Route::get('cellcodes/species/{id}', 'CellCodeController@getSpeciesFromCellcodes');
+Route::get('cellcodes/species/{id}/{report_number}', 'CellCodeController@getSpeciesFromCellcodes');
 
-Route::get('cellcodes/habitat/{id}', 'CellCodeController@getHabitatsFromCellcodes');
+Route::get('cellcodes/habitat/{id}/{report_number}', 'CellCodeController@getHabitatsFromCellcodes');
 
 /*Route::get('api/taxonomy-to-species/{ids}', function($ids) {
 	$pieces = explode(":", $ids);

@@ -5,12 +5,19 @@
 <div class="c-content-box c-size-md c-bg-white">
   <div class="container">
     <div class="row">
+      <div class="row" style="padding-left: 15px; padding-right: 15px;">
+      <div class="row c-margin-b-40" style="padding-left: 15px;">
+        <div class="col-md-5">
+        <h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Species</h1>
+        <p>Morbi ut elit at arcu aliquet consequat. Ut eget mi gravida, aliquam ligula vitae, posuere lacus.</p>
+      </div>
+    </div>
       <div class="col-md-12">
         <div class="ibox float-e-margins">
           <div class="ibox-title">
             <div class="row">
               <div class="col-sm-8">
-                  <h4 class="input-font-mimi-big">Ricerca Avanzata</h4>
+                  <h2 class="c-font-bold">Ricerca Avanzata</h2>
               </div>
               <div class="col-sm-4">
                 <div class="loader" v-if="loadingAdvancedData"></div>
@@ -22,7 +29,7 @@
               {!! csrf_field() !!}
             <div class="row">
                 <div class="col-sm-12 col-md-4">
-                  <div class="row">
+                  <div class="row" style="padding-left: 15px;">
                     @foreach($kingdoms as $kingdom)
                       @if ($kingdom->kingdom_name != 'Bacteria' && $kingdom->kingdom_name != 'Fungi' && $kingdom->kingdom_name != 'Protista')
                         <div class="panel-group" id="accordion">
@@ -37,19 +44,19 @@
                               <div id="{{ $kingdom->kingdom_name . '_jstree' }}">
                                 <ul>
                                 @foreach($kingdom->phyla() as $phylum)
-                                  <li data-jstree='{"icon":"../public/images/phylum_vlittle.png"}' rel="phylum">{{ $phylum->phylum_name }}
+                                  <li data-jstree='{"icon":"../images/phylum_vlittle.png"}' rel="phylum">{{ $phylum->phylum_name }}
                                     <ul>
                                     @foreach($phylum->classes() as $class)
-                                      <li data-jstree='{"icon":"../public/images/class_vlittle.png"}' rel="class">{{ $class->class_name }}
+                                      <li data-jstree='{"icon":"../images/class_vlittle.png"}' rel="class">{{ $class->class_name }}
                                         <ul>
                                         @foreach($class->orders() as $order)
-                                        <li data-jstree='{"icon":"../public/images/order_vlittle.png"}' rel="order">{{ $order->order_name }}
+                                        <li data-jstree='{"icon":"../images/order_vlittle.png"}' rel="order">{{ $order->order_name }}
                                           <ul>
                                           @foreach($order->families() as $family)
-                                          <li data-jstree='{"icon":"../public/images/family_vlittle.png"}' rel="family">{{ $family->family_name }}
+                                          <li data-jstree='{"icon":"../images/family_vlittle.png"}' rel="family">{{ $family->family_name }}
                                             <ul>
                                             @foreach($family->genera() as $genus)
-                                              <li data-jstree='{"icon":"../public/images/genus_vlittle.png"}' rel="genus" code='{{ $genus->genus_code }}'>{{ $genus->genus_name }}</li>
+                                              <li data-jstree='{"icon":"../images/genus_vlittle.png"}' rel="genus" code='{{ $genus->genus_code }}'>{{ $genus->genus_name }}</li>
                                             @endforeach
                                             </ul>
                                           </li>
@@ -178,7 +185,7 @@
                     <div class="col-sm-4">
                       <div class="input-group">
                         
-                       <button type="submit" class="btn btn-primary" v-show="true" :disabled="loadingAdvanceData"><strong>Cerca</strong></button>      
+                       <button type="submit" class="button-link btn btn-primary" v-show="true" :disabled="loadingAdvanceData">Cerca</button>      
                       </div>  
                     </div>
                   </div>
@@ -300,7 +307,7 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_species_generator.js') !!}"></script>
    <script src="{!! asset('js/vendor/switchery.js') !!}"></script>
-	 <script src="{!! asset('js/taxonomy_regbio_status_to_species.js') !!}"></script>
+	 <script src="{!! asset('js/taxonomy_regbio_status_to_species_IV_report.js') !!}"></script>
    <script src="{!! asset('js/taxonomy_main.js') !!}"></script>
    
 @endsection

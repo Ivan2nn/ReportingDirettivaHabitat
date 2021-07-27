@@ -4,19 +4,29 @@
 
 <div class="c-content-box c-size-md c-bg-white">
   <div class="container">
-    <div class="row">
+    <div class="row" style="padding-left: 15px;">
+
+
+      <div class="row c-margin-b-40">
+        <div class="col-md-5">
+          <h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Habitat</h1>
+          <p>Morbi ut elit at arcu aliquet consequat. Ut eget mi gravida, aliquam ligula vitae, posuere lacus.</p>
+        </div>
+      </div>
+
+
       <div class="col-md-12">
         <div class="ibox float-e-margins">
           <div class="ibox-title">
-            <div class="row">
-              <div class="col-sm-8">
-                  <h4 class="input-font-mimi-big">Ricerca Avanzata</h4>
+              <div class="row">
+                  <h2 class="c-font-bold">Ricerca Avanzata</h2>
               </div>
               <div class="col-sm-4">
                 <div class="loader" v-if="loadingAdvancedData"></div>
               </div>
             </div>
           </div>
+       </div>   
           <div class="ibox-content col-sm-12">
         <form method="GET" @submit.prevent="searchHabitatsFromSelections">
             {!! csrf_field() !!}
@@ -145,7 +155,7 @@
                 <div class="col-sm-4">
                   <div class="input-group">
                     
-                    <button type="submit" class="btn btn-primary" v-show="true" :disabled="loadingAdvanceData"><strong>Cerca</strong></button>         
+                    <button type="submit" class="button-link btn btn-primary" v-show="true" :disabled="loadingAdvanceData">Cerca</button>         
                   </div>  
                 </div>
               </div>
@@ -187,10 +197,10 @@
                   <li class="c-last mimi-legenda-advanced" style="margin-right: 0">
             <h4 class="c-font-black">Trend</h4>
             <ul class="c-legenda">
-              <li><img src="{!! asset('public/images/green_up.png') !!}" />In miglioramento</li>
-              <li><img src="{!! asset('public/images/yellow_stable.png') !!}" />Stabile</li>
-              <li><img src="{!! asset('public/images/red_down.png') !!}" />In peggioramento</li>
-              <li><img src="{!! asset('public/images/grey_null.png') !!}" />Sconosciuto</li>
+              <li><img src="{!! asset('images/green_up.png') !!}" />In miglioramento</li>
+              <li><img src="{!! asset('images/yellow_stable.png') !!}" />Stabile</li>
+              <li><img src="{!! asset('images/red_down.png') !!}" />In peggioramento</li>
+              <li><img src="{!! asset('images/grey_null.png') !!}" />Sconosciuto</li>
             </ul>                   
                   </li>
                 </ul>
@@ -262,7 +272,7 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_habitat_generator.js') !!}"></script>
    <script src="{!! asset('js/vendor/switchery.js') !!}"></script>
-	 <script src="{!! asset('js/macrocategory_regbio_status_to_habitat.js') !!}"></script>
+	 <script src="{!! asset('js/macrocategory_regbio_status_to_habitat_IV_report.js') !!}"></script>
    <script src="{!! asset('js/macrocategory_main.js') !!}"></script>
    
 @endsection

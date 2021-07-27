@@ -18,29 +18,53 @@ class Species extends Model
     	return $this->hasOne('App\Taxonomy','species_code');
     }
 
-    public function cellcodes()
+    public function cellcodes($report_number = '')
     {
-    	return $this->belongsToMany('App\Cellcode','cellcode_species','species_code','cellcode_id');
+        if (!$report_number) {
+    	    return $this->belongsToMany('App\Cellcode','cellcode_species','species_code','cellcode_id');
+        } else {
+            return $this->belongsToMany('App\Cellcode','cellcode_species','species_code','cellcode_id')->wherePivot('report',$report_number);
+        }
     }
 
-    public function biogeographicregions() 
+    //public function fromReport($report_number) {
+    //    return $this->wherePivot('report',$report_number);
+    //}
+
+    public function biogeographicregions($report_number= '') 
     {
-        return $this->belongsToMany('App\Biogeographicregion','species_data0712_status_conserve','species_code','biogeographicregion_id');
+        if (!$report_number) {
+            return $this->belongsToMany('App\Biogeographicregion','species_data0712_status_conserve','species_code','biogeographicregion_id')->withPivot('report');
+        } else {
+            return $this->belongsToMany('App\Biogeographicregion','species_data0712_status_conserve','species_code','biogeographicregion_id')->wherePivot('report',$report_number)->withPivot('report');
+        }
     }
 
-    public function presences()
+    public function presences($report_number= '')
     {
-        return $this->belongsToMany('App\Presence','species_data0712_presence','species_code','status_presence_id')->withPivot('biogeographicregion_id');
+        if (!$report_number) {
+            return $this->belongsToMany('App\Presence','species_data0712_presence','species_code','status_presence_id')->withPivot('biogeographicregion_id');
+        } else {
+            return $this->belongsToMany('App\Presence','species_data0712_presence','species_code','status_presence_id')->wherePivot('report',$report_number)->withPivot('biogeographicregion_id');
+        }
     }
 
-    public function conservations()
+    public function conservations($report_number = '')
     {
-        return $this->belongsToMany('App\Conservation','species_data0712_status_conserve','species_code','status_conserve_id')->withPivot('biogeographicregion_id');
+        if (!$report_number) {
+            return $this->belongsToMany('App\Conservation','species_data0712_status_conserve','species_code','status_conserve_id')->withPivot('biogeographicregion_id');
+        } else {
+            return $this->belongsToMany('App\Conservation','species_data0712_status_conserve','species_code','status_conserve_id')->wherePivot('report',$report_number)->withPivot('biogeographicregion_id');
+        }
     }
 
-    public function trends()
+    public function trends($report_number = '')
     {
-        return $this->belongsToMany('App\Trend','species_data0712_trend','species_code','trend_id')->withPivot('biogeographicregion_id');
+        if (!$report_number) {
+            return $this->belongsToMany('App\Trend','species_data0712_trend','species_code','trend_id')->withPivot('biogeographicregion_id');
+        } else {
+            return $this->belongsToMany('App\Trend','species_data0712_trend','species_code','trend_id')->wherePivot('report',$report_number)->withPivot('biogeographicregion_id');
+        }
     }
 
     public function modification_codes() {
@@ -64,9 +88,9 @@ class Species extends Model
     }
 
     // This method gives back a formatted array with the values REGBIO[STATUS_PRESERVE]
-    public function getFormattedPresences()
+    public function getFormattedPresences($report_number)
     {
-        $allPresences = $this->presences->map(function($item, $key){
+        $allPresences = $this->presences($report_number)->map(function($item, $key){
             return [
                 Biogeographicregion::where('id',$item->pivot->biogeographicregion_id)->first()->name . '[' . $item->name . ']',
             ];
@@ -75,9 +99,9 @@ class Species extends Model
         return $allPresences;
     }
 
-    public function getFormattedPresence($bioreg)
+    public function getFormattedPresence($report_number, $bioreg)
     {
-        $specificBioregionPresence = $this->presences->filter(function($item, $key) use($bioreg){
+        $specificBioregionPresence = $this->presences($report_number)->get()->filter(function($item, $key) use($bioreg){
             return Biogeographicregion::where('id', $item->pivot->biogeographicregion_id)->first()->name == $bioreg;
         });
 
@@ -88,9 +112,9 @@ class Species extends Model
         }
     }
 
-    public function getFormattedConservations()
+    public function getFormattedConservations($report_number)
     {
-        $allConservations = $this->conservations->map(function($item, $key){
+        $allConservations = $this->conservations($report_number)->map(function($item, $key){
             return [
                 Biogeographicregion::where('id', $item->pivot->biogeographicregion_id)->first()->name . '[' . $item->code . ']',
             ];
@@ -99,9 +123,9 @@ class Species extends Model
         return $allConservations;
     }
 
-    public function getFormattedConservation($bioreg)
+    public function getFormattedConservation($report_number, $bioreg)
     {
-        $specificBioregionConservation = $this->conservations->filter(function($item, $key) use($bioreg){
+        $specificBioregionConservation = $this->conservations($report_number)->get()->filter(function($item, $key) use($bioreg){
         	return Biogeographicregion::where('id', $item->pivot->biogeographicregion_id)->first()->name == $bioreg;
         });
 
@@ -112,9 +136,9 @@ class Species extends Model
         }
     }
 
-    public function getFormattedTrends()
+    public function getFormattedTrends($report_number)
     {
-        $allTrends = $this->trends->map(function($item, $key){
+        $allTrends = $this->trends($report_number)->map(function($item, $key){
             return [
                 Biogeographicregion::where('id',$item->pivot->biogeographicregion_id)->first()->name . '[' . $item->name . ']',
             ];
@@ -123,9 +147,9 @@ class Species extends Model
         return $allTrends;
     }
 
-    public function getFormattedTrend($bioreg)
+    public function getFormattedTrend($report_number, $bioreg)
     {
-        $specificBioregionTrend = $this->trends->filter(function($item, $key) use($bioreg){
+        $specificBioregionTrend = $this->trends($report_number)->get()->filter(function($item, $key) use($bioreg){
         	return Biogeographicregion::where('id',$item->pivot->biogeographicregion_id)->first()->name == $bioreg;
         });
 
@@ -136,16 +160,29 @@ class Species extends Model
         }
     }
 
-    public function isInAnnexII() {
-    	return DB::table('species_annex0712_ii')->where('species_code',$this->species_code)->first() != null;
+    public function isInAnnexII($report_number = '') {
+        if (!$report_number) {
+    	    return DB::table('species_annex0712_ii')->where('species_code',$this->species_code)->first() != null;
+        } else {
+            return DB::table('species_annex0712_ii')->where('species_code',$this->species_code)->where('report',$report_number)->first() != null;
+        }
+
     }
 
-    public function isInAnnexIV() {
-    	return DB::table('species_annex0712_iv')->where('species_code',$this->species_code)->first() != null;
+    public function isInAnnexIV($report_number = '') {
+        if (!$report_number) {
+    	    return DB::table('species_annex0712_iv')->where('species_code',$this->species_code)->first() != null;
+        } else {
+            return DB::table('species_annex0712_iv')->where('species_code',$this->species_code)->where('report',$report_number)->first() != null;
+        }
     }
 
-    public function isInAnnexV() {
-    	return DB::table('species_annex0712_v')->where('species_code',$this->species_code)->first() != null;
+    public function isInAnnexV($report_number = '') {
+        if (!$report_number) {
+    	    return DB::table('species_annex0712_v')->where('species_code',$this->species_code)->first() != null;
+        } else {
+            return DB::table('species_annex0712_v')->where('species_code',$this->species_code)->where('report',$report_number)->first() != null;
+        }
     }
 
     public function annexList() {
@@ -161,14 +198,14 @@ class Species extends Model
     }
 
     // Better to have list of the annexes as an array
-    public function annexes() 
+    public function annexes($report_number) 
     {
     	$finalList = [];
-    	if ($this->isInAnnexII())
+    	if ($this->isInAnnexII($report_number))
     		array_push($finalList, 'II');
-    	if ($this->isInAnnexIV())
+    	if ($this->isInAnnexIV($report_number))
     		array_push($finalList, 'IV');
-    	if ($this->isInAnnexV())
+    	if ($this->isInAnnexV($report_number))
     		array_push($finalList, 'V');
 
     	return $finalList;
@@ -257,14 +294,14 @@ class Species extends Model
         //return $connected_species;
     }
 
-    public function scopeBiogeoregAND(Builder $query, $biogeoregName, $biogeoregBoolean) {
+    public function scopeBiogeoregAND(Builder $query, $biogeoregName, $biogeoregBoolean, $report_number) {
         if ($biogeoregBoolean) {
-            return $query->whereHas('biogeographicregions', function($q) use($biogeoregName) {
-                $q->where('name',$biogeoregName);
+            return $query->whereHas('biogeographicregions', function($q) use($biogeoregName, $report_number) {
+                $q->where('name',$biogeoregName)->where('report',$report_number);
             });
         } else {
-            return $query->whereDoesntHave('biogeographicregions', function($q) use($biogeoregName) {
-                $q->where('name',$biogeoregName);
+            return $query->whereDoesntHave('biogeographicregions', function($q) use($biogeoregName, $report_number) {
+                $q->where('name',$biogeoregName)->where('report',$report_number);
             });
         }
     }
@@ -298,7 +335,7 @@ class Species extends Model
         return $query;
     }
 
-    public function scopeAllBiogeoregOR_FalseExcluded(Builder $query, $list_of_biogeoreg) {
+    public function scopeAllBiogeoregOR_FalseExcluded(Builder $query, $list_of_biogeoreg, $report_number) {
         // In case of ND (not defined biogeographic regions) since it's not a code of biogeoregion we have to take it out from
         // the array and works it apart. Of course it can't be used with AND but only with OR .... I want among the 
         // selected species the ones in the ALP and that have not defined biogeoregion; NOT ALP and NOT DEFINED
@@ -316,31 +353,31 @@ class Species extends Model
         }
 
         if ($list_of_biogeoreg['ND'] == false) {
-            return $query->whereHas('biogeographicregions', function($q) use($included) {
-                        $q->whereIn('name',$included);
-                    })->whereDoesntHave('biogeographicregions', function($q) use($notIncluded) {
-                        $q->whereIn('name',$notIncluded);
+            return $query->whereHas('biogeographicregions', function($q) use($included, $report_number) {
+                        $q->whereIn('name',$included)->where('report',$report_number);
+                    })->whereDoesntHave('biogeographicregions', function($q) use($notIncluded, $report_number) {
+                        $q->whereIn('name',$notIncluded)->where('report',$report_number);
                     });
         }
 
         if ($list_of_biogeoreg['ND'] == true) {
             return $query
                 ->where(function($qq) use ($notIncluded, $included) {
-                    $qq->whereHas('biogeographicregions', function($q) use($included) {
-                            $q->whereIn('name',$included);
-                        })->whereDoesntHave('biogeographicregions', function($q) use($notIncluded) {
-                            $q->whereIn('name',$notIncluded);
+                    $qq->whereHas('biogeographicregions', function($q) use($included, $report_number) {
+                            $q->whereIn('name',$included)->where('report',$report_number);
+                        })->whereDoesntHave('biogeographicregions', function($q) use($notIncluded, $report_number) {
+                            $q->whereIn('name',$notIncluded)->where('report',$report_number);
                         });
                 })->orWhere(function($qq) {
-                    $qq->whereDoesntHave('biogeographicregions', function($q) {
-                            $q->whereIn('name',['ALP','MED','CON','MMED']);
+                    $qq->whereDoesntHave('biogeographicregions', function($q) use($report_number) {
+                            $q->whereIn('name',['ALP','MED','CON','MMED'])->where('report',$report_number);
                         }); 
                 });
         }
         
     }
 
-    public function scopeAllBiogeoregOR(Builder $query, $list_of_biogeoreg) {
+    public function scopeAllBiogeoregOR(Builder $query, $list_of_biogeoreg, $report_number) {
 
         // In case of ND (not defined biogeographic regions) since it's not a code of biogeoregion we have to take it out from
         // the array and works it apart. Of course it can't be used with AND but only with OR .... I want among the 
@@ -359,20 +396,20 @@ class Species extends Model
         }
 
         if ($list_of_biogeoreg['ND'] == false) {
-            return $query->whereHas('biogeographicregions', function($q) use($included) {
-                        $q->whereIn('name',$included);
+            return $query->whereHas('biogeographicregions', function($q) use($included, $report_number) {
+                        $q->whereIn('name',$included)->where('report',$report_number);
                     });
         }
 
         if ($list_of_biogeoreg['ND'] == true) {
             return $query
-                ->where(function($qq) use ($notIncluded, $included) {
-                    $qq->whereHas('biogeographicregions', function($q) use($included) {
-                            $q->whereIn('name',$included);
+                ->where(function($qq) use ($notIncluded, $included, $report_number) {
+                    $qq->whereHas('biogeographicregions', function($q) use($included, $report_number) {
+                            $q->whereIn('name',$included)->where('report',$report_number);
                         });
-                })->orWhere(function($qq) {
+                })->orWhere(function($qq) use($report_number) {
                     $qq->whereDoesntHave('biogeographicregions', function($q) {
-                            $q->whereIn('name',['ALP','MED','CON','MMED']);
+                            $q->whereIn('name',['ALP','MED','CON','MMED'])->where('report',$report_number);
                         }); 
                 });
         }
@@ -380,7 +417,7 @@ class Species extends Model
         
     }
 
-    public function scopeAllConservationOR(Builder $query, $list_of_conservation) {
+    public function scopeAllConservationOR(Builder $query, $list_of_conservation, $report_number) {
         $included = [];
         $notIncluded = [];
 
@@ -392,10 +429,10 @@ class Species extends Model
 
         }
 
-        return $query->whereHas('conservations', function($q) use($included) {
-                    $q->whereIn('code',$included);
-                })->whereDoesntHave('conservations', function($q) use($notIncluded) {
-                    $q->whereIn('code',$notIncluded);
+        return $query->whereHas('conservations', function($q) use($included, $report_number) {
+                    $q->whereIn('code',$included)->where('report',$report_number);
+                })->whereDoesntHave('conservations', function($q) use($notIncluded, $report_number) {
+                    $q->whereIn('code',$notIncluded)->where('report',$report_number);
                 });
     }
    

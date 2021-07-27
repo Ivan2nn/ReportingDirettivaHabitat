@@ -4,6 +4,12 @@ src/public/storage
 src/Homestead.yaml
 src/Homestead.json
 src/.env
+src/public/documents/schede_III_report/
+src/public/documents/schede_IV_report/
+src/public/documents/monitoraggio_III_report/
+src/public/documents/monitoraggio_IV_report/
+src/public/documents/REP_IV_sch_map/
+src/public/documents/Habitat_Approf.zip
 
 nginx/Dockerfile.nginx
 docker_comp.zip
