@@ -4,6 +4,10 @@ src/public/storage
 src/Homestead.yaml
 src/Homestead.json
 src/.env
+src/public/documents/schede_III_report
+src/public/documents/schede_IV_report
+src/public/documents/monitoraggio_III_report
+src/public/documents/monitoraggio_IV_report
 
 nginx/Dockerfile.nginx
 docker_comp.zip
