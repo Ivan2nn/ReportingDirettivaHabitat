@@ -11,7 +11,7 @@
                     <img alt="" src="{!! asset('images/Rosalia_Alpina.jpg') !!}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" />
                     <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
                     data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
-                        <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block"> REPORTING DIRETTIVA HABITAT</h3>
+                        <h3 class="c-font-46 c-font-bold c-font-white c-block">Reporting direttiva habitat</h3>
                     </div>
                 </li>
                 <!--END -->
@@ -20,22 +20,16 @@
                     <img alt="" src="{!! asset('images/Campanula_morettiana.png') !!}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" />
                     <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
                     data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:600;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
-                        <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block"> REPORTING DIRETTIVA HABITAT</h3>
-		     </div>
+                        <h3 class="c-font-46 c-font-bold c-font-white c-block"> Reporting direttiva habitat</h3>
+		          </div>
                 </li>
-                <!-- <li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
-                    <img alt="" src="{!! asset('images/AreaLince.jpg') !!}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-                    <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
-                    data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:600;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600"></div>
-                        <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block"> REPORTING DIRETTIVA HABITAT</h3>
-                </li> -->
                 <!--END -->
                 <!--BEGIN: SLIDE #3 -->
                 <li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
                     <img alt="" src="{!! asset('images/Orso1Ale.jpg') !!}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" />
                     <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
                     data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:600;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
-                        <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block"> REPORTING DIRETTIVA HABITAT</h3>
+                        <h3 class="c-font-46 c-font-bold c-font-white c-block">Reporting direttiva habitat</h3>
 			</div>
                 </li>
                 <!--END -->
@@ -44,7 +38,7 @@
                     <img alt="" src="{!! asset('images/IMG_2286.png') !!}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" />
                     <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
                     data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:600;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
-                        <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block"> REPORTING DIRETTIVA HABITAT</h3>
+                        <h3 class="c-font-46 c-font-bold c-font-white c-block">Reporting direttiva habitat</h3>
 			</div>
                 </li>
 		<!--END -->
@@ -53,7 +47,7 @@
                     <img alt="" src="{!! asset('images/Woodwardia_radicans.png') !!}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" />
                     <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
                     data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:600;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600"></div>
-                        <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block"> REPORTING DIRETTIVA HABITAT</h3>
+                        <h3 class="c-font-46 c-font-bold c-font-white c-block">Reporting direttiva habitat</h3>
                 </li>
 		<!--END -->
 		<!--BEGIN: SLIDE #5 -->
@@ -61,7 +55,7 @@
                     <img alt="" src="{!! asset('images/IMG_2641.png') !!}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" />
                     <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
                     data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:600;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
-                        <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block"> REPORTING DIRETTIVA HABITAT</h3>
+                        <h3 class="c-font-46 c-font-bold c-font-white c-block">Reporting direttiva habitat</h3>
 			</div>
                 </li>
 		<!--END -->
