@@ -137,14 +137,6 @@
 	            	<input type="hidden" v-model="outCode = '{!! $species->species_code !!}'">
 	            	<input type="hidden" v-model="outSpeciesName = '{!! $species->species_name !!}'">
 	            @endif
-
-	            <div class="row" v-if="dataAvailable">
-		        	<div class="col-sm-8">
-		               	<h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
-		               	<a v-bind:href="speciesDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
-	                    <a v-bind:href="speciesDetails.monitoring" target="_blank" class="">Monitoraggio</a>
-					</div>
-				</div>
 	            
 		    </div>
 
@@ -164,6 +156,13 @@
 	            </div>
 			</div>
 		</div>
+		<div class="row" v-if="dataAvailable">
+		        	<div class="col-sm-8 download-schede">
+		               	<h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
+		               	<a class="c-font-bold text-link" v-bind:href="speciesDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
+	                    <a class="c-font-bold text-link" v-bind:href="speciesDetails.monitoring" target="_blank" class="">Monitoraggio</a>
+					</div>
+				</div>
 
 	</div>
 

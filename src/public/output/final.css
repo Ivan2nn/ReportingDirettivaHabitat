@@ -30417,6 +30417,7 @@ p {
 
 /* New data table styles */
 
+
 .table {
     font-size: 14px!important;
 }
@@ -30429,17 +30430,21 @@ p {
     color: #098B66!important;
 }
 
+
 @media (min-width: 1093px) {
     .download-schede {
     margin-top: -118px;
     }
 }
 
+
+
 @media (max-width: 1092px) {
     .download-schede {
     margin-bottom: 30px;
     }
 }
+
 
 .bg-light-mint {
     background-color: #C8EDE2;
