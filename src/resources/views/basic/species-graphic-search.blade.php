@@ -163,7 +163,7 @@
 			<div class="row">
 				<h2 class="c-font-bold c-margin-t-40 c-margin-b-30">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
 
-				<table class="table table-striped"> 
+				<table class="table table-striped c-margin-b-30"> 
 					<thead> 
 						<tr> 
 							<th>Codice</th> 
@@ -196,6 +196,74 @@
 							</td>
 						</tr> 
 				</table>
+
+				<table class="table table-striped c-margin-b-30"> 
+					<thead> 
+						<tr> 
+							<th>Regioni Biogeografiche</th> 
+							<th>ALP</th> 
+							<th>CON</th> 
+							<th>MED</th> 
+							<th>MMED</th> 
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr>
+                            <td>Presenza</td>
+                            <td>@{{ speciesDetails.species_presence_alp }}</td>
+                            <td>@{{ speciesDetails.species_presence_con }}</td>
+                            <td>@{{ speciesDetails.species_presence_med }}</td>
+		    				<td>@{{ speciesDetails.species_presence_mmed }}</td>
+	                    </tr>
+	                    <tr>
+                            <td>Stato di Conservazione complessivo (2007- 2012)</td>
+                            <td>
+                            	<div :class="itemStatusStyle(speciesDetails, 'alp')"></div>
+                            </td>
+                            <td>
+                            	<div :class="itemStatusStyle(speciesDetails, 'con')"></div>
+                            </td>
+                            <td>
+                            	<div :class="itemStatusStyle(speciesDetails, 'med')"></div>
+                            </td>
+		    				<td>
+		    					<div :class="itemStatusStyle(speciesDetails, 'mmed')"></div>
+		    				</td>
+	                    </tr>
+	                    <tr>
+	                        <td>Trend (2007 - 2012)</td>
+	                        <td>
+	                        	<div>
+	                        		<span>
+	                        			<img v-bind:src="itemTrendStyle(speciesDetails, 'alp')" class="trend-image" />
+	                        		</span>
+	                        	</div>
+	                        </td>
+	                        <td>
+	                        	<div>
+	                        		<span>
+	                        			<img v-bind:src="itemTrendStyle(speciesDetails, 'con')" class="trend-image" />
+	                        		</span>
+	                        	</div>
+	                        </td>
+	                        <td>
+	                        	<div>
+	                        		<span>
+	                        			<img v-bind:src="itemTrendStyle(speciesDetails, 'med')" class="trend-image" />
+	                        		</span>
+	                        	</div>
+	                        </td>
+					    	<td>
+					    		<div>
+					    			<span>
+					    				<img v-bind:src="itemTrendStyle(speciesDetails, 'mmed')" class="trend-image" />
+					    			</span>
+					    		</div>
+					    	</td>
+	                    </tr>
+	                </tbody>    
+				</table>
+
 
 
 
