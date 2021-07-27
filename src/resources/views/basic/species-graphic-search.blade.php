@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="c-content-box c-size-md c-bg-white">
-    <div class="container">
+    <div class="">
+
+      <div class="container">
 		<div class="row">
 			<!-- <h1 style="padding: 20px 5px; background-color: #99ccff;">Al momento il sito riporta informazioni riferite a specie e habitat terrestri e di acqua dolce.<br>
 			I dati relativi a specie e habitat marini sono in corso di inserimento</h1> -->
@@ -154,11 +156,15 @@
 			</div>
 		</div>
 
-        <div class="container c-bg-grey-1 animated bounceInRight" v-if="dataAvailable">
+	</div>
+
+    <div class="animated bounceInRight bg-light-grey" v-if="dataAvailable">
+    	<div class="container ">
+    	
 			<div class="row">
                 <div class="col-md-6 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
                     <div class="col-sm-12">
-            			<h2 class="c-font-bold">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
+            			<h2 class="c-font-bold c-margin-t-40">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
 					</div>
 				</div>
 			</div>
@@ -409,6 +415,7 @@
 	            </li>
 	        </ul>
 	    </template>
+	  </div>  
 	</div>
 </div>
 
