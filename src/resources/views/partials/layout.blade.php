@@ -154,7 +154,7 @@
         
         
         <!-- BEGIN: PAGE CONTAINER -->
-        <div class="c-layout-page">
+        <div class="c-layout-page container">
             <!-- BEGIN: PAGE CONTENT -->
             <!-- BEGIN: LAYOUT/SLIDERS/REVO-SLIDER-4 -->
             @yield('content')
