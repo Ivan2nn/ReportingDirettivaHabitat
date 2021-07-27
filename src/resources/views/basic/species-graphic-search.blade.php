@@ -98,7 +98,8 @@
 		            <div class="ibox-title">
 		                <div class="row">
 		            		<div class="col-sm-8">
-		                		<h2 class="c-font-bold">Ricerca specie per nome o per codice</h2>
+
+		               <h2 class="c-font-bold">Ricerca specie per nome o per codice</h2>
 							</div>
 							<div class="col-sm-4">
 								<div class="loader" v-if="loadingNameCode"></div>
@@ -416,5 +417,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_species_generator.js') !!}"></script>
 	 <script src="{!! asset('js/speciesToCellMapping.js') !!}"></script>
-     <script src="{!! asset('js/species_base_search_III_report.js') !!}?<?=time()?>"></script>
+     <script src="{!! asset('js/species_base_search_IV_report.js') !!}?<?=time()?>"></script>
 @endsection

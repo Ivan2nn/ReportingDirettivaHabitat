@@ -31,8 +31,16 @@ Route::get('/', array('as' => 'home', function () {
 	return view('basic.landing');
 }));
 
+Route::get('/home-III-report', array('as' => 'home-III-report', function () {
+	return view('basic.landing_3_report');
+}));
+
 Route::get('/contesto-riferimento', array('as' => 'contesto-riferimento', function () {
 	return view('basic.reference-context');
+}));
+
+Route::get('/piano-di-monitoraggio', array('as' => 'piano-di-monitoraggio', function () {
+	return view('basic.reference-monitoring');
 }));
 
 Route::get('/downloads', array('as' => 'downloads', function () {
