@@ -41,7 +41,7 @@
 					            	>
 								</div>
 								<div class="col-sm-4">
-					            	<button type="submit" class="button-link btn btn-primary btn-lg pull-right" v-show="searchingNames" :disabled="loadingNames">Cerca</button>
+					            	<button type="submit" class="button-link btn btn-primary btn-lg pull-left" v-show="searchingNames" :disabled="loadingNames">Cerca</button>
 					            </div>
 			            	</div>
 						</form>
@@ -113,7 +113,7 @@
 					            	>
 								</div>
 								<div class="col-sm-4">
-					            	<button type="submit" class="button-link btn btn-primary btn-lg pull-right" v-show="searchingNameCode" :disabled="loadingNameCode">Cerca</button>
+					            	<button type="submit" class="button-link btn btn-primary btn-lg pull-left" v-show="searchingNameCode" :disabled="loadingNameCode">Cerca</button>
 					            </div>
 			            	</div>
 						</form>

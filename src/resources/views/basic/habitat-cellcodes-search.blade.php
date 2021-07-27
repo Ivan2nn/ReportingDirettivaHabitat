@@ -3,7 +3,15 @@
 @section('content')
 <div class="c-content-box c-size-md c-bg-white">
   <div class="container">
-   	<div class="row">
+   	<div class="row" style="padding-left: 15px;">
+
+       <div class="row c-margin-b-40">
+        <div class="col-md-5">
+          <h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Habitat</h1>
+          <p>Morbi ut elit at arcu aliquet consequat. Ut eget mi gravida, aliquam ligula vitae, posuere lacus.</p>
+        </div>
+      </div>
+
       <div class="col-md-5">
         <div class="ibox float-e-margins">
           <div class="ibox-title">
