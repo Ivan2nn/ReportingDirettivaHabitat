@@ -26827,7 +26827,6 @@ h1 {
       margin-left: 20px; }
 
 .c-content-tab-2 > .c-tab-content .tab-content {
-  padding: 80px 0;
   overflow: auto; }
 
 .c-content-tab-2 > .c-tab-content .c-tab-pane > h4 {
@@ -26870,12 +26869,6 @@ h1 {
 .c-content-tab-2.c-opt-1 > .nav.c-hover-lighten a:hover {
   opacity: 1; }
 
-.c-content-tab-2.c-opt-1 > .c-tab-content {
-  background-color: #2f353b; }
-  .c-content-tab-2.c-opt-1 > .c-tab-content .c-tab-pane > h4 {
-    color: #ffffff; }
-  .c-content-tab-2.c-opt-1 > .c-tab-content .c-tab-pane > .c-title {
-    color: #97a1ac; }
 
 .c-title-tab-2 > h4 {
   margin: 15px 0 36px;

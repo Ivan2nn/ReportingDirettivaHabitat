@@ -116,7 +116,7 @@
                 <div class="c-content-tab-2 c-theme c-opt-1">
                     
                     <div class="c-tab-content">
-                        <div class="c-bg-img-center1" style="background-color= rgba(39, 39, 39, 1);">
+                        <div class="c-bg-img-center1">
                             <div class="container">
                                 <div class="tab-content">
                                     <div class="tab-pane fade in active" id="c-tab2-opt1-1">
