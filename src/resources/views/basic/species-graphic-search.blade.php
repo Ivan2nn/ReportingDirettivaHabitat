@@ -160,16 +160,8 @@
 
     <div class="animated bounceInRight bg-light-grey" v-if="dataAvailable">
     	<div class="container ">
-    	
 			<div class="row">
-                <div class="col-md-6 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
-                    <div class="col-sm-12">
-            			<h2 class="c-font-bold c-margin-t-40">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-9">
+				<h2 class="c-font-bold c-margin-t-40 c-margin-b-30">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
 
 				<table class="table table-striped"> 
 					<thead> 
@@ -185,14 +177,31 @@
 					</thead> 
 					<tbody> 
 						<tr> 
-							<th scope="row"></th> 
-							<td>Mark</td> 
-							<td>Otto</td> 
-							<td>@mdo</td> 
+							<th scope="row">@{{ speciesDetails.species_code }}</th> 
+							<td>@{{ speciesDetails.kingdom }}</td> 
+							<td>@{{ speciesDetails.classis }}</td> 
+							<td>
+								<span v-if="speciesDetails.priority">SI</span>
+								<span v-else>No</span>
+							</td> 
+							<td>
+								<span v-if="speciesDetails.endemic">SI</span>
+								<span v-else>No</span>
+							</td> 
+							<td>
+								<span v-for="annex in speciesDetails.annexes">@{{ annex }} </span>
+							</td> 
+							<td>
+								@{{ speciesDetails.lri_specs }}
+							</td>
 						</tr> 
 				</table>
 
 
+
+
+
+				<div class="col-md-9">
 					<div class="row">
 						<div class="col-md-5">
 							<div class="c-content-v-center c-info-species-head-theme-bg">
