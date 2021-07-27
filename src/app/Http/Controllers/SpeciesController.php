@@ -209,25 +209,29 @@ class SpeciesController extends Controller
 
 	$outputData['species']['modified'] = $tempOutNote;
 
-	$files = glob(public_path() . '/documents/species/*.pdf');
+	$species_cards_folder = '/documents/schede_' . $report_number . '_report/species/';
+
+	$files = glob(public_path() . $species_cards_folder . '*.pdf');
         // iterate through the files and determine 
         // if the filename contains the search string.
         foreach($files as $file) {
             $name = pathinfo($file, PATHINFO_FILENAME);
             $is_there = strpos(strtolower($name), (string)$selectedSpecies->species_code);
             if ($is_there === 0) {
-                $outputData['species']['document'] = 'public/documents/species/' . $name . '.pdf';
+                $outputData['species']['document'] = 'public' . $species_cards_folder . $name . '.pdf';
             }
         }
 
-	$files_monitoring = glob(public_path() . '/documents/monitoraggio/species/*.pdf');
+    $species_monitoring_folder = '/documents/monitoraggio_' . $report_number . '_report/species/';
+
+	$files_monitoring = glob(public_path() . $species_monitoring_folder . '*.pdf');
         // iterate through the files and determine 
         // if the filename contains the search string.
         foreach($files_monitoring as $file) {
             $name = pathinfo($file, PATHINFO_FILENAME);
             $is_there = strpos(strtolower($name), (string)$selectedSpecies->species_code);
             if ($is_there === 0) {
-                $outputData['species']['monitoring'] = 'public/documents/monitoraggio/species/' . $name . '.pdf';
+                $outputData['species']['monitoring'] = 'public' . $species_monitoring_folder . $name . '.pdf';
             }
         }
 
