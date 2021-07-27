@@ -66,30 +66,34 @@
 </section>
 <!-- END: LAYOUT/SLIDERS/REVO-SLIDER-4 -->
 <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
-<div class="c-content-box c-size-md c-bg-white">
+<div class="c-content-box c-size-md bg-light-grey">
     <div class="container">
         <div class="section-header">
             <div class="row">
-                <div class="col-sm-6 focus-box">
+                <div class="col-sm-4 focus-box">
                     <div class="service-icon">
                         <a href="{{ route('species-basic-search') }}">
                         <i class="pixeden our-focus-widget-image mimi-focus-home-icon-species"></i> <!-- FOCUS ICON-->
                         </a>
                     </div>
-                    <h5 class="red-border-bottom">SPECIE</h5>
+                    <h2 class="c-font-bold">Specie</h2>
+                    <p>Maiores voluptas laboriosam non dolorum perferendis fuga repellat aut. Blanditiis quos in minus.</p>
+                   <a href="" class="button-link">link text</a>
                     <!-- <div class="c-content-feature-1 wow animate fadeInUp">
                         <div class="c-content-line-icon c-theme c-icon-screen-chart"></div>
                         <h3 class="c-font-uppercase c-font-bold">Fully responsive</h3>
                         <p class="c-font-thin">Beautiful cinematic designs optimized for all screen sizes and types. Compatible with Retina high pixel density displays.</p>
                     </div> -->
                 </div>
-                <div class="col-sm-6 focus-box">
+                <div class="col-sm-4 focus-box">
                     <div class="service-icon">
                         <a href="{{ route('habitat-basic-search') }}">
                         <i class="pixeden our-focus-widget-image mimi-focus-home-icon-habitat"></i> <!-- FOCUS ICON-->
                         </a>
                     </div>
-                    <h5 class="red-border-bottom">HABITAT</h5>
+                    <h2 class="c-font-bold">Habitat</h2>
+                    <p>Maiores voluptas laboriosam non dolorum perferendis fuga repellat aut. Blanditiis quos in minus.</p>
+                    <a href="" class="button-link">link text</a>
                     <!-- <div class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.2s">
                         <div class="c-content-line-icon c-theme c-icon-support"></div>
                         <h3 class="c-font-uppercase c-font-bold">Visual & Pragmatic</h3>

@@ -29864,17 +29864,45 @@ a {
 .row .focus-box {
     display: inline-block;
     float: none !important;
-    margin-right: -4px;
     vertical-align: top;
     margin-bottom: 25px;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.row .focus-box p {
+   margin-bottom: 40px;
+}
+
+@media  (min-width: 845px) {
+    .row .focus-box {
+        margin-right: 30px;
+    }
+}
+
+.button-link {
+    background-color: #00B783;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 11px;
+}
+
+.button-link:hover {
+    background-color: #098B66;
+    color: #fff!important;
+}
+
+
+.bg-light-grey {
+    background-color: #FAFAFA;
 }
 
 .focus-box .service-icon {
-    width: 145px;
-    height: 145px;
+    width: 120px;
+    height: 120px;
     margin: auto;
     border-radius: 50%;
-    border: 10px solid #ececec;
     margin-bottom: 20px;
     position: relative;
     -webkit-transition: all 0.2s ease-in-out;
@@ -29899,7 +29927,6 @@ a {
 
 .section-header {
     text-align: center;
-    padding-bottom: 75px;
 }
 
 .red-border-bottom::before {
