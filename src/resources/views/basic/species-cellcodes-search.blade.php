@@ -48,7 +48,7 @@
           <div class="ibox-title">
             <div class="row">
               <div class="col-sm-12">
-                  <h4 class="input-font-mimi-big">Mappa di Distribuzione Specie</h4>
+                  <h3 class="">Mappa di Distribuzione Specie</h3>
               </div>
             </div>
           </div>
