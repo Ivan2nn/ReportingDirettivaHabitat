@@ -4,7 +4,7 @@
 
 <div class="c-content-box c-size-md c-bg-white">
   <div class="container">
-    <div class="row">
+    <div class="row" style="padding-left: 15px;">
       <div class="col-md-12">
         <div class="ibox float-e-margins">
           <div class="ibox-title">

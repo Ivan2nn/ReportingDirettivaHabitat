@@ -8,12 +8,19 @@
 			I dati relativi a specie e habitat marini sono in corso di inserimento</h1> -->
 		</div>
 		<div class="row">
+			<div class="row" style="padding-left: 15px; padding-right: 15px;">
+			<div class="row c-margin-b-40" style="padding-left: 15px;">
+				<div class="col-md-5">
+				<h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Habitat</h1>
+				<p>Morbi ut elit at arcu aliquet consequat. Ut eget mi gravida, aliquam ligula vitae, posuere lacus.</p>
+			</div>
+		</div>
 			<div class="col-md-5">
 				{{-- <div class="ibox float-e-margins">
 		            <div class="ibox-title">
 		            	<div class="row">
 		            		<div class="col-sm-8">
-		                		<h4 class="input-font-mimi-big">Ricerca per Nome</h4>
+		            			<h2 class="c-font-bold">Ricerca specie per nome</h2>
 							</div>
 							<div class="col-sm-4">
 								<div class="loader" v-if="loadingNames"></div>
@@ -24,7 +31,7 @@
 		                <form method="GET" action="/api/habitat/" v-ajax>
 					            {!! csrf_field() !!}
 	    	            	<div class="row">	
-					            <div class="col-sm-8 has-success">
+					            <div class="col-sm-8">
 									<input type="text"
 									class="form-control input-lg input-font-mimi-normal"
 					                v-model="queryName"
@@ -34,7 +41,7 @@
 					            	>
 								</div>
 								<div class="col-sm-4">
-					            	<button type="submit" class="btn btn-primary btn-lg pull-right" v-show="searchingNames" :disabled="loadingNames"><strong>Cerca</strong></button>
+					            	<button type="submit" class="button-link btn btn-primary btn-lg pull-right" v-show="searchingNames" :disabled="loadingNames">Cerca</button>
 					            </div>
 			            	</div>
 						</form>
@@ -49,7 +56,7 @@
 		            <div class="ibox-title">
 		                <div class="row">
 		            		<div class="col-sm-8">
-		                		<h4 class="input-font-mimi-big">Ricerca per Codice</h4>
+		                		<h2 class="c-font-bold">Ricerca specie per codice</h2>
 							</div>
 							<div class="col-sm-4">
 								<div class="loader" v-if="loadingCodes"></div>
@@ -60,7 +67,7 @@
 		                <form method="GET" action="/api/habitat/" v-ajax>
 			            {!! csrf_field() !!}
 			            <div class="row">
-							<div class="col-sm-8 has-success">
+							<div class="col-sm-8">
 								<input type="text"
 								class="form-control input-lg input-font-mimi-normal"
 				                v-model="queryCode"
@@ -70,7 +77,7 @@
 				            	>
 			            	</div>
 			            	<div class="col-sm-4">
-			            		<button type="submit" class="btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes"><strong>Cerca</strong></button>
+			            		<button type="submit" class="button-link btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes">Cerca</strong>
 			            	</div>
 						</div>	
 						</form>
@@ -85,7 +92,7 @@
 		            <div class="ibox-title">
 		            	<div class="row">
 		            		<div class="col-sm-8">
-		                		<h4 class="input-font-mimi-big">Ricerca per Nome o per Codice</h4>
+		                		<h2 class="c-font-bold">Ricerca specie per nome o per codice</h2>
 							</div>
 							<div class="col-sm-4">
 								<div class="loader" v-if="loadingNameCode"></div>
@@ -96,7 +103,7 @@
 		                <form method="GET" action="/api/habitat/" v-ajax>
 					            {!! csrf_field() !!}
 	    	            	<div class="row">	
-					            <div class="col-sm-8 has-success">
+					            <div class="col-sm-8">
 									<input type="text"
 									class="form-control input-lg input-font-mimi-normal"
 					                v-model="queryNameCode"
@@ -106,7 +113,7 @@
 					            	>
 								</div>
 								<div class="col-sm-4">
-					            	<button type="submit" class="btn btn-primary btn-lg pull-right" v-show="searchingNameCode" :disabled="loadingNameCode"><strong>Cerca</strong></button>
+					            	<button type="submit" class="button-link btn btn-primary btn-lg pull-right" v-show="searchingNameCode" :disabled="loadingNameCode">Cerca</button>
 					            </div>
 			            	</div>
 						</form>
@@ -128,8 +135,8 @@
 				<div class="ibox float-e-margins">
 		            <div class="ibox-title">
 		            	<div class="row">
-		            		<div class="col-sm-12">
-		                		<h4 class="input-font-mimi-big">Mappa di Distribuzione dell'Habitat</h4>
+		            		<div class="col-sm-12 c-margin-t-5">
+		                		<h3 class="">Mappa di Distribuzione dell`Habitat</h3>
 							</div>
 		                </div>
 		            </div>

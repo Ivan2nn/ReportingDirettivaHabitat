@@ -5,7 +5,7 @@
 <div class="c-content-box c-size-md c-bg-white">
   <div class="container">
     <div class="row">
-      <div class="row">
+      <div class="row" style="padding-left: 15px; padding-right: 15px;">
       <div class="row c-margin-b-40" style="padding-left: 15px;">
         <div class="col-md-5">
         <h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Species</h1>
@@ -29,7 +29,7 @@
               {!! csrf_field() !!}
             <div class="row">
                 <div class="col-sm-12 col-md-4">
-                  <div class="row">
+                  <div class="row" style="padding-left: 15px;">
                     @foreach($kingdoms as $kingdom)
                       @if ($kingdom->kingdom_name != 'Bacteria' && $kingdom->kingdom_name != 'Fungi' && $kingdom->kingdom_name != 'Protista')
                         <div class="panel-group" id="accordion">
