@@ -121,8 +121,8 @@
                                 <div class="tab-content">
                                     <div class="tab-pane fade in active" id="c-tab2-opt1-1">
                                         <div class="c-tab-pane">
-                                            <h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">Reporting Direttiva Habitat</h4>
-                                            <p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin "> Finalizzato alla raccolta, organizzazione e messa a disposizione dei dati e delle cartografie prodotte dall’Italia per il reporting ex Articolo17 della Direttiva "Habitat" 92/43/CEE (3° Rapporto nazionale), trasmesso alla Commissione Europea (CE) nel dicembre 2013, nonché della documentazione utile per l’adempimento delle future attività di monitoraggio e rendicontazione.
+                                            <h2 class="c-font-28 c-font-bold">Reporting Direttiva Habitat</h2>
+                                            <p class="c-font-17 c-margin-b-20 c-margin-t-40"> Finalizzato alla raccolta, organizzazione e messa a disposizione dei dati e delle cartografie prodotte dall’Italia per il reporting ex Articolo17 della Direttiva "Habitat" 92/43/CEE (3° Rapporto nazionale), trasmesso alla Commissione Europea (CE) nel dicembre 2013, nonché della documentazione utile per l’adempimento delle future attività di monitoraggio e rendicontazione.
                                             <br><br>
                                             Nel sito sono disponibili inoltre le schede di monitoraggio contenenti i protocolli di campo specifici per tutte le specie animali e vegetali e tutti gli habitat italiani, terrestri e di acqua dolce, di interesse comunitario (elencati negli allegati All. I, II, IV, V della Direttiva). 
                                             <br><br>
