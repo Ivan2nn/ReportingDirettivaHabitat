@@ -5,12 +5,19 @@
 <div class="c-content-box c-size-md c-bg-white">
   <div class="container">
     <div class="row">
+      <div class="row" style="padding-left: 15px; padding-right: 15px;">
+      <div class="row c-margin-b-40" style="padding-left: 15px;">
+        <div class="col-md-5">
+        <h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Species</h1>
+        <p>Morbi ut elit at arcu aliquet consequat. Ut eget mi gravida, aliquam ligula vitae, posuere lacus.</p>
+      </div>
+    </div>
       <div class="col-md-12">
         <div class="ibox float-e-margins">
           <div class="ibox-title">
             <div class="row">
               <div class="col-sm-8">
-                  <h4 class="input-font-mimi-big">Ricerca Avanzata</h4>
+                  <h2 class="c-font-bold">Ricerca Avanzata</h2>
               </div>
               <div class="col-sm-4">
                 <div class="loader" v-if="loadingAdvancedData"></div>
@@ -22,7 +29,7 @@
               {!! csrf_field() !!}
             <div class="row">
                 <div class="col-sm-12 col-md-4">
-                  <div class="row">
+                  <div class="row" style="padding-left: 15px;">
                     @foreach($kingdoms as $kingdom)
                       @if ($kingdom->kingdom_name != 'Bacteria' && $kingdom->kingdom_name != 'Fungi' && $kingdom->kingdom_name != 'Protista')
                         <div class="panel-group" id="accordion">
@@ -178,7 +185,7 @@
                     <div class="col-sm-4">
                       <div class="input-group">
                         
-                       <button type="submit" class="btn btn-primary" v-show="true" :disabled="loadingAdvanceData"><strong>Cerca</strong></button>      
+                       <button type="submit" class="button-link btn btn-primary" v-show="true" :disabled="loadingAdvanceData">Cerca</button>      
                       </div>  
                     </div>
                   </div>
