@@ -9,6 +9,13 @@
 			I dati relativi a specie e habitat marini sono in corso di inserimento</h1> -->
 		</div>
 		<div class="row">
+			<div class="row">
+				<div class="col-md-5">
+				<h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Species</h1>
+				<p>Morbi ut elit at arcu aliquet consequat. Ut eget mi gravida, aliquam ligula vitae, posuere lacus.</p>
+			</div>
+		</div>
+			
 			<div class="col-md-5">
 				{{-- <div class="ibox float-e-margins">
 		            <div class="ibox-title">
