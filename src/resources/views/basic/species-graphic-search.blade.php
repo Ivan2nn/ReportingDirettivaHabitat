@@ -161,7 +161,10 @@
     <div class="animated bounceInRight bg-light-grey" v-if="dataAvailable">
     	<div class="container ">
 			<div class="row">
-				<h2 class="c-font-bold c-margin-t-40 c-margin-b-30">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
+				<div class="row c-margin-t-40 c-margin-b-30">
+					<h2 class="c-font-bold pull-left">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
+					<a href="#" class="button-link pull-right" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+				</div>
 
 				<table class="table table-striped c-margin-b-30"> 
 					<thead> 
@@ -266,7 +269,7 @@
 
 
 
-				
+
 
 				<div class="col-md-3">
 					<div class="row">
@@ -350,11 +353,6 @@
 
 				</div>
 			</div>
-			<div class="row">
-		        	<div class="col-md-4" v-if="dataAvailable">
-		        		<a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
-		        	</div>
-		        </div>
 		</div>
 		
 
