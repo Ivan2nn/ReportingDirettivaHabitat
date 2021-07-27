@@ -3,32 +3,40 @@
 @section('content')
 <div class="c-content-box c-size-md c-bg-white">
   <div class="container">
-   	<div class="row">
+   	<div class="row" style="padding-left: 15px;">
+
+       <div class="row c-margin-b-40">
+        <div class="col-md-5">
+          <h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Habitat</h1>
+          <p>Morbi ut elit at arcu aliquet consequat. Ut eget mi gravida, aliquam ligula vitae, posuere lacus.</p>
+        </div>
+      </div>
+
       <div class="col-md-5">
         <div class="ibox float-e-margins">
+
           <div class="ibox-title">
             <div class="row">
-              <div class="col-sm-8">
-                  <h4 class="input-font-mimi-big">Ricerca per Cella</h4>
-              </div>
+             <h2 class="c-font-bold">Ricerca per Cella</h2>
               <div class="col-sm-4">
                 <div class="loader" v-if="loading"></div>
               </div>
             </div>
           </div>
+
           <div class="ibox-content">
             <form methd="GET" action="/cellcodes/habitat/" v-ajax>
               {!! csrf_field() !!}
               <div class="row">
-                <div class="col-sm-8 has-success">
-                  <input type="text"
+                <div class="col-sm-8" style="padding-left: 0!important;">
+                  <input style="height: 42px;" type="text"
                     class="form-control"
                     v-model="selectedCell"
                     id="cellCodeSelectionBox"
 		    :disabled="loading" />
                 </div>
-                <div class="col-sm-4">
-                  <button type="submit" class="btn btn-primary btn-lg pull-right" :disabled="loading"><strong>Cerca</strong></button>
+                <div class="col-sm-4" style="padding-left: 0!important;">
+                  <button type="submit" class="button-link btn btn-primary btn-lg pull-left" :disabled="loading">Cerca</button>
                 </div>
               </div>  
             </form>
@@ -41,7 +49,7 @@
           <div class="ibox-title">
             <div class="row">
               <div class="col-sm-12">
-                  <h4 class="input-font-mimi-big">Mappa di Distribuzione Habitat</h4>
+                  <h3 class="">Mappa di Distribuzione Habitat</h3>
               </div>
             </div>
           </div>
