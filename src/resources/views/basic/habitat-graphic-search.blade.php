@@ -9,7 +9,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-5">
-				<div class="ibox float-e-margins">
+				{{-- <div class="ibox float-e-margins">
 		            <div class="ibox-title">
 		            	<div class="row">
 		            		<div class="col-sm-8">
@@ -80,7 +80,44 @@
 				 			</div>
 				 		</div>
 		            </div>
+		        </div> --}}
+				<div class="ibox float-e-margins">
+		            <div class="ibox-title">
+		            	<div class="row">
+		            		<div class="col-sm-8">
+		                		<h4 class="input-font-mimi-big">Ricerca per Nome o per Codice</h4>
+							</div>
+							<div class="col-sm-4">
+								<div class="loader" v-if="loadingNameCode"></div>
+							</div>
+		                </div>
+		            </div>
+		            <div class="ibox-content">
+		                <form method="GET" action="/api/habitat/" v-ajax>
+					            {!! csrf_field() !!}
+	    	            	<div class="row">	
+					            <div class="col-sm-8 has-success">
+									<input type="text"
+									class="form-control input-lg input-font-mimi-normal"
+					                v-model="queryNameCode"
+					                v-on:keyup="searchNamesCodes"
+					                v-on:click="resetQueries"
+							:disabled="loadingNames || loadingCodes"
+					            	>
+								</div>
+								<div class="col-sm-4">
+					            	<button type="submit" class="btn btn-primary btn-lg pull-right" v-show="searchingNameCode" :disabled="loadingNameCode"><strong>Cerca</strong></button>
+					            </div>
+			            	</div>
+						</form>
+						<div class="row" v-if="!isSearching">
+							<div class="col-sm-8">
+					 			<habitat-names-codes :list="searchedNamesCodes"></habitat-names-codes>
+					 		</div>
+					 	</div>
+		            </div>
 		        </div>
+
 		        @if ($habitat)
 	            	<input type="hidden" v-model="outCode = '{!! $habitat->habitat_code !!}'">
 	            	<input type="hidden" v-model="outHabitatName = '{!! $habitat->habitat_name !!}'">
@@ -92,7 +129,7 @@
 		            <div class="ibox-title">
 		            	<div class="row">
 		            		<div class="col-sm-12">
-		                		<h4 class="input-font-mimi-big">Mappa di Distribuzione dell'Habitat <span style="font-size: 14px;">    [disponibile solo per gli habitat terrestri e di acqua dolce]</span></h4>
+		                		<h4 class="input-font-mimi-big">Mappa di Distribuzione dell'Habitat</h4>
 							</div>
 		                </div>
 		            </div>
@@ -319,6 +356,15 @@
 			</li>
 		    </ul>
 		</template>
+
+		<template id="habitat-names-codes-template">
+	        <ul class="list-group">      
+	            <li class="list-group-item" id="hash" v-for="habitat in list" v-on:click="notify(habitat, 'namescodes')" style="cursor: default;">
+	                <span>@{{ habitat.habitat_name }}</span>
+					<span>:@{{ habitat.habitat_code }}</span> 
+	            </li>
+	        </ul>
+	    </template>
 	</div>
 </div>
 
@@ -327,5 +373,5 @@
 @section('added-scripts')
 	<script src="{!! asset('js/csv_habitat_generator.js') !!}"></script>
 	 <script src="{!! asset('js/habitatToCellMapping.js') !!}"></script>
-     <script src="{!! asset('js/main_habitat_IV_report.js') !!}"></script>
+     <script src="{!! asset('js/habitat_base_search_III_report.js') !!}"></script>
 @endsection

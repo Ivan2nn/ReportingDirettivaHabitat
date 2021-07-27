@@ -14,10 +14,12 @@ Vue.directive('ajax', {
 	onSubmit: function(e) {
 		e.preventDefault();
 		instance = this;
-		if (this.vm.searchingNames)
+		/* if (this.vm.searchingNames)
 			this.vm.loadingNames = true;
 		if (this.vm.searchingCodes)
-			this.vm.loadingCodes = true;
+			this.vm.loadingCodes = true; */
+		if (this.vm.searchingNameCode)
+			this.vm.loadingNameCode = true;
 		this.vm.isSearching = true;
 		this.vm.dataAvailable = false;
 		
@@ -25,8 +27,9 @@ Vue.directive('ajax', {
 			// Inside the response data there are also the taxonomy data, but the google map API cna distinguish by itself
 			instance.vm.$dispatch('final-map-data', response.data);
 			instance.vm.speciesDetails = JSON.parse(response.data)['species'];
-			instance.vm.loadingNames = false;
-			instance.vm.loadingCodes = false;
+			//instance.vm.loadingNames = false;
+			//instance.vm.loadingCodes = false;
+			instance.vm.loadingNameCode = false;
 			instance.vm.dataAvailable = true;
 		}, function (response) {
 
@@ -131,9 +134,11 @@ new Vue({
 		filterSpecies: true,
 		loadingNames: false,
 		loadingCodes: false,
+		loadingNameCode: false,
 		isSearching: false,
 		searchingNames: false,
-		searchingCodes: false
+		searchingCodes: false,
+		searchingNameCode: false
 	},
 
 	ready: function() {
@@ -195,7 +200,6 @@ new Vue({
 				searchedNamesCodesValues = [];
 				if (this.queryNameCode) {
 					searchedNamesCodesValues = this.species.filter(this.filterQueryNamesCodes(this.queryNameCode));
-					console.log(vm.isName);
 				}
 				return searchedNamesCodesValues;
 			}
@@ -217,6 +221,8 @@ new Vue({
 			this.loadingNames = false;
 			this.searchingNames = false;
 			this.searchingCodes = false;
+			this.searchingNameCode= false;
+			this.loadingNameCode = false;
 		},
 
 		isLetter: function(firstCharacter) {
@@ -358,17 +364,20 @@ new Vue({
 	      	// to the instance that registered it
 	      	// searchedField can be 'names' or 'codes'
 	      	this.selectedOne = childObj;
-	      	this.queryName = childObj.species_name;
+	      	//this.queryName = childObj.species_name;
 	      	this.queryCode = childObj.species_code;
+			this.queryNameCode = childObj.species_name;
 	      	this.isSearching = true;
 
-	      	if (searchedField == 'names') {
+			this.searchingNameCode = true;
+
+	      	/* if (searchedField == 'names') {
 	      		this.searchingNames = true;
 	      	}
 
 	      	if (searchedField == 'codes') {
 	      		this.searchingCodes = true;
-	      	}
+	      	} */
     	},
 
     	'final-map-data': function(finalMapData) {
