@@ -176,6 +176,7 @@
 				<div class="visible-xs">
 					<a href="#" style="margin-left:15px;" class="button-link" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 				</div>
+				<div style="overflow-x:auto;">
 
 				<table class="table table-striped c-margin-b-50"> 
 					<thead> 
@@ -209,7 +210,9 @@
 								@{{ speciesDetails.lri_specs }}
 							</td>
 						</tr> 
+					</tbody>
 				</table>
+			</div>
 
 				<table class="table table-striped c-margin-b-50"> 
 					<thead class="bg-light-mint"> 
