@@ -30436,10 +30436,11 @@ p {
 
 /* New data table styles */
 
-<<<<<<< HEAD
+.bg-light-mint {
+    background-color: #C8EDE2;
+}
 
-=======
->>>>>>> d1da652 (Add new data table styles)
+
 .table {
     font-size: 14px!important;
 }
@@ -30467,10 +30468,3 @@ p {
     }
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d1da652 (Add new data table styles)
-.bg-light-mint {
-    background-color: #C8EDE2;
-}

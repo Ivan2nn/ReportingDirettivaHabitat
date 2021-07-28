@@ -181,6 +181,65 @@
 						</tbody>
 					</table>
 
+					<table class="table table-striped c-margin-b-50"> 
+						<thead class="bg-light-mint" style="background-color: #C8EDE2;"> 
+							<tr> 
+								<th>Regioni Biogeografiche</th> 
+								<th>ALP</th> 
+								<th>CON</th> 
+								<th>MED</th> 
+								<th>MMED</th>   
+							</tr> 
+						</thead> 
+						<tbody> 
+							<tr> 
+								<td>Presenza</td>
+                            	<td>@{{ habitatDetails.habitat_presence_alp }}</td>
+							    <td>@{{ habitatDetails.habitat_presence_con }}</td>
+							    <td>@{{ habitatDetails.habitat_presence_med }}</td>
+								<td>@{{ habitatDetails.habitat_presence_mmed }}</td>
+							</tr> 
+							<tr>
+								<td>Stato di Conservazione complessivo (2007- 2012)</td>
+							    <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
+							    <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
+							    <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
+								<td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
+							</tr>
+							<tr>
+					            <td>Trends (2007 - 2012)</td>
+					            <td>
+					            	<div>
+					            		<span>
+					            			<img v-bind:src="itemTrendStyle(habitatDetails, 'alp')" class="trend-image" />
+					            		</span>
+					            	</div>
+					            </td>
+					            <td>
+					            	<div>
+					            		<span>
+					            			<img v-bind:src="itemTrendStyle(habitatDetails, 'con')" class="trend-image" />
+					            		</span>
+					            	</div>
+					            </td>
+					            <td>
+					            	<div>
+					            		<span>
+					            			<img v-bind:src="itemTrendStyle(habitatDetails, 'med')" class="trend-image" />
+					            		</span>
+					            	</div>
+					            </td>
+						    	<td>
+						    		<div>
+						    			<span>
+						    				<img v-bind:src="itemTrendStyle(habitatDetails, 'mmed')" class="trend-image" />
+						    			</span>
+						    		</div>
+						    	</td>
+							</tr>
+						</tbody>
+					</table>
+
 
 				</div>
 
@@ -204,12 +263,12 @@
 							        </tr>
 							    </thead>
 							    <tbody>
-								 <tr>
+									<tr>
 							            <td>Presenza</td>
 							            <td>@{{ habitatDetails.habitat_presence_alp }}</td>
 							            <td>@{{ habitatDetails.habitat_presence_con }}</td>
 							            <td>@{{ habitatDetails.habitat_presence_med }}</td>
-								    <td>@{{ habitatDetails.habitat_presence_mmed }}</td>
+								    	<td>@{{ habitatDetails.habitat_presence_mmed }}</td>
 							        </tr>
 							        <tr>
 							            <td>Stato di Conservazione complessivo (2007- 2012)</td>

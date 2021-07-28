@@ -215,7 +215,7 @@
 			</div>
 
 				<table class="table table-striped c-margin-b-50"> 
-					<thead class="bg-light-mint"> 
+					<thead class="bg-light-mint" style="background-color: #C8EDE2;"> 
 						<tr> 
 							<th>Regioni Biogeografiche</th> 
 							<th>ALP</th> 
