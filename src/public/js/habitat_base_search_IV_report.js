@@ -153,7 +153,9 @@ new Vue({
 		if (vm.outHabitatName != '') {
 			vm.queryName = vm.outHabitatName;
 			vm.queryCode = vm.outCode;
+			vm.queryNameCode = vm.outHabitatName;
 			vm.filterHabitat = false;
+			vm.loadingNameCode = true;
 			vm.loadingNames = true;
 			this.dataAvailable = false;
 			vm.$http.get('/api/habitat/' + vm.queryCode + '/' + vm.report_number).then((response) => {
@@ -162,6 +164,7 @@ new Vue({
 				this.habitatDetails = JSON.parse(response.data)['habitat'];
 				this.dataAvailable = true;
 				this.loadingNames = false;
+				vm.loadingNameCode = false;
 			}, (response) => {
 
 			});
@@ -360,8 +363,9 @@ new Vue({
 	      	// to the instance that registered it
 	      	// searchedField can be 'names' or 'codes'
 	      	this.selectedOne = childObj;
-	      	this.queryName = childObj.habitat_name;
+	      	//this.queryName = childObj.habitat_name;
 	      	this.queryCode = childObj.habitat_code;
+			this.queryNameCode = childObj.habitat_name;
 	      	this.isSearching = true;
 			this.searchingNameCode = true;
 

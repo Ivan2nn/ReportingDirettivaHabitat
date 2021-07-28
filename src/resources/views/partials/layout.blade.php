@@ -84,7 +84,7 @@
                         <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
                         <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
                             <ul class="nav navbar-nav">
-                                <li class="c-active">
+                                <li class="active-mimi-menu-link">
                                     <a href="{{ route('home') }}" class="c-link dropdown-toggle">Home</a>                
                                 </li>
                                 <li>
@@ -229,6 +229,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWmknJ23y9FJ6i3EUXhZHGUDB2QEbSPXE"></script> 
         <script src="{!! asset('output/final.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('js/fixes.js') !!}" type="text/javascript"></script>
+    <script src="{!! asset('output/active_link.js') !!}" type="text/javascript"></script>
         
         <script>
             $(document).ready(function()
