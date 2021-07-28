@@ -30410,3 +30410,6 @@ p {
     }
 }
 
+.c-layout-header.c-layout-header-6 .c-navbar .c-mega-menu > .nav.navbar-nav > li.active-mimi-menu-link > a {
+  border-bottom: 2px solid #00B783;
+}

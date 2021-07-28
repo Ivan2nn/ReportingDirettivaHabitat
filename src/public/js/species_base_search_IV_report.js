@@ -29,6 +29,7 @@ Vue.directive('ajax', {
 			instance.vm.speciesDetails = JSON.parse(response.data)['species'];
 			//instance.vm.loadingNames = false;
 			//instance.vm.loadingCodes = false;
+			console.log(response.data);
 			instance.vm.loadingNameCode = false;
 			instance.vm.dataAvailable = true;
 		}, function (response) {
@@ -155,16 +156,20 @@ new Vue({
 		if (vm.outSpeciesName != '') {
 			vm.queryName = vm.outSpeciesName;
 			vm.queryCode = vm.outCode;
-			vm.queryNameCode = vm.outNameCode;
+			vm.queryNameCode = vm.outSpeciesName;
 			vm.filterSpecies = false;
 			vm.loadingNames = true;
+			vm.loadingNameCode = true;
 			vm.dataAvailable = false;
+			vm.isSearching = true;
 			vm.$http.get('/api/species/' + vm.queryCode + '/' + vm.report_number).then(function(response) {
 				// Inside the response data there are also the taxonomy data, but the google map API cna distinguish by itself
 				vm.$dispatch('final-map-data', response.data);
 				vm.speciesDetails = JSON.parse(response.data)['species'];
+
 				vm.dataAvailable = true;
 				vm.loadingNames = false;
+				vm.loadingNameCode = false;
 			}, function(response) {
 
 			});

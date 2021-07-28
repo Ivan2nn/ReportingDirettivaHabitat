@@ -155,8 +155,9 @@ new Vue({
 		if (vm.outSpeciesName != '') {
 			vm.queryName = vm.outSpeciesName;
 			vm.queryCode = vm.outCode;
-			vm.queryNameCode = vm.outNameCode;
+			vm.queryNameCode = vm.outSpeciesName;
 			vm.filterSpecies = false;
+			vm.loadingNameCode = true;
 			vm.loadingNames = true;
 			vm.dataAvailable = false;
 			vm.$http.get('/api/species/' + vm.queryCode + '/' + vm.report_number).then(function(response) {
@@ -164,6 +165,7 @@ new Vue({
 				vm.$dispatch('final-map-data', response.data);
 				vm.speciesDetails = JSON.parse(response.data)['species'];
 				vm.dataAvailable = true;
+				vm.loadingNameCode = false;
 				vm.loadingNames = false;
 			}, function(response) {
 

@@ -55,7 +55,7 @@ Route::get('/links', array('as' => 'links', function () {
 
 Route::get('species-basic-search/{code?}', array('as' => 'species-basic-search', function($code = null) {
 	$species = null;
-	if ($code) {
+	if ($code)  {
 		$species = App\Species::where('species_code',$code)->first();
 	}
 	return view('basic.species-graphic-search', compact('species'));
