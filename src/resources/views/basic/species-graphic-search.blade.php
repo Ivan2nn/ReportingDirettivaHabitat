@@ -170,8 +170,11 @@
     	<div class="container ">
 			<div class="row">
 				<div class="row c-margin-t-40 c-margin-b-30">
-					<h2 class="c-font-bold pull-left" style="padding-left:16px;">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
-					<a href="#" class="button-link pull-right" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+					<h2 class="c-font-bold pull-left" style="margin-left:30px;">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
+					<a href="#" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+				</div>
+				<div class="visible-xs">
+					<a href="#" style="margin-left:15px;" class="button-link" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 				</div>
 
 				<table class="table table-striped c-margin-b-50"> 
