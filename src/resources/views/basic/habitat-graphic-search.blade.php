@@ -259,6 +259,7 @@
 			<div class="row">
 				<div class="col-md-9"> 
 					<div class="row">
+
 						<div class="col-md-10">
 							<div class="c-content-v-center c-info-species-head-theme-bg">
 							    <div class="c-wrapper">
@@ -289,7 +290,7 @@
 					        </div>
 						</div>
 					</div>
-			
+
 					<div class="row">
 						<div class="col-md-12">
 							<span class="c-font-30">Legenda</span>

@@ -10,7 +10,7 @@
       <div class="row c-margin-b-40">
         <div class="col-md-5">
           <h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Habitat</h1>
-          <p>Morbi ut elit at arcu aliquet consequat. Ut eget mi gravida, aliquam ligula vitae, posuere lacus.</p>
+          <p>Ricerca dati 4° report (2013-2018) per gli habitat</p>
         </div>
       </div>
 
@@ -164,8 +164,8 @@
           </div><!-- end of ibox -->
 
         </div>
-      </div>
-    </div>
+      
+    
 
 	<div class="row" v-if="dataAvailable">
 		<div class="col-md-5 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
@@ -216,6 +216,9 @@
   	      </div>
   	    </div>
   </div>
+</div>
+
+</div>
 </div>
 
 <template id="habitat-template">
