@@ -151,12 +151,36 @@
 			<div class="container">
 				<div class="row">
                 	<div class="row c-margin-t-40 c-margin-b-30">
-        				<h2 class="c-font-bold pull-left" style="margin-left:30px;">Scheda dell' Habitat</h2>
+        				<h2 class="c-font-bold pull-left" style="margin-left:30px; max-width: 60%;">Scheda della @{{ habitatDetails.habitat_name }}</h2>
         				<a href="#" style="margin-left:15px;" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 					</div>
 				</div>
 				<div class="visible-xs">
 					<a href="#" style="margin-left:15px;" class="button-link" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+				</div>
+
+				<div style="overflow-x:auto;">
+					<table class="table table-striped c-margin-b-50"> 
+						<thead> 
+							<tr> 
+								<th>Codice</th> 
+								<th>Macrocategorie</th> 
+								<th>Hb. Prioritario</th>  
+							</tr> 
+						</thead> 
+						<tbody> 
+							<tr> 
+								<th style="font-weight: normal;">@{{ habitatDetails.habitat_code }}</th>
+								<td>@{{ habitatDetails.macrocategory }}</td>  
+								<td>
+									<span v-if="habitatDetails.habitat_priority">SI</span>
+									<span v-else>No</span>
+								</td> 
+							</tr> 
+						</tbody>
+					</table>
+
+
 				</div>
 
 			</div>
