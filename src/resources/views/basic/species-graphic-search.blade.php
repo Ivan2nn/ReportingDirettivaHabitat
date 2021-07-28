@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="c-content-box c-size-md c-bg-white">
+<div class="c-content-box c-size-md c-bg-white test">
     <div class="container">
 		<div class="row">
 			<!-- <h1 style="padding: 20px 5px; background-color: #99ccff;">Al momento il sito riporta informazioni riferite a specie e habitat terrestri e di acqua dolce.<br>
