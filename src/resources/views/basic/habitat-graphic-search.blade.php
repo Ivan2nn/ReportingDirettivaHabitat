@@ -227,14 +227,14 @@
 								    <td>@{{ habitatDetails.habitat_presence_mmed }}</td>
 							        </tr>
 							        <tr>
-							            <td>Stato di Conservazione complessivo (2007- 2012)</td>
+							            <td>Stato di Conservazione complessivo (2013 - 2018)</td>
 							            <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
 							            <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
 							            <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
 								    <td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
 							        </tr>
 							        <tr>
-							            <td>Trends (2007 - 2012)</td>
+							            <td>Trends (2013 - 2018)</td>
 							            <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'alp')" class="trend-image" /></span></div></td>
 							            <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'con')" class="trend-image" /></span></div></td>
 							            <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'med')" class="trend-image" /></span></div></td>
@@ -280,7 +280,7 @@
 							<table class="table mimi-table-striped">
 							    <tbody>
 							        <tr>
-							            <td>3° Reporting</td>
+							            <td>4° Reporting</td>
 							            <td><a v-bind:href="habitatDetails.document" target="_blank" class="btn btn-files-link">Visualizza</a>
 													</td>
 							        </tr>

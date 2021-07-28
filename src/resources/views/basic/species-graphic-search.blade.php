@@ -258,14 +258,14 @@
 					    <td>@{{ speciesDetails.species_presence_mmed }}</td>
 	                                </tr>
 	                                <tr>
-	                                    <td>Stato di Conservazione complessivo (2007- 2012)</td>
+	                                    <td>Stato di Conservazione complessivo (2013- 2018)</td>
 	                                    <td><div :class="itemStatusStyle(speciesDetails, 'alp')"></div></td>
 	                                    <td><div :class="itemStatusStyle(speciesDetails, 'con')"></div></td>
 	                                    <td><div :class="itemStatusStyle(speciesDetails, 'med')"></div></td>
 					    <td><div :class="itemStatusStyle(speciesDetails, 'mmed')"></div></td>
 	                                </tr>
 	                                <tr>
-	                                    <td>Trend (2007 - 2012)</td>
+	                                    <td>Trend (2013 - 2018)</td>
 	                                    <td><div><span><img v-bind:src="itemTrendStyle(speciesDetails, 'alp')" class="trend-image" /></span></div></td>
 	                                    <td><div><span><img v-bind:src="itemTrendStyle(speciesDetails, 'con')" class="trend-image" /></span></div></td>
 	                                    <td><div><span><img v-bind:src="itemTrendStyle(speciesDetails, 'med')" class="trend-image" /></span></div></td>
@@ -312,7 +312,7 @@
 							<table class="table mimi-table-striped">
 	                            <tbody>
 	                                <tr>
-	                                    <td>3° Reporting</td>
+	                                    <td>4° Reporting</td>
 	                                    <td><a v-bind:href="speciesDetails.document" target="_blank" class="btn btn-files-link">Visualizza</a>
 										</td>
 	                                </tr>
