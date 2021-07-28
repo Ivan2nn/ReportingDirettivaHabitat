@@ -252,44 +252,6 @@
 				<div class="col-md-9"> 
 					<div class="row">
 						<div class="col-md-10">
-							<table class="table mimi-table-striped mimi-table-red-heading">
-							    <thead>
-							        <tr>
-							            <th class="c-font-bold">Regioni Biogeografiche</th>
-							            <th class="c-font-bold">ALP</th>	
-							            <th class="c-font-bold">CON</th>	
-							            <th class="c-font-bold">MED</th>
-								    <th class="c-font-bold">MMED</th>	
-							        </tr>
-							    </thead>
-							    <tbody>
-									<tr>
-							            <td>Presenza</td>
-							            <td>@{{ habitatDetails.habitat_presence_alp }}</td>
-							            <td>@{{ habitatDetails.habitat_presence_con }}</td>
-							            <td>@{{ habitatDetails.habitat_presence_med }}</td>
-								    	<td>@{{ habitatDetails.habitat_presence_mmed }}</td>
-							        </tr>
-							        <tr>
-							            <td>Stato di Conservazione complessivo (2007- 2012)</td>
-							            <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
-							            <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
-							            <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
-								    <td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
-							        </tr>
-							        <tr>
-							            <td>Trends (2007 - 2012)</td>
-							            <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'alp')" class="trend-image" /></span></div></td>
-							            <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'con')" class="trend-image" /></span></div></td>
-							            <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'med')" class="trend-image" /></span></div></td>
-								    <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'mmed')" class="trend-image" /></span></div></td>
-							        </tr>
-							    </tbody>
-							</table>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-10">
 							<div class="c-content-v-center c-info-species-head-theme-bg">
 							    <div class="c-wrapper">
 							        <div class="c-body c-padding-8">
