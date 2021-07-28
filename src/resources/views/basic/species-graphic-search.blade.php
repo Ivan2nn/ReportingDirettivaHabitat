@@ -170,11 +170,11 @@
     	<div class="container ">
 			<div class="row">
 				<div class="row c-margin-t-40 c-margin-b-30">
-					<h2 class="c-font-bold pull-left">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
+					<h2 class="c-font-bold pull-left" style="padding-left:16px;">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
 					<a href="#" class="button-link pull-right" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 				</div>
 
-				<table class="table table-striped c-margin-b-30"> 
+				<table class="table table-striped c-margin-b-50"> 
 					<thead> 
 						<tr> 
 							<th>Codice</th> 
@@ -188,7 +188,7 @@
 					</thead> 
 					<tbody> 
 						<tr> 
-							<th scope="row">@{{ speciesDetails.species_code }}</th> 
+							<th style="font-weight: normal;">@{{ speciesDetails.species_code }}</th> 
 							<td>@{{ speciesDetails.kingdom }}</td> 
 							<td>@{{ speciesDetails.classis }}</td> 
 							<td>
@@ -208,8 +208,8 @@
 						</tr> 
 				</table>
 
-				<table class="table table-striped c-margin-b-30"> 
-					<thead> 
+				<table class="table table-striped c-margin-b-50"> 
+					<thead class="bg-light-mint"> 
 						<tr> 
 							<th>Regioni Biogeografiche</th> 
 							<th>ALP</th> 

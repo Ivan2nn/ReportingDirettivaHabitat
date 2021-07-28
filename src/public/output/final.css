@@ -15692,9 +15692,25 @@ label.control-label {
   border-color: #eeeeee; }
 
 .table > thead > tr > th {
-  font-weight: 500;
-  font-size: 17px;
-  color: #3f444a; }
+  font-weight: bold;
+  font-size: 14px;
+  color: #3f444a; 
+  text-transform: uppercase;
+
+}
+
+.table>tbody>tr>td, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>td, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>thead>tr>th {
+    border: none!important;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #fff!important;
+}
 
 .table tr.success > th,
 .table tr.success > td,
@@ -30034,28 +30050,28 @@ a {
 }
 .species-information-font {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 3px;
   vertical-align: middle;
 }
 .red-rectangle {
-  width: 20px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background: red;
 }
 .green-rectangle {
-  width: 20px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background: green;
 }
 .yellow-rectangle {
-  width: 20px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background: yellow;
 }
 .grey-rectangle {
-  width: 20px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background: grey;
 }
 .trend-image {
@@ -30094,7 +30110,7 @@ a {
   font-size: 20px;
 }
 .table.table-font-big th {
-  font-size: 16px;
+  font-size: 14px;
 }
 .i-box-mimi {
   margin-top: 20px;
@@ -30128,7 +30144,7 @@ a {
   background-image: url(family.png) !important;
 }
 .mimi-table-cell-font {
-  font-size: 18px;
+  font-size: 14px;
 }
 /* ========================================= */
 /* -----------------------------------------*/
@@ -30394,6 +30410,9 @@ h4 {
     }
 }
 
+body {
+    color: #373737!important;
+}
 
 h1 {
     font-size: 38px!important;
@@ -30417,7 +30436,10 @@ p {
 
 /* New data table styles */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d1da652 (Add new data table styles)
 .table {
     font-size: 14px!important;
 }
@@ -30445,7 +30467,10 @@ p {
     }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d1da652 (Add new data table styles)
 .bg-light-mint {
     background-color: #C8EDE2;
 }
