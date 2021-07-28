@@ -77,7 +77,7 @@
 				            	>
 			            	</div>
 			            	<div class="col-sm-4">
-			            		<button type="submit" class="button-link btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes">Cerca</strong>
+			            		<button type="submit" class="button-link btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes">Cerca</button>
 			            	</div>
 						</div>	
 						</form>
