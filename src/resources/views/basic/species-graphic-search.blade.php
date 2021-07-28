@@ -281,6 +281,19 @@
 	                </tbody>    
 				</table>
 
+				<table class="table table-striped c-margin-b-50"> 
+					<thead> 
+						<tr> 
+							<th>Modifiche nomenclaturali e/o tassonomiche</th>  
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr> 
+							<th style="font-weight: normal;">@{{{ speciesDetails.modified }}}</th>
+						</tr> 
+					</tbody>
+				</table>
+
 
 				<div class="row">
 					<div class="row c-margin-b-30">
