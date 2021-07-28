@@ -147,6 +147,7 @@
 			</div>
 		</div>
 		<div class="bg-light-grey animated bounceInRight" v-if="dataAvailable">
+
 			<!-- New Data Table -->
 			<div class="container">
 				<div class="row">
@@ -190,56 +191,6 @@
 
 			<div class="row">
 				<div class="col-md-9"> 
-					<div class="row">
-						<div class="col-md-5">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-	                            <div class="c-wrapper c-margin-bottom-10">
-	                                <div class="c-body c-padding-8">
-	                                    <h3 class="c-font-19 c-line-height-18 c-font-white">Nome: <span class="c-font-italic">@{{ habitatDetails.habitat_name }}</span></h3>
-	                                </div>
-	                            </div>
-	                        </div>
-						</div>
-						<div class="col-md-5">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-	                            <div class="c-wrapper c-margin-bottom-10">
-	                                <div class="c-body c-padding-8">
-	                                    <h3 class="c-font-19 c-line-height-18 c-font-white">Codice: <span class="c-font-italic">@{{ habitatDetails.habitat_code }}</span></h3>
-	                                </div>
-	                            </div>
-	                        </div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-	                            <div class="c-wrapper">
-	                                <div class="c-body c-padding-8">
-	                                    <h3 class="c-font-17 c-line-height-18 c-font-white c-font-bold">Macrocategorie</h3>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="c-content-v-center c-info-species-body-theme-bg">
-	                            <div class="c-wrapper c-margin-bottom-10">
-	                                <div class="c-body c-padding-8">
-	                                    <h4 class="c-font-18 c-line-height-20 c-font-black c-font-thin">@{{ habitatDetails.macrocategory }}</h4>
-	                                </div>
-	                            </div>
-	                        </div>
-                        </div>      
-			<div class="col-md-5">
-							<table class="table mimi-table-striped">
-	                            <tbody>
-	                                <tr>
-	                                    <td>Hb. Prioritario</td>
-	                                    <td><span v-if="habitatDetails.habitat_priority">SI</span>
-											<span v-else>No</span>
-										</td>
-	                                </tr>
-	                            </tbody>
-	                        </table>
-                        </div>
-					</div>
 					<div class="row">
 						<div class="col-md-10">
 							<table class="table mimi-table-striped mimi-table-red-heading">
