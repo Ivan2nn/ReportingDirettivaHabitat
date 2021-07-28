@@ -146,14 +146,22 @@
 	            </div>
 			</div>
 		</div>
-		<div class="container c-bg-grey-1 animated bounceInRight" v-if="dataAvailable">
-			<div class="row">
-                <div class="col-md-6 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
-                    <div class="col-sm-12">
-            			<h2 class="c-font-uppercase c-font-bold c-font-26 c-margin-b-20">Scheda dell'Habitat</h2>
+		<div class="bg-light-grey animated bounceInRight" v-if="dataAvailable">
+			<!-- New Data Table -->
+			<div class="container">
+				<div class="row">
+                	<div class="col-md-6 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
+                    	<div class="col-sm-12">
+            				<h2 class="c-font-uppercase c-font-bold c-font-26 c-margin-b-20">Scheda della @{{ habitatDetails.habitat_name }}</h2>
+						</div>
 					</div>
 				</div>
+
 			</div>
+			<!-- New Data Table ends -->
+
+
+
 			<div class="row">
 				<div class="col-md-9"> 
 					<div class="row">
