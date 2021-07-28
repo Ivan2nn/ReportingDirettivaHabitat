@@ -336,19 +336,19 @@ new Vue({
       		var temp = 'item.species_trend_' + bioreg;
       		
       		if (eval(temp) == '-') {
-      			return "images/red_down.png";
+      			return "/images/red_down.png";
       		};
 
       		if (eval(temp) == '=') {
-      			return "images/yellow_stable.png";
+      			return "/images/yellow_stable.png";
       		};
 
       		if (eval(temp) == '+') {
-      			return "images/green_up.png";
+      			return "/images/green_up.png";
       		};
 
       		if (eval(temp) == 'x') {
-      			return "images/grey_null.png";
+      			return "/images/grey_null.png";
       		};
 
       		/*if (eval(temp) == '') {
