@@ -30421,6 +30421,12 @@ h4 {
     text-transform: none!important;
 }
 
+@media (max-width: 844px) {
+   .h4m {
+        margin-top: 20px;
+    }
+}
+
 .bg-light-mint {
     background-color: #C8EDE2;
 }
