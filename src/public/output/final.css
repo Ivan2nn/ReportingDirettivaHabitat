@@ -15691,27 +15691,6 @@ label.control-label {
 .table > thead > tr > th {
   border-color: #eeeeee; }
 
-.table > thead > tr > th {
-  font-weight: bold;
-  font-size: 14px;
-  color: #3f444a; 
-  text-transform: uppercase;
-
-}
-
-.table>tbody>tr>td, 
-.table>tbody>tr>th, 
-.table>tfoot>tr>td, 
-.table>tfoot>tr>th, 
-.table>thead>tr>td, 
-.table>thead>tr>th {
-    border: none!important;
-}
-
-.table-striped>tbody>tr:nth-of-type(odd) {
-    background-color: #fff!important;
-}
-
 .table tr.success > th,
 .table tr.success > td,
 .table tr.info > th,
@@ -30443,6 +30422,27 @@ p {
 
 .table {
     font-size: 14px!important;
+}
+
+.table > thead > tr > th {
+  font-weight: bold;
+  font-size: 14px;
+  color: #3f444a; 
+  text-transform: uppercase;
+
+}
+
+.table>tbody>tr>td, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>td, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>thead>tr>th {
+    border: none!important;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #fff!important;
 }
 
 .text-link {
