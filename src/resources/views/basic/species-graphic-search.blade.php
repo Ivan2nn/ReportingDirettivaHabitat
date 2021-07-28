@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="c-content-box c-size-md c-bg-white">
-    <div class="container">
+    <div class="">
+
+      <div class="container">
 		<div class="row">
 			<!-- <h1 style="padding: 20px 5px; background-color: #99ccff;">Al momento il sito riporta informazioni riferite a specie e habitat terrestri e di acqua dolce.<br>
 			I dati relativi a specie e habitat marini sono in corso di inserimento</h1> -->
@@ -135,6 +137,7 @@
 	            	<input type="hidden" v-model="outCode = '{!! $species->species_code !!}'">
 	            	<input type="hidden" v-model="outSpeciesName = '{!! $species->species_name !!}'">
 	            @endif
+	            
 		    </div>
 
 			<div class="col-md-7">
@@ -153,178 +156,134 @@
 	            </div>
 			</div>
 		</div>
+		<div class="row" v-if="dataAvailable">
+		        	<div class="col-sm-8 download-schede">
+		               	<h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
+		               	<a class="c-font-bold text-link" v-bind:href="speciesDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
+	                    <a class="c-font-bold text-link" v-bind:href="speciesDetails.monitoring" target="_blank" class="">Monitoraggio</a>
+					</div>
+				</div>
 
-            <div class="container c-bg-grey-1 animated bounceInRight" v-if="dataAvailable">
+	</div>
+
+    <div class="animated bounceInRight bg-light-grey" v-if="dataAvailable">
+    	<div class="container ">
 			<div class="row">
-                <div class="col-md-6 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
-                    <div class="col-sm-12">
-            			<h2 class="c-font-uppercase c-font-bold c-font-26 c-margin-b-20">Scheda della Specie</h2>
-					</div>
+				<div class="row c-margin-t-40 c-margin-b-30">
+					<h2 class="c-font-bold pull-left" style="margin-left:30px;">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
+					<a href="#" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 				</div>
+				<div class="visible-xs">
+					<a href="#" style="margin-left:15px;" class="button-link" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+				</div>
+				<div style="overflow-x:auto;">
+
+				<table class="table table-striped c-margin-b-50"> 
+					<thead> 
+						<tr> 
+							<th>Codice</th> 
+							<th>Regno</th> 
+							<th>Classe</th> 
+							<th>Sp. Prioritaria</th> 
+							<th>Sp. Endemica</th> 
+							<th>Allegati DH</th> 
+							<th>Lista rossa IUCN (*)</th> 
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr> 
+							<th style="font-weight: normal;">@{{ speciesDetails.species_code }}</th> 
+							<td>@{{ speciesDetails.kingdom }}</td> 
+							<td>@{{ speciesDetails.classis }}</td> 
+							<td>
+								<span v-if="speciesDetails.priority">SI</span>
+								<span v-else>No</span>
+							</td> 
+							<td>
+								<span v-if="speciesDetails.endemic">SI</span>
+								<span v-else>No</span>
+							</td> 
+							<td>
+								<span v-for="annex in speciesDetails.annexes">@{{ annex }} </span>
+							</td> 
+							<td>
+								@{{ speciesDetails.lri_specs }}
+							</td>
+						</tr> 
+					</tbody>
+				</table>
 			</div>
-			<div class="row">
-				<div class="col-md-9"> 
-					<div class="row">
-						<div class="col-md-5">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-	                            <div class="c-wrapper c-margin-bottom-10">
-	                                <div class="c-body c-padding-8">
-	                                    <h3 class="c-font-19 c-line-height-18 c-font-white c-font-italic">Nome: @{{ speciesDetails.species_name }}</h3>
-	                                </div>
-	                            </div>
-	                        </div>
-						</div>
-						<div class="col-md-5">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-	                            <div class="c-wrapper c-margin-bottom-10">
-	                                <div class="c-body c-padding-8">
-	                                    <h3 class="c-font-19 c-line-height-18 c-font-white c-font-italic">Codice : @{{ speciesDetails.species_code }}</h3>
-	                                </div>
-	                            </div>
-	                        </div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<table class="table mimi-table-striped">
-	                            <thead>
-	                                <tr>
-	                                    <th class="c-font-17 c-font-bold">Tassonomia</th>
-	                                    <th></th>	
-	                                </tr>
-	                            </thead>
-	                            <tbody>
-	                                <tr>
-	                                    <td>Regno</td>
-	                                    <td>@{{ speciesDetails.kingdom }}</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Classe</td>
-	                                    <td>@{{ speciesDetails.classis }}</td>
-	                                </tr>
-	                            </tbody>
-	                        </table>
-                        </div>
-                        <div class="col-md-5">
-							<table class="table mimi-table-striped">
-	                            <tbody>
-	                                <tr>
-	                                    <td>Sp. Prioritaria</td>
-	                                    <td><span v-if="speciesDetails.priority">SI</span>
-											<span v-else>No</span>
-										</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Sp. Endemica</td>
-	                                    <td><span v-if="speciesDetails.endemic">SI</span>
-											<span v-else>No</span>
-										</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Allegati DH</td>
-	                                    <td><span v-for="annex in speciesDetails.annexes">@{{ annex }} </span></td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Lista rossa IUCN (*)</td>
-	                                    <td>@{{ speciesDetails.lri_specs }}</td>
-	                                </tr>
-	                            </tbody>
-	                        </table>
-                        </div>
-					</div>
-					<div class="row">
-						<div class="col-md-10 c-margin-b-10">
-							<h4>(*) Per maggiore dettaglio vedere scheda di monitoraggio</h4>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-10">
-							<table class="table mimi-table-striped mimi-table-red-heading">
-	                            <thead>
-	                                <tr>
-	                                    <th class="c-font-bold">Regioni Biogeografiche</th>
-	                                    <th class="c-font-bold">ALP</th>	
-	                                    <th class="c-font-bold">CON</th>	
-	                                    <th class="c-font-bold">MED</th>
-					    <th class="c-font-bold">MMED</th>	
-	                                </tr>
-	                            </thead>
-	                            <tbody>
-	                                <tr>
-	                                    <td>Presenza</td>
-	                                    <td>@{{ speciesDetails.species_presence_alp }}</td>
-	                                    <td>@{{ speciesDetails.species_presence_con }}</td>
-	                                    <td>@{{ speciesDetails.species_presence_med }}</td>
-					    <td>@{{ speciesDetails.species_presence_mmed }}</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Stato di Conservazione complessivo (2013- 2018)</td>
-	                                    <td><div :class="itemStatusStyle(speciesDetails, 'alp')"></div></td>
-	                                    <td><div :class="itemStatusStyle(speciesDetails, 'con')"></div></td>
-	                                    <td><div :class="itemStatusStyle(speciesDetails, 'med')"></div></td>
-					    <td><div :class="itemStatusStyle(speciesDetails, 'mmed')"></div></td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Trend (2013 - 2018)</td>
-	                                    <td><div><span><img v-bind:src="itemTrendStyle(speciesDetails, 'alp')" class="trend-image" /></span></div></td>
-	                                    <td><div><span><img v-bind:src="itemTrendStyle(speciesDetails, 'con')" class="trend-image" /></span></div></td>
-	                                    <td><div><span><img v-bind:src="itemTrendStyle(speciesDetails, 'med')" class="trend-image" /></span></div></td>
-					    <td><div><span><img v-bind:src="itemTrendStyle(speciesDetails, 'mmed')" class="trend-image" /></span></div></td>
-	                                </tr>
-	                            </tbody>
-	                        </table>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-10">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-							    <div class="c-wrapper">
-							        <div class="c-body c-padding-8">
-							            <h3 class="c-font-19 c-line-height-18 c-font-white c-font-bold">Modifiche nomenclaturali e/o tassonomiche</h3>
-							        </div>
-							    </div>
-							</div>
-							<div class="c-content-v-center c-info-species-body-theme-bg">
-							    <div class="c-wrapper c-margin-bottom-10">
-							        <div class="c-body c-padding-8">
-							            <h4 class="c-font-18 c-line-height-20 c-font-black c-font-thin">@{{{ speciesDetails.modified }}}</h4>
-							        </div>
-							    </div>
-							</div>
-						</div>
-					</div>
-				</div>
+
+				<table class="table table-striped c-margin-b-50"> 
+					<thead class="bg-light-mint" style="background-color: #C8EDE2;"> 
+						<tr> 
+							<th>Regioni Biogeografiche</th> 
+							<th>ALP</th> 
+							<th>CON</th> 
+							<th>MED</th> 
+							<th>MMED</th> 
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr>
+                            <td>Presenza</td>
+                            <td>@{{ speciesDetails.species_presence_alp }}</td>
+                            <td>@{{ speciesDetails.species_presence_con }}</td>
+                            <td>@{{ speciesDetails.species_presence_med }}</td>
+		    				<td>@{{ speciesDetails.species_presence_mmed }}</td>
+	                    </tr>
+	                    <tr>
+                            <td>Stato di Conservazione complessivo (2007- 2012)</td>
+                            <td>
+                            	<div :class="itemStatusStyle(speciesDetails, 'alp')"></div>
+                            </td>
+                            <td>
+                            	<div :class="itemStatusStyle(speciesDetails, 'con')"></div>
+                            </td>
+                            <td>
+                            	<div :class="itemStatusStyle(speciesDetails, 'med')"></div>
+                            </td>
+		    				<td>
+		    					<div :class="itemStatusStyle(speciesDetails, 'mmed')"></div>
+		    				</td>
+	                    </tr>
+	                    <tr>
+	                        <td>Trend (2007 - 2012)</td>
+	                        <td>
+	                        	<div>
+	                        		<span>
+	                        			<img v-bind:src="itemTrendStyle(speciesDetails, 'alp')" class="trend-image" />
+	                        		</span>
+	                        	</div>
+	                        </td>
+	                        <td>
+	                        	<div>
+	                        		<span>
+	                        			<img v-bind:src="itemTrendStyle(speciesDetails, 'con')" class="trend-image" />
+	                        		</span>
+	                        	</div>
+	                        </td>
+	                        <td>
+	                        	<div>
+	                        		<span>
+	                        			<img v-bind:src="itemTrendStyle(speciesDetails, 'med')" class="trend-image" />
+	                        		</span>
+	                        	</div>
+	                        </td>
+					    	<td>
+					    		<div>
+					    			<span>
+					    				<img v-bind:src="itemTrendStyle(speciesDetails, 'mmed')" class="trend-image" />
+					    			</span>
+					    		</div>
+					    	</td>
+	                    </tr>
+	                </tbody>    
+				</table>
+
+
+
 				<div class="col-md-3">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-	                            <div class="c-wrapper c-margin-bottom-10">
-	                                <div class="c-body c-padding-8">
-	                                    <h3 class="c-font-19 c-line-height-18 c-font-white c-font-bold">Download Schede</h3>
-	                                </div>
-	                            </div>
-	                        </div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<table class="table mimi-table-striped">
-	                            <tbody>
-	                                <tr>
-	                                    <td>4° Reporting</td>
-	                                    <td><a v-bind:href="speciesDetails.document" target="_blank" class="btn btn-files-link">Visualizza</a>
-										</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Monitoraggio</td>
-	                                    <td><a v-bind:href="speciesDetails.monitoring" target="_blank" class="btn btn-files-link">Visualizza</a>
-										</td>
-	                                </tr>
-	                            </tbody>
-	                        </table>
-                        </div>
-					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<span class="c-font-30">Legenda</span>
@@ -377,11 +336,6 @@
 
 				</div>
 			</div>
-			<div class="row">
-		        	<div class="col-md-4" v-if="dataAvailable">
-		        		<a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
-		        	</div>
-		        </div>
 		</div>
 		
 
@@ -409,6 +363,7 @@
 	            </li>
 	        </ul>
 	    </template>
+	  </div>  
 	</div>
 </div>
 

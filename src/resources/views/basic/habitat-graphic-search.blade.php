@@ -146,105 +146,120 @@
 	            </div>
 			</div>
 		</div>
-		<div class="container c-bg-grey-1 animated bounceInRight" v-if="dataAvailable">
-			<div class="row">
-                <div class="col-md-6 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
-                    <div class="col-sm-12">
-            			<h2 class="c-font-uppercase c-font-bold c-font-26 c-margin-b-20">Scheda dell'Habitat</h2>
+		<div class="row" v-if="dataAvailable">
+			<div class="col-sm-8 download-schede">
+		    	<h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
+		        <a class="c-font-bold text-link" v-bind:href="habitatDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
+	            <a class="c-font-bold text-link" v-bind:href="habitatDetails.monitoring" target="_blank" class="">Monitoraggio</a>
+			</div>
+		</div>
+
+		<div class="bg-light-grey animated bounceInRight" v-if="dataAvailable">
+
+			<!-- New Data Table -->
+			<div class="container">
+				<div class="row">
+                	<div class="row c-margin-t-40 c-margin-b-30">
+        				<h2 class="c-font-bold pull-left" style="margin-left:30px; max-width: 60%;">Scheda della @{{ habitatDetails.habitat_name }}</h2>
+        				<a href="#" style="margin-left:15px;" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 					</div>
 				</div>
+				<div class="visible-xs">
+					<a href="#" style="margin-left:15px;" class="button-link" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+				</div>
+
+				<div style="overflow-x:auto;">
+					<table class="table table-striped c-margin-b-50"> 
+						<thead> 
+							<tr> 
+								<th>Codice</th> 
+								<th>Macrocategorie</th> 
+								<th>Hb. Prioritario</th>  
+							</tr> 
+						</thead> 
+						<tbody> 
+							<tr> 
+								<th style="font-weight: normal;">@{{ habitatDetails.habitat_code }}</th>
+								<td>@{{ habitatDetails.macrocategory }}</td>  
+								<td>
+									<span v-if="habitatDetails.habitat_priority">SI</span>
+									<span v-else>No</span>
+								</td> 
+							</tr> 
+						</tbody>
+					</table>
+
+					<table class="table table-striped c-margin-b-50"> 
+						<thead class="bg-light-mint" style="background-color: #C8EDE2;"> 
+							<tr> 
+								<th>Regioni Biogeografiche</th> 
+								<th>ALP</th> 
+								<th>CON</th> 
+								<th>MED</th> 
+								<th>MMED</th>   
+							</tr> 
+						</thead> 
+						<tbody> 
+							<tr> 
+								<td>Presenza</td>
+                            	<td>@{{ habitatDetails.habitat_presence_alp }}</td>
+							    <td>@{{ habitatDetails.habitat_presence_con }}</td>
+							    <td>@{{ habitatDetails.habitat_presence_med }}</td>
+								<td>@{{ habitatDetails.habitat_presence_mmed }}</td>
+							</tr> 
+							<tr>
+								<td>Stato di Conservazione complessivo (2007- 2012)</td>
+							    <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
+							    <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
+							    <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
+								<td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
+							</tr>
+							<tr>
+					            <td>Trends (2007 - 2012)</td>
+					            <td>
+					            	<div>
+					            		<span>
+					            			<img v-bind:src="itemTrendStyle(habitatDetails, 'alp')" class="trend-image" />
+					            		</span>
+					            	</div>
+					            </td>
+					            <td>
+					            	<div>
+					            		<span>
+					            			<img v-bind:src="itemTrendStyle(habitatDetails, 'con')" class="trend-image" />
+					            		</span>
+					            	</div>
+					            </td>
+					            <td>
+					            	<div>
+					            		<span>
+					            			<img v-bind:src="itemTrendStyle(habitatDetails, 'med')" class="trend-image" />
+					            		</span>
+					            	</div>
+					            </td>
+						    	<td>
+						    		<div>
+						    			<span>
+						    				<img v-bind:src="itemTrendStyle(habitatDetails, 'mmed')" class="trend-image" />
+						    			</span>
+						    		</div>
+						    	</td>
+							</tr>
+						</tbody>
+					</table>
+
+
+				</div>
+
 			</div>
+			<!-- New Data Table ends -->
+
+
+
 			<div class="row">
 				<div class="col-md-9"> 
 					<div class="row">
-						<div class="col-md-5">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-	                            <div class="c-wrapper c-margin-bottom-10">
-	                                <div class="c-body c-padding-8">
-	                                    <h3 class="c-font-19 c-line-height-18 c-font-white">Nome: <span class="c-font-italic">@{{ habitatDetails.habitat_name }}</span></h3>
-	                                </div>
-	                            </div>
-	                        </div>
-						</div>
-						<div class="col-md-5">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-	                            <div class="c-wrapper c-margin-bottom-10">
-	                                <div class="c-body c-padding-8">
-	                                    <h3 class="c-font-19 c-line-height-18 c-font-white">Codice: <span class="c-font-italic">@{{ habitatDetails.habitat_code }}</span></h3>
-	                                </div>
-	                            </div>
-	                        </div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-	                            <div class="c-wrapper">
-	                                <div class="c-body c-padding-8">
-	                                    <h3 class="c-font-17 c-line-height-18 c-font-white c-font-bold">Macrocategorie</h3>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="c-content-v-center c-info-species-body-theme-bg">
-	                            <div class="c-wrapper c-margin-bottom-10">
-	                                <div class="c-body c-padding-8">
-	                                    <h4 class="c-font-18 c-line-height-20 c-font-black c-font-thin">@{{ habitatDetails.macrocategory }}</h4>
-	                                </div>
-	                            </div>
-	                        </div>
-                        </div>      
-			<div class="col-md-5">
-							<table class="table mimi-table-striped">
-	                            <tbody>
-	                                <tr>
-	                                    <td>Hb. Prioritario</td>
-	                                    <td><span v-if="habitatDetails.habitat_priority">SI</span>
-											<span v-else>No</span>
-										</td>
-	                                </tr>
-	                            </tbody>
-	                        </table>
-                        </div>
-					</div>
-					<div class="row">
-						<div class="col-md-10">
-							<table class="table mimi-table-striped mimi-table-red-heading">
-							    <thead>
-							        <tr>
-							            <th class="c-font-bold">Regioni Biogeografiche</th>
-							            <th class="c-font-bold">ALP</th>	
-							            <th class="c-font-bold">CON</th>	
-							            <th class="c-font-bold">MED</th>
-								    <th class="c-font-bold">MMED</th>	
-							        </tr>
-							    </thead>
-							    <tbody>
-								 <tr>
-							            <td>Presenza</td>
-							            <td>@{{ habitatDetails.habitat_presence_alp }}</td>
-							            <td>@{{ habitatDetails.habitat_presence_con }}</td>
-							            <td>@{{ habitatDetails.habitat_presence_med }}</td>
-								    <td>@{{ habitatDetails.habitat_presence_mmed }}</td>
-							        </tr>
-							        <tr>
-							            <td>Stato di Conservazione complessivo (2013 - 2018)</td>
-							            <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
-							            <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
-							            <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
-								    <td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
-							        </tr>
-							        <tr>
-							            <td>Trends (2013 - 2018)</td>
-							            <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'alp')" class="trend-image" /></span></div></td>
-							            <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'con')" class="trend-image" /></span></div></td>
-							            <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'med')" class="trend-image" /></span></div></td>
-								    <td><div><span><img v-bind:src="itemTrendStyle(habitatDetails, 'mmed')" class="trend-image" /></span></div></td>
-							        </tr>
-							    </tbody>
-							</table>
-						</div>
-					</div>
-					<div class="row">
+
 						<div class="col-md-10">
 							<div class="c-content-v-center c-info-species-head-theme-bg">
 							    <div class="c-wrapper">
@@ -275,24 +290,7 @@
 					        </div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<table class="table mimi-table-striped">
-							    <tbody>
-							        <tr>
-							            <td>4° Reporting</td>
-							            <td><a v-bind:href="habitatDetails.document" target="_blank" class="btn btn-files-link">Visualizza</a>
-													</td>
-							        </tr>
-							        <tr>
-							            <td>Monitoraggio</td>
-							            <td><a v-bind:href="habitatDetails.monitoring" target="_blank" class="btn btn-files-link">Visualizza</a>
-													</td>
-							        </tr>
-							    </tbody>
-							</table>
-                        			</div>
-					</div>
+
 					<div class="row">
 						<div class="col-md-12">
 							<span class="c-font-30">Legenda</span>
@@ -339,11 +337,6 @@
 						</div>
 					</div>
 
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4" v-if="dataAvailable">
-					<a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 				</div>
 			</div>
 		</div>

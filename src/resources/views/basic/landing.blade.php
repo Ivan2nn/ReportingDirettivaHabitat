@@ -78,7 +78,7 @@
                     </div>
                     <h2 class="c-font-bold">Specie</h2>
                     <p>Ricerca dati 4° report (2013-2018) per le specie animali e vegetali</p>
-                   {{-- <a href="" class="button-link">link text</a> --}}
+                   <a href="" class="button-link">Cerca</a>
                     <!-- <div class="c-content-feature-1 wow animate fadeInUp">
                         <div class="c-content-line-icon c-theme c-icon-screen-chart"></div>
                         <h3 class="c-font-uppercase c-font-bold">Fully responsive</h3>
@@ -93,7 +93,7 @@
                     </div>
                     <h2 class="c-font-bold">Habitat</h2>
                     <p>Ricerca dati 4° report (2013-2018) per gli habitat</p>
-                   {{--  <a href="" class="button-link">link text</a> --}}
+                    <a href="" class="button-link">Cerca</a>
                     <!-- <div class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.2s">
                         <div class="c-content-line-icon c-theme c-icon-support"></div>
                         <h3 class="c-font-uppercase c-font-bold">Visual & Pragmatic</h3>
