@@ -175,7 +175,7 @@ class HabitatController extends Controller
             $name = pathinfo($file, PATHINFO_FILENAME);
             $is_there = strpos(strtolower($name), (string)$selectedHabitat->habitat_code);
             if ($is_there === 0) {
-                $outputData['habitat']['document'] = 'public' . $habitat_cards_folder . $name . '.pdf';
+                $outputData['habitat']['document'] = $habitat_cards_folder . $name . '.pdf';
             }
         }
 
@@ -188,7 +188,7 @@ class HabitatController extends Controller
             $name = pathinfo($file, PATHINFO_FILENAME);
             $is_there = strpos(strtolower($name), (string)$selectedHabitat->habitat_code);
             if ($is_there === 0) {
-                $outputData['habitat']['monitoring'] = 'public' . $habitat_monitoring_folder . $name . '.pdf';
+                $outputData['habitat']['monitoring'] = $habitat_monitoring_folder . $name . '.pdf';
             }
         }
         

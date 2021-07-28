@@ -208,14 +208,14 @@
 								<td>@{{ habitatDetails.habitat_presence_mmed }}</td>
 							</tr> 
 							<tr>
-								<td>Stato di Conservazione complessivo (2007- 2012)</td>
+								<td>Stato di Conservazione complessivo (2013- 2018)</td>
 							    <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
 							    <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
 							    <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
 								<td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
 							</tr>
 							<tr>
-					            <td>Trends (2007 - 2012)</td>
+					            <td>Trends (2013 - 2018)</td>
 					            <td>
 					            	<div>
 					            		<span>

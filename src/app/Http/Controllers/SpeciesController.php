@@ -218,7 +218,7 @@ class SpeciesController extends Controller
             $name = pathinfo($file, PATHINFO_FILENAME);
             $is_there = strpos(strtolower($name), (string)$selectedSpecies->species_code);
             if ($is_there === 0) {
-                $outputData['species']['document'] = 'public' . $species_cards_folder . $name . '.pdf';
+                $outputData['species']['document'] = $species_cards_folder . $name . '.pdf';
             }
         }
 
@@ -231,7 +231,7 @@ class SpeciesController extends Controller
             $name = pathinfo($file, PATHINFO_FILENAME);
             $is_there = strpos(strtolower($name), (string)$selectedSpecies->species_code);
             if ($is_there === 0) {
-                $outputData['species']['monitoring'] = 'public' . $species_monitoring_folder . $name . '.pdf';
+                $outputData['species']['monitoring'] = $species_monitoring_folder . $name . '.pdf';
             }
         }
 

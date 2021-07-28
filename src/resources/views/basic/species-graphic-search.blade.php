@@ -233,7 +233,7 @@
 		    				<td>@{{ speciesDetails.species_presence_mmed }}</td>
 	                    </tr>
 	                    <tr>
-                            <td>Stato di Conservazione complessivo (2007- 2012)</td>
+                            <td>Stato di Conservazione complessivo (2013- 2018)</td>
                             <td>
                             	<div :class="itemStatusStyle(speciesDetails, 'alp')"></div>
                             </td>
@@ -248,7 +248,7 @@
 		    				</td>
 	                    </tr>
 	                    <tr>
-	                        <td>Trend (2007 - 2012)</td>
+	                        <td>Trend (20013 - 2018)</td>
 	                        <td>
 	                        	<div>
 	                        		<span>
