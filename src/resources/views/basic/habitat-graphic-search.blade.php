@@ -188,73 +188,81 @@
 							</tr> 
 						</tbody>
 					</table>
-
-					<table class="table table-striped c-margin-b-50"> 
-						<thead class="bg-light-mint" style="background-color: #C8EDE2;"> 
-							<tr> 
-								<th>Regioni Biogeografiche</th> 
-								<th>ALP</th> 
-								<th>CON</th> 
-								<th>MED</th> 
-								<th>MMED</th>   
-							</tr> 
-						</thead> 
-						<tbody> 
-							<tr> 
-								<td>Presenza</td>
-                            	<td>@{{ habitatDetails.habitat_presence_alp }}</td>
-							    <td>@{{ habitatDetails.habitat_presence_con }}</td>
-							    <td>@{{ habitatDetails.habitat_presence_med }}</td>
-								<td>@{{ habitatDetails.habitat_presence_mmed }}</td>
-							</tr> 
-							<tr>
-								<td>Stato di Conservazione complessivo (2013- 2018)</td>
-							    <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
-							    <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
-							    <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
-								<td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
-							</tr>
-							<tr>
-					            <td>Trends (2013 - 2018)</td>
-					            <td>
-					            	<div>
-					            		<span>
-					            			<img v-bind:src="itemTrendStyle(habitatDetails, 'alp')" class="trend-image" />
-					            		</span>
-					            	</div>
-					            </td>
-					            <td>
-					            	<div>
-					            		<span>
-					            			<img v-bind:src="itemTrendStyle(habitatDetails, 'con')" class="trend-image" />
-					            		</span>
-					            	</div>
-					            </td>
-					            <td>
-					            	<div>
-					            		<span>
-					            			<img v-bind:src="itemTrendStyle(habitatDetails, 'med')" class="trend-image" />
-					            		</span>
-					            	</div>
-					            </td>
-						    	<td>
-						    		<div>
-						    			<span>
-						    				<img v-bind:src="itemTrendStyle(habitatDetails, 'mmed')" class="trend-image" />
-						    			</span>
-						    		</div>
-						    	</td>
-							</tr>
-						</tbody>
-					</table>
-
-
 				</div>
 
-			</div>
-			<!-- New Data Table ends -->
+				<table class="table table-striped c-margin-b-50"> 
+					<thead class="bg-light-mint" style="background-color: #C8EDE2;"> 
+						<tr> 
+							<th>Regioni Biogeografiche</th> 
+							<th>ALP</th> 
+							<th>CON</th> 
+							<th>MED</th> 
+							<th>MMED</th>   
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr> 
+							<td>Presenza</td>
+                        	<td>@{{ habitatDetails.habitat_presence_alp }}</td>
+						    <td>@{{ habitatDetails.habitat_presence_con }}</td>
+						    <td>@{{ habitatDetails.habitat_presence_med }}</td>
+							<td>@{{ habitatDetails.habitat_presence_mmed }}</td>
+						</tr> 
+						<tr>
+							<td>Stato di Conservazione complessivo (2013- 2018)</td>
+						    <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
+						    <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
+						    <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
+							<td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
+						</tr>
+						<tr>
+				            <td>Trends (2013 - 2018)</td>
+				            <td>
+				            	<div>
+				            		<span>
+				            			<img v-bind:src="itemTrendStyle(habitatDetails, 'alp')" class="trend-image" />
+				            		</span>
+				            	</div>
+				            </td>
+				            <td>
+				            	<div>
+				            		<span>
+				            			<img v-bind:src="itemTrendStyle(habitatDetails, 'con')" class="trend-image" />
+				            		</span>
+				            	</div>
+				            </td>
+				            <td>
+				            	<div>
+				            		<span>
+				            			<img v-bind:src="itemTrendStyle(habitatDetails, 'med')" class="trend-image" />
+				            		</span>
+				            	</div>
+				            </td>
+					    	<td>
+					    		<div>
+					    			<span>
+					    				<img v-bind:src="itemTrendStyle(habitatDetails, 'mmed')" class="trend-image" />
+					    			</span>
+					    		</div>
+					    	</td>
+						</tr>
+					</tbody>
+				</table>
 
-			<div class="row">
+				<table class="table table-striped c-margin-b-50"> 
+					<thead> 
+						<tr> 
+							<th>Modifiche nomenclaturali</th>  
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr> 
+							<th style="font-weight: normal;">@{{{ habitatDetails.modified }}}</th>
+						</tr> 
+					</tbody>
+				</table>
+
+				<div class="row">
 					<div class="row c-margin-b-30">
 						<h2 class="c-font-bold" style="margin-left:45px;">Legenda</h2>
 					</div>
@@ -301,33 +309,11 @@
 					</div>
 				</div>
 
+			</div><!-- New Data Table container ends -->
 
-
-			<div class="row">
-				<div class="col-md-9"> 
-					<div class="row">
-
-						<div class="col-md-10">
-							<div class="c-content-v-center c-info-species-head-theme-bg">
-							    <div class="c-wrapper">
-							        <div class="c-body c-padding-8">
-							            <h3 class="c-font-19 c-line-height-18 c-font-white c-font-bold">Modifiche nomenclaturali</h3>
-							        </div>
-							    </div>
-							</div>
-							<div class="c-content-v-center c-info-species-body-theme-bg">
-							    <div class="c-wrapper c-margin-bottom-10">
-							        <div class="c-body c-padding-8">
-							            <h4 class="c-font-18 c-line-height-20 c-font-black c-font-thin">@{{{ habitatDetails.modified }}}</h4>
-							        </div>
-							    </div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-			</div>
 		</div>
+			
+	</div>
 	
 		<template id="habitat-names-template">
 		    <ul class="list-group">      
@@ -353,7 +339,6 @@
 	            </li>
 	        </ul>
 	    </template>
-	</div>
 </div>
 
 @endsection
