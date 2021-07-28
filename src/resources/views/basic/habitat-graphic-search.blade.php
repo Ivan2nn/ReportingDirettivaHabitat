@@ -146,6 +146,14 @@
 	            </div>
 			</div>
 		</div>
+		<div class="row" v-if="dataAvailable">
+			<div class="col-sm-8 download-schede">
+		    	<h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
+		        <a class="c-font-bold text-link" v-bind:href="habitatDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
+	            <a class="c-font-bold text-link" v-bind:href="habitatDetails.monitoring" target="_blank" class="">Monitoraggio</a>
+			</div>
+		</div>
+
 		<div class="bg-light-grey animated bounceInRight" v-if="dataAvailable">
 
 			<!-- New Data Table -->
@@ -281,24 +289,7 @@
 					        </div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<table class="table mimi-table-striped">
-							    <tbody>
-							        <tr>
-							            <td>3° Reporting</td>
-							            <td><a v-bind:href="habitatDetails.document" target="_blank" class="btn btn-files-link">Visualizza</a>
-													</td>
-							        </tr>
-							        <tr>
-							            <td>Monitoraggio</td>
-							            <td><a v-bind:href="habitatDetails.monitoring" target="_blank" class="btn btn-files-link">Visualizza</a>
-													</td>
-							        </tr>
-							    </tbody>
-							</table>
-                        			</div>
-					</div>
+			
 					<div class="row">
 						<div class="col-md-12">
 							<span class="c-font-30">Legenda</span>
@@ -345,11 +336,6 @@
 						</div>
 					</div>
 
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4" v-if="dataAvailable">
-					<a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 				</div>
 			</div>
 		</div>
