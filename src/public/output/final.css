@@ -30188,9 +30188,9 @@ a {
   padding-left: 0px;
 }
 .mimi-legenda-block {
-  width: 20px;
-  height: 10px;
-  margin-right: 4px;
+  width: 15px;
+  height: 15px;
+  margin-right: 6px;
   background-color: black;
   display: inline-block;
 }
@@ -30222,12 +30222,13 @@ a {
   /* height: 25px; */
   line-height: 25px;
 }
-.c-works li.mimi-legenda ul li img {
+ul li img {
   vertical-align: middle;
   width: 20px;
   height: auto;
   margin-right: 4px;
 }
+
 .c-works li.mimi-legenda-advanced {
   list-style: none;
   display: inline-block;
@@ -30246,6 +30247,7 @@ a {
   height: auto;
   margin-right: 4px;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -30415,6 +30417,16 @@ p {
 
 /* New data table styles */
 
+h4 {
+    text-transform: none!important;
+}
+
+@media (max-width: 844px) {
+   .h4m {
+        margin-top: 20px;
+    }
+}
+
 .bg-light-mint {
     background-color: #C8EDE2;
 }
@@ -30459,7 +30471,6 @@ p {
     margin-top: -118px;
     }
 }
-
 
 
 @media (max-width: 1092px) {

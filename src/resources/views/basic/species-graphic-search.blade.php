@@ -281,60 +281,67 @@
 	                </tbody>    
 				</table>
 
+				<table class="table table-striped c-margin-b-50"> 
+					<thead> 
+						<tr> 
+							<th>Modifiche nomenclaturali e/o tassonomiche</th>  
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr> 
+							<th style="font-weight: normal;">@{{{ speciesDetails.modified }}}</th>
+						</tr> 
+					</tbody>
+				</table>
 
 
-				<div class="col-md-3">
-					<div class="row">
-						<div class="col-md-12">
-							<span class="c-font-30">Legenda</span>
+				<div class="row">
+					<div class="row c-margin-b-30">
+						<h2 class="c-font-bold" style="margin-left:45px;">Legenda</h2>
+					</div>
+					<div class="row c-margin-b-40" style="margin-left: 14px;">
+						<div class="col-sm-3">
+							<h4 class="c-margin-b-20">Regioni Biogeografiche</h4>
+							<ul class="list-unstyled">
+								<li><span class="c-font-bold">MED</span> = Mediterranea</li>
+								<li><span class="c-font-bold">CON</span> = Continentale</li>
+								<li><span class="c-font-bold">ALP</span> = Alpina</li>
+								<li><span class="c-font-bold">MMED</span> = Marina Mediterranea</li>
+							</ul>			
 						</div>
-						<div class="col-md-12">
-							<ul class="c-works">
-                				<li class="c-first mimi-legenda">
-									<h4 class="c-font-black">Regioni Biogeografiche</h4>
-									<ul class="c-legenda">
-										<li><span class="c-font-bold">MED</span> = Mediterranea</li>
-										<li><span class="c-font-bold">CON</span> = Continentale</li>
-										<li><span class="c-font-bold">ALP</span> = Alpina</li>
-										<li><span class="c-font-bold">MMED</span> = Marina Mediterranea</li>
-									</ul>										
-                				</li>
-                				
-                				<li class="mimi-legenda">
-									<h4 class="c-font-black">Presenza</h4>
-									<ul class="c-legenda">
-										<li><span class="c-font-bold">PRE</span> = Presente</li>
-										<li><span class="c-font-bold">OCC</span> = Occasionale</li>
-										<li><span class="c-font-bold">MAR</span> = Marginale</li>
-										<li><span class="c-font-bold">TAX</span> = Tassonomia non definita</li>
-										<li><span class="c-font-bold">EXa</span> = Estinta dopo l'entrata in vigore della DH</li>
-										<li><span class="c-font-bold">EXp</span> = Estinta prima dell'entrata in vigore della DH</li>
-										<li><span class="c-font-bold">NP</span> = Non Presente</li>
-									</ul>																			
-                				</li>
-						<li class="mimi-legenda">
-									<h4 class="c-font-black">Stato di Conservazione</h4>
-									<ul class="c-legenda">
-										<li><div class="mimi-legenda-block legenda-green"></div>Favorevole</li>
-										<li><div class="mimi-legenda-block legenda-yellow"></div>Inadeguato</li>
-										<li><div class="mimi-legenda-block legenda-red"></div>Cattivo</li>
-										<li><div class="mimi-legenda-block legenda-grey"></div>Sconosciuto</li>
-									</ul>																			
-                				</li>
-                				<li class="c-last mimi-legenda">
-									<h4 class="c-font-black">Trend</h4>
-									<ul class="c-legenda">
-										<li><img src="{!! asset('images/green_up.png') !!}" />In miglioramento</li>
-										<li><img src="{!! asset('images/yellow_stable.png') !!}" />Stabile</li>
-										<li><img src="{!! asset('images/red_down.png') !!}" />In peggioramento</li>
-										<li><img src="{!! asset('images/grey_null.png') !!}" />Sconosciuto</li>
-									</ul>										
-                				</li>
-                			</ul>
+						<div class="col-sm-3">
+							<h4 class="c-margin-b-20 h4m">Presenza</h4>
+							<ul class="list-unstyled">
+								<li><span class="c-font-bold">PRE</span> = Presente</li>
+								<li><span class="c-font-bold">OCC</span> = Occasionale</li>
+								<li><span class="c-font-bold">MAR</span> = Marginale</li>
+								<li><span class="c-font-bold">TAX</span> = Tassonomia non definita</li>
+								<li><span class="c-font-bold">EXa</span> = Estinta dopo l'entrata in vigore della DH</li>
+								<li><span class="c-font-bold">EXp</span> = Estinta prima dell'entrata in vigore della DH</li>
+								<li><span class="c-font-bold">NP</span> = Non Presente</li>
+							</ul>	
+						</div>
+						<div class="col-sm-3">
+							<h4 class="c-margin-b-20 h4m">Stato di Conservazione</h4>
+							<ul class="list-unstyled">
+								<li><div class="mimi-legenda-block legenda-green"></div>Favorevole</li>
+								<li><div class="mimi-legenda-block legenda-yellow"></div>Inadeguato</li>
+								<li><div class="mimi-legenda-block legenda-red"></div>Cattivo</li>
+								<li><div class="mimi-legenda-block legenda-grey"></div>Sconosciuto</li>
+							</ul>	
+						</div>
+						<div class="col-sm-3">
+							<h4 class="c-margin-b-20 h4m">Trend</h4>
+							<ul class="list-unstyled">
+								<li><img src="{!! asset('images/green_up.png') !!}" />In miglioramento</li>
+								<li><img src="{!! asset('images/yellow_stable.png') !!}" />Stabile</li>
+								<li><img src="{!! asset('images/red_down.png') !!}" />In peggioramento</li>
+								<li><img src="{!! asset('images/grey_null.png') !!}" />Sconosciuto</li>
+							</ul>	
 						</div>
 					</div>
-
 				</div>
+
 			</div>
 		</div>
 		
