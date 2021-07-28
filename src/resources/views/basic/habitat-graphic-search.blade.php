@@ -150,11 +150,13 @@
 			<!-- New Data Table -->
 			<div class="container">
 				<div class="row">
-                	<div class="col-md-6 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
-                    	<div class="col-sm-12">
-            				<h2 class="c-font-uppercase c-font-bold c-font-26 c-margin-b-20">Scheda della @{{ habitatDetails.habitat_name }}</h2>
-						</div>
+                	<div class="row c-margin-t-40 c-margin-b-30">
+        				<h2 class="c-font-bold pull-left" style="margin-left:30px;">Scheda dell' Habitat</h2>
+        				<a href="#" style="margin-left:15px;" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 					</div>
+				</div>
+				<div class="visible-xs">
+					<a href="#" style="margin-left:15px;" class="button-link" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 				</div>
 
 			</div>
