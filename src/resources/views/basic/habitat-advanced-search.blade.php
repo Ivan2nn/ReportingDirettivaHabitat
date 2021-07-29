@@ -187,12 +187,6 @@
     <div class="row">
       <multi-habitat-info-cell :list="habitatDetails"></multi-habitat-info-cell>
     </div>
-    <div class="row">
-      <div class="col-md-4" v-if="dataAvailable">
-       <a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
-      </div>
-    </div>
-
 
     
   </div> <!-- end of 2. container -->
