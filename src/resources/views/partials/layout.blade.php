@@ -171,13 +171,13 @@
                             <h4>Specie</h4>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="#" class="">Ricerca base</a>  
+                                    <a href="/species-basic-search" class="">Ricerca base</a>  
                                 </li>
                                  <li>
-                                    <a href="#" class="">Ricerca avanzata</a>  
+                                    <a href="/species-advanced-search" class="">Ricerca avanzata</a>  
                                 </li>
                                 <li>
-                                    <a href="#" class="">Ricerca cartografica</a>  
+                                    <a href="/species-cellcodes-search" class="">Ricerca cartografica</a>  
                                 </li>
                             </ul>
                         </div>
@@ -185,13 +185,13 @@
                             <h4>Habitat</h4>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="#" class="">Ricerca base</a>  
+                                    <a href="/habitat-basic-search" class="">Ricerca base</a>  
                                 </li>
                                  <li>
-                                    <a href="#" class="">Ricerca avanzata</a>  
+                                    <a href="/habitat-advanced-search" class="">Ricerca avanzata</a>  
                                 </li>
                                 <li>
-                                    <a href="#" class="">Ricerca cartografica</a>  
+                                    <a href="/habitat-cellcodes-search" class="">Ricerca cartografica</a>  
                                 </li>
                             </ul>
                         </div>
@@ -201,13 +201,13 @@
                                      <a href="#" class="">III Report</a>
                                 </li>
                                  <li>
-                                     <a href="#" class="">Piano di monitoraggio</a> 
+                                     <a href="/piano-di-monitoraggio" class="">Piano di monitoraggio</a> 
                                 </li>
                                 <li>
-                                     <a href="#" class="">Download</a>  
+                                     <a href="/downloads" class="">Download</a>  
                                 </li>
                                  <li>
-                                     <a href="#" class="">Links</a>
+                                     <a href="/links" class="">Links</a>
                                 </li>
                             </ul>
                         </div>
