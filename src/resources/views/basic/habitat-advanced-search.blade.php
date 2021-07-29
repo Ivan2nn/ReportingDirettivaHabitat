@@ -4,8 +4,8 @@
 
 <div class="c-content-box c-size-md c-bg-white">
   <div class="container">
-    <div class="row" style="padding-left: 15px;">
 
+    <div class="row" style="padding-left: 15px;">
 
       <div class="row c-margin-b-40">
         <div class="col-md-5">
@@ -26,8 +26,9 @@
               </div>
             </div>
           </div>
-       </div>   
-          <div class="ibox-content col-sm-12">
+      </div>   
+
+      <div class="ibox-content col-sm-12">
         <form method="GET" @submit.prevent="searchHabitatsFromSelections">
             {!! csrf_field() !!}
               <div class="row">
@@ -78,39 +79,6 @@
           		              <input class="js-switch-mmed" type="checkbox" checked />
           		              
           		            </div>
-                          <!--<div class="col-sm-12">
-                            <h2>ND</h2>
-                            <input class="js-switch-nd" type="checkbox" />
-                          </div>-->
-                          <!-- <div class="col-sm-12 c-margin-t-20">
-                              <div class="wrapper">
-                                <div class="c-body">
-                                  <div class="c-radio-inline">
-                                    <div class="c-radio">
-                                        <input id="radio4-112" class="c-radio" checked="" name="radios_biogr" value="OR" type="radio">
-                                        <label for="radio4-112">
-                                            <span></span>
-                                            <span class="check"></span>
-                                            <span class="box"></span>OR</label>
-                                    </div>
-                                    <div class="c-radio">
-                                        <input id="radio3-112" class="c-radio" name="radios_biogr" value="OR-FE" type="radio">
-                                        <label for="radio3-112">
-                                            <span></span>
-                                            <span class="check"></span>
-                                            <span class="box"></span>OR (Falsi esclusi)</label>
-                                    </div>
-                                    <div class="c-radio">
-                                        <input id="radio5-112" class="c-radio" name="radios_biogr" value="AND" type="radio">
-                                        <label for="radio5-112">
-                                            <span></span>
-                                            <span class="check"></span>
-                                            <span class="box"></span>AND</label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>-->
 
                           </div><!-- ENDoF PANELbODY -->
                         </div><!-- END OF pANEL -->
@@ -159,33 +127,33 @@
                   </div>  
                 </div>
               </div>
-            </form>
+        </form>
 
-          </div><!-- end of ibox -->
+      </div><!-- end of ibox -->
+    </div> <!-- end of row -->
+  </div>
 
-        </div>
-      
-    
 
-	<div class="row" v-if="dataAvailable">
-		<div class="col-md-5 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
+<div class="bg-light-grey">
+  <div class="container">
+        <div class="row" v-if="dataAvailable">
+      <div class="col-md-5 c-margin-b-30">
         <div class="col-sm-12">
           <h2 class="c-font-uppercase c-font-bold c-font-26 c-margin-b-20">Numero di Habitat filtrati: @{{ habitatDetails.length }}</h2>
         </div>
       </div>
-      <div class="col-md-7 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
-                  
-                <ul class="c-works pull-right">
-                  <li class="c-first mimi-legenda-advanced">
+      <div class="col-md-7 c-margin-b-30">
+        <ul class="c-works pull-right">
+          <li class="c-first mimi-legenda-advanced">
             <h4 class="c-font-black">Regioni Biogeografiche</h4>
             <ul class="c-legenda">
               <li>MED = Mediterranea</li>
               <li>CON = Continentale</li>
               <li>ALP = Alpina</li>
-	      <li>MMED = Marina Mediterranea</li>
+              <li>MMED = Marina Mediterranea</li>
             </ul>                   
-                  </li>
-                  <li class="mimi-legenda-advanced">
+          </li>
+          <li class="mimi-legenda-advanced">
             <h4 class="c-font-black">Stato di Conservazione</h4>
             <ul class="c-legenda">
               <li><div class="mimi-legenda-block legenda-green"></div>Favorevole</li>
@@ -193,8 +161,8 @@
               <li><div class="mimi-legenda-block legenda-red"></div>Cattivo</li>
               <li><div class="mimi-legenda-block legenda-grey"></div>Sconosciuto</li>
             </ul>                                     
-                  </li>
-                  <li class="c-last mimi-legenda-advanced" style="margin-right: 0">
+          </li>
+          <li class="c-last mimi-legenda-advanced" style="margin-right: 0">
             <h4 class="c-font-black">Trend</h4>
             <ul class="c-legenda">
               <li><img src="{!! asset('images/green_up.png') !!}" />In miglioramento</li>
@@ -202,24 +170,31 @@
               <li><img src="{!! asset('images/red_down.png') !!}" />In peggioramento</li>
               <li><img src="{!! asset('images/grey_null.png') !!}" />Sconosciuto</li>
             </ul>                   
-                  </li>
-                </ul>
-     
+          </li>
+        </ul>
+      </div>
     </div>
-	</div>
-  	<div class="row">
-  		<multi-habitat-info-cell :list="habitatDetails"></multi-habitat-info-cell>
-  	</div>
-  	<div class="row">
-  	      <div class="col-md-4" v-if="dataAvailable">
-  		<a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
-  	      </div>
-  	    </div>
-  </div>
+
+    <div class="row">
+      <multi-habitat-info-cell :list="habitatDetails"></multi-habitat-info-cell>
+    </div>
+    <div class="row">
+      <div class="col-md-4" v-if="dataAvailable">
+       <a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+      </div>
+    </div>
+
+
+    
+  </div> <!-- end of 2. container -->
 </div>
 
-</div>
-</div>
+</div> <!-- end of c-content-box -->
+
+
+
+
+
 
 <template id="habitat-template">
     <ul class="list-group">      
