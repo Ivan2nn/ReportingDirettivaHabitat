@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="c-content-box c-size-md c-bg-white">
-    <div class="container">
+    <div class="">
+    	<div class="container">
 		<div class="row">
 			<!-- <h1 style="padding: 20px 5px; background-color: #99ccff;">Al momento il sito riporta informazioni riferite a specie e habitat terrestri e di acqua dolce.<br>
 			I dati relativi a specie e habitat marini sono in corso di inserimento</h1> -->
@@ -153,8 +154,12 @@
 	            <a class="c-font-bold text-link" v-bind:href="habitatDetails.monitoring" target="_blank" class="">Monitoraggio</a>
 			</div>
 		</div>
+	</div> <!-- 1. container ends -->
+	</div>
 
-		<div class="bg-light-grey animated bounceInRight" v-if="dataAvailable">
+
+	<div class="bg-light-grey"> <!-- data container starts -->
+		<div class="animated bounceInRight" v-if="dataAvailable">
 
 			<!-- New Data Table -->
 			<div class="container">
@@ -310,9 +315,8 @@
 				</div>
 
 			</div><!-- New Data Table container ends -->
-
 		</div>
-			
+		
 	</div>
 	
 		<template id="habitat-names-template">
