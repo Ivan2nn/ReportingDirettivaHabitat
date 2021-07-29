@@ -59,27 +59,16 @@
       </div>
     </div>
 
-	<div class="row" v-if="dataAvailable">
-		<div class="col-md-5 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
-        <div class="col-sm-12">
-          <h2 class="c-font-uppercase c-font-bold c-font-26 c-margin-b-20">Numero di Specie filtrate nella cella @{{ selectedCell }} : @{{ speciesDetails.length }}</h2>
-        </div>
-      </div>
-	</div>
-
-    <div class="row">
-      <multi-species-info-cell :list="speciesDetails"></multi-species-info-cell>
-    </div>
-	<div class="row">
-	      <div class="col-md-4" v-if="dataAvailable">
-		<a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
-      </div>
-    </div>
   </div>
 </div>
 
+
+
+
 <div class="bg-light-grey">
   <div class="container">
+
+
     <div class="row c-margin-t-40 c-margin-b-40">
         <div class="c-margin-b-30">
           <h2 class="c-font-bold" style="margin-left: 20px">Legenda</h2>
@@ -128,8 +117,24 @@
         </div>
       </div>
 
+      <div class="row c-margin-t-40" v-if="dataAvailable">
+      <div class="col-md-6 c-margin-b-30">
+        <div class="col-sm-12">
+          <h2 class="c-font-bold c-margin-b-20">Numero di Specie filtrate nella cella @{{ selectedCell }} : @{{ speciesDetails.length }}</h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <a href="#" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+        <a href="#" class="button-link pull-left visible-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+      </div>
+    </div>
 
-  </div>
+    <div class="row">
+      <multi-species-info-cell :list="speciesDetails"></multi-species-info-cell>
+    </div>
+
+
+  </div> <!-- end of the 2. container -->
 </div>
 
 
