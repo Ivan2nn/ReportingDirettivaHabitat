@@ -163,47 +163,13 @@
 
 
 	        <div class="row" v-if="dataAvailable">
-		        <div class="col-md-6 c-margin-b-30 wow animate fadeInDown" style="opacity: 1; visibility: visible; animation-name: fadeInDown;">
+		        <div class="col-md-6 c-margin-b-30">
 		          <div class="col-sm-12">
-		            <h2 class="c-font-uppercase c-font-bold c-font-26 c-margin-b-20">Numero di Specie filtrate: @{{ speciesDetails.length }}</h2>
+		            <h2 class="c-font-bold c-margin-b-20">Numero di Specie filtrate: @{{ speciesDetails.length }}</h2>
 		          </div>
 	          </div>
-
-            <div class="col-md-6 c-margin-b-30 wow">
-              <div class="col-sm-12">
-                <ul class="c-works pull-right">
-                  <li class="c-first mimi-legenda-advanced">
-                    <h4 class="c-font-black">Regioni Biogeografiche</h4>
-                    <ul class="c-legenda">
-                      <li>MED = Mediterranea</li>
-                      <li>CON = Continentale</li>
-                      <li>ALP = Alpina</li>
-	                    <li>MMED = Marina Mediterranea</li>	
-                    </ul>                   
-                  </li>
-                  <li class="mimi-legenda-advanced">
-                    <h4 class="c-font-black">Stato di Conservazione</h4>
-                      <ul class="c-legenda">
-                        <li><div class="mimi-legenda-block legenda-green"></div>Favorevole</li>
-                        <li><div class="mimi-legenda-block legenda-yellow"></div>Inadeguato</li>
-                        <li><div class="mimi-legenda-block legenda-red"></div>Cattivo</li>
-                        <li><div class="mimi-legenda-block legenda-grey"></div>Sconosciuto</li>
-                      </ul>                                     
-                  </li>
-                  <li class="c-last mimi-legenda-advanced" style="margin-right: 0">
-                    <h4 class="c-font-black">Trend</h4>
-                    <ul class="c-legenda">
-                      <li><img src="{!! asset('images/green_up.png') !!}" />In miglioramento</li>
-                      <li><img src="{!! asset('images/yellow_stable.png') !!}" />Stabile</li>
-                      <li><img src="{!! asset('images/red_down.png') !!}" />In peggioramento</li>
-                      <li><img src="{!! asset('images/grey_null.png') !!}" />Sconosciuto</li>
-                    </ul>                   
-                  </li>
-                </ul>
-              </div>
-            </div>
-
 	        </div>
+
         </div>
 
 	      <div class="row">
@@ -211,6 +177,7 @@
       	      <multi-species-info-cell :list="speciesDetails"></multi-species-info-cell>
       		</div>
 	      </div>
+
 		    <div class="row">
 		      <div class="col-md-4" v-if="dataAvailable">
 			      <a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
