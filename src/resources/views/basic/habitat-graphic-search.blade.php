@@ -2,22 +2,25 @@
 
 @section('content')
 <div class="c-content-box c-size-md c-bg-white">
-    <div class="">
-    	<div class="container">
+   
+    <div class="container">
 		<div class="row">
 			<!-- <h1 style="padding: 20px 5px; background-color: #99ccff;">Al momento il sito riporta informazioni riferite a specie e habitat terrestri e di acqua dolce.<br>
 			I dati relativi a specie e habitat marini sono in corso di inserimento</h1> -->
 		</div>
-		<div class="row">
-			<div class="row" style="padding-left: 15px; padding-right: 15px;">
-			<div class="row c-margin-b-40" style="padding-left: 15px;">
-				<div class="col-md-5">
+
+	
+		<div class="row c-margin-b-40">
+			<div class="col-md-5">
 				<h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Habitat</h1>
 				<p>Ricerca dati 4° report (2013-2018) per gli habitat</p>
 			</div>
 		</div>
+
+
+		<div class="row">
 			<div class="col-md-5">
-				{{-- <div class="ibox float-e-margins">
+		   {{-- <div class="ibox float-e-margins">
 		            <div class="ibox-title">
 		            	<div class="row">
 		            		<div class="col-sm-8">
@@ -53,6 +56,7 @@
 					 	</div>
 		            </div>
 		        </div>
+
 	            <div class="ibox float-e-margins i-box-mimi">
 		            <div class="ibox-title">
 		                <div class="row">
@@ -66,21 +70,21 @@
 		            </div>
 		            <div class="ibox-content">
 		                <form method="GET" action="/api/habitat/" v-ajax>
-			            {!! csrf_field() !!}
-			            <div class="row">
-							<div class="col-sm-8">
-								<input type="text"
-								class="form-control input-lg input-font-mimi-normal"
-				                v-model="queryCode"
-				                v-on:keyup="searchCodes"
-				                v-on:click="resetQueries"
-						:disabled="loadingCodes || loadingNames"
-				            	>
-			            	</div>
-			            	<div class="col-sm-4">
-			            		<button type="submit" class="button-link btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes">Cerca</button>
-			            	</div>
-						</div>	
+			            	{!! csrf_field() !!}
+			            	<div class="row">
+								<div class="col-sm-8">
+									<input type="text"
+									class="form-control input-lg input-font-mimi-normal"
+				                	v-model="queryCode"
+				                	v-on:keyup="searchCodes"
+				                	v-on:click="resetQueries"
+									:disabled="loadingCodes || loadingNames"
+				            		>
+			            		</div>
+				            	<div class="col-sm-4">
+				            		<button type="submit" class="button-link btn btn-primary btn-lg pull-right" v-show="searchingCodes" :disabled="loadingCodes">Cerca</button>
+				            	</div>
+							</div>	
 						</form>
 						<div class="row" v-if="!isSearching">
 							<div class="col-sm-8">
@@ -88,7 +92,9 @@
 				 			</div>
 				 		</div>
 		            </div>
+
 		        </div> --}}
+
 				<div class="ibox float-e-margins">
 		            <div class="ibox-title">
 		            	<div class="row">
@@ -102,7 +108,7 @@
 		            </div>
 		            <div class="ibox-content">
 		                <form method="GET" action="/api/habitat/" v-ajax>
-					            {!! csrf_field() !!}
+					        {!! csrf_field() !!}
 	    	            	<div class="row">	
 					            <div class="col-sm-8">
 									<input type="text"
@@ -118,18 +124,22 @@
 					            </div>
 			            	</div>
 						</form>
+
 						<div class="row" v-if="!isSearching">
 							<div class="col-sm-8">
 					 			<habitat-names-codes :list="searchedNamesCodes"></habitat-names-codes>
 					 		</div>
 					 	</div>
+
 		            </div>
+
 		        </div>
 
 		        @if ($habitat)
 	            	<input type="hidden" v-model="outCode = '{!! $habitat->habitat_code !!}'">
 	            	<input type="hidden" v-model="outHabitatName = '{!! $habitat->habitat_name !!}'">
 	            @endif
+
 		    </div>
 
 			<div class="col-md-7">
@@ -146,178 +156,179 @@
 	            	</div>
 	            </div>
 			</div>
-		</div>
-		<div class="row" v-if="dataAvailable">
-			<div class="col-sm-8 download-schede">
-		    	<h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
-		        <a class="c-font-bold text-link" v-bind:href="habitatDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
-	            <a class="c-font-bold text-link" v-bind:href="habitatDetails.monitoring" target="_blank" class="">Monitoraggio</a>
-			</div>
-		</div>
-	</div> <!-- 1. container ends -->
-	</div>
 
-
-	<div class="bg-light-grey"> <!-- data container starts -->
-		<div class="animated bounceInRight" v-if="dataAvailable">
-
-			<!-- New Data Table -->
-			<div class="container">
-				<div class="row">
-                	<div class="row c-margin-t-40 c-margin-b-30">
-        				<h2 class="c-font-bold pull-left" style="margin-left:30px; max-width: 60%;">Scheda della @{{ habitatDetails.habitat_name }}</h2>
-        				<a href="#" style="margin-left:15px;" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
-					</div>
-				</div>
-				<div class="visible-xs">
-					<a href="#" style="margin-left:15px;" class="button-link" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
-				</div>
-
-				<div style="overflow-x:auto;">
-					<table class="table table-striped c-margin-b-50"> 
-						<thead> 
-							<tr> 
-								<th>Codice</th> 
-								<th>Macrocategorie</th> 
-								<th>Hb. Prioritario</th>  
-							</tr> 
-						</thead> 
-						<tbody> 
-							<tr> 
-								<th style="font-weight: normal;">@{{ habitatDetails.habitat_code }}</th>
-								<td>@{{ habitatDetails.macrocategory }}</td>  
-								<td>
-									<span v-if="habitatDetails.habitat_priority">SI</span>
-									<span v-else>No</span>
-								</td> 
-							</tr> 
-						</tbody>
-					</table>
-				</div>
-
-				<table class="table table-striped c-margin-b-50"> 
-					<thead class="bg-light-mint" style="background-color: #C8EDE2;"> 
-						<tr> 
-							<th>Regioni Biogeografiche</th> 
-							<th>ALP</th> 
-							<th>CON</th> 
-							<th>MED</th> 
-							<th>MMED</th>   
-						</tr> 
-					</thead> 
-					<tbody> 
-						<tr> 
-							<td>Presenza</td>
-                        	<td>@{{ habitatDetails.habitat_presence_alp }}</td>
-						    <td>@{{ habitatDetails.habitat_presence_con }}</td>
-						    <td>@{{ habitatDetails.habitat_presence_med }}</td>
-							<td>@{{ habitatDetails.habitat_presence_mmed }}</td>
-						</tr> 
-						<tr>
-							<td>Stato di Conservazione complessivo (2013- 2018)</td>
-						    <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
-						    <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
-						    <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
-							<td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
-						</tr>
-						<tr>
-				            <td>Trends (2013 - 2018)</td>
-				            <td>
-				            	<div>
-				            		<span>
-				            			<img v-bind:src="itemTrendStyle(habitatDetails, 'alp')" class="trend-image" />
-				            		</span>
-				            	</div>
-				            </td>
-				            <td>
-				            	<div>
-				            		<span>
-				            			<img v-bind:src="itemTrendStyle(habitatDetails, 'con')" class="trend-image" />
-				            		</span>
-				            	</div>
-				            </td>
-				            <td>
-				            	<div>
-				            		<span>
-				            			<img v-bind:src="itemTrendStyle(habitatDetails, 'med')" class="trend-image" />
-				            		</span>
-				            	</div>
-				            </td>
-					    	<td>
-					    		<div>
-					    			<span>
-					    				<img v-bind:src="itemTrendStyle(habitatDetails, 'mmed')" class="trend-image" />
-					    			</span>
-					    		</div>
-					    	</td>
-						</tr>
-					</tbody>
-				</table>
-
-				<table class="table table-striped c-margin-b-50"> 
-					<thead> 
-						<tr> 
-							<th>Modifiche nomenclaturali</th>  
-						</tr> 
-					</thead> 
-					<tbody> 
-						<tr> 
-							<th style="font-weight: normal;">@{{{ habitatDetails.modified }}}</th>
-						</tr> 
-					</tbody>
-				</table>
-
-				<div class="row">
-					<div class="row c-margin-b-30">
-						<h2 class="c-font-bold" style="margin-left:45px;">Legenda</h2>
-					</div>
-					<div class="row c-margin-b-40" style="margin-left: 14px;">
-						<div class="col-sm-3">
-							<h4 class="c-margin-b-20">Regioni Biogeografiche</h4>
-							<ul class="list-unstyled">
-								<li><span class="c-font-bold">MED</span> = Mediterranea</li>
-								<li><span class="c-font-bold">CON</span> = Continentale</li>
-								<li><span class="c-font-bold">ALP</span> = Alpina</li>
-								<li><span class="c-font-bold">MMED</span> = Marina Mediterranea</li>
-							</ul>			
-						</div>
-						<div class="col-sm-3">
-							<h4 class="c-margin-b-20 h4m">Presenza</h4>
-							<ul class="list-unstyled">
-								<li><span class="c-font-bold">PRE</span> = Presente</li>
-								<li><span class="c-font-bold">OCC</span> = Occasionale</li>
-								<li><span class="c-font-bold">MAR</span> = Marginale</li>
-								<li><span class="c-font-bold">TAX</span> = Tassonomia non definita</li>
-								<li><span class="c-font-bold">EXa</span> = Estinta dopo l'entrata in vigore della DH</li>
-								<li><span class="c-font-bold">EXp</span> = Estinta prima dell'entrata in vigore della DH</li>
-								<li><span class="c-font-bold">NP</span> = Non Presente</li>
-							</ul>	
-						</div>
-						<div class="col-sm-3">
-							<h4 class="c-margin-b-20 h4m">Stato di Conservazione</h4>
-							<ul class="list-unstyled">
-								<li><div class="mimi-legenda-block legenda-green"></div>Favorevole</li>
-								<li><div class="mimi-legenda-block legenda-yellow"></div>Inadeguato</li>
-								<li><div class="mimi-legenda-block legenda-red"></div>Cattivo</li>
-								<li><div class="mimi-legenda-block legenda-grey"></div>Sconosciuto</li>
-							</ul>	
-						</div>
-						<div class="col-sm-3">
-							<h4 class="c-margin-b-20 h4m">Trend</h4>
-							<ul class="list-unstyled">
-								<li><img src="{!! asset('images/green_up.png') !!}" />In miglioramento</li>
-								<li><img src="{!! asset('images/yellow_stable.png') !!}" />Stabile</li>
-								<li><img src="{!! asset('images/red_down.png') !!}" />In peggioramento</li>
-								<li><img src="{!! asset('images/grey_null.png') !!}" />Sconosciuto</li>
-							</ul>	
-						</div>
-					</div>
-				</div>
-
-			</div><!-- New Data Table container ends -->
 		</div>
 		
+	</div> <!-- 1. container ends -->
+
+
+	<div class="container" v-if="dataAvailable">
+		<div class="col-sm-8 download-schede">
+	    	<h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
+	        <a class="c-font-bold text-link" v-bind:href="habitatDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
+            <a class="c-font-bold text-link" v-bind:href="habitatDetails.monitoring" target="_blank" class="">Monitoraggio</a>
+		</div>
 	</div>
+
+
+	<div class="container animated bounceInRight" v-if="dataAvailable"> <!-- data container starts -->
+
+		<!-- New Data Table -->
+		<div class="row">
+        	<div class="clearfix c-margin-t-40 c-margin-b-30">
+				<h2 class="c-font-bold pull-left" style="margin-left:30px;">Scheda della @{{ habitatDetails.habitat_name }}</h2>
+				<a href="#" style="margin-left:15px;" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+			</div>
+		</div>
+
+		<div class="visible-xs">
+			<a href="#" style="margin-left:15px;" class="button-link" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+		</div>
+
+		<div style="overflow-x:auto;">
+			<table class="table table-striped c-margin-b-50"> 
+				<thead> 
+					<tr> 
+						<th>Codice</th> 
+						<th>Macrocategorie</th> 
+						<th>Hb. Prioritario</th>  
+					</tr> 
+				</thead> 
+				<tbody> 
+					<tr> 
+						<th style="font-weight: normal;">@{{ habitatDetails.habitat_code }}</th>
+						<td>@{{ habitatDetails.macrocategory }}</td>  
+						<td>
+							<span v-if="habitatDetails.habitat_priority">SI</span>
+							<span v-else>No</span>
+						</td> 
+					</tr> 
+				</tbody>
+			</table>
+		</div>
+
+		<table class="table table-striped c-margin-b-50"> 
+			<thead class="bg-light-mint" style="background-color: #C8EDE2;"> 
+				<tr> 
+					<th>Regioni Biogeografiche</th> 
+					<th>ALP</th> 
+					<th>CON</th> 
+					<th>MED</th> 
+					<th>MMED</th>   
+				</tr> 
+			</thead> 
+			<tbody> 
+				<tr> 
+					<td>Presenza</td>
+                	<td>@{{ habitatDetails.habitat_presence_alp }}</td>
+				    <td>@{{ habitatDetails.habitat_presence_con }}</td>
+				    <td>@{{ habitatDetails.habitat_presence_med }}</td>
+					<td>@{{ habitatDetails.habitat_presence_mmed }}</td>
+				</tr> 
+				<tr>
+					<td>Stato di Conservazione complessivo (2013- 2018)</td>
+				    <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
+				    <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
+				    <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
+					<td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
+				</tr>
+				<tr>
+		            <td>Trends (2013 - 2018)</td>
+		            <td>
+		            	<div>
+		            		<span>
+		            			<img v-bind:src="itemTrendStyle(habitatDetails, 'alp')" class="trend-image" />
+		            		</span>
+		            	</div>
+		            </td>
+		            <td>
+		            	<div>
+		            		<span>
+		            			<img v-bind:src="itemTrendStyle(habitatDetails, 'con')" class="trend-image" />
+		            		</span>
+		            	</div>
+		            </td>
+		            <td>
+		            	<div>
+		            		<span>
+		            			<img v-bind:src="itemTrendStyle(habitatDetails, 'med')" class="trend-image" />
+		            		</span>
+		            	</div>
+		            </td>
+			    	<td>
+			    		<div>
+			    			<span>
+			    				<img v-bind:src="itemTrendStyle(habitatDetails, 'mmed')" class="trend-image" />
+			    			</span>
+			    		</div>
+			    	</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="table table-striped c-margin-b-50"> 
+			<thead> 
+				<tr> 
+					<th>Modifiche nomenclaturali</th>  
+				</tr> 
+			</thead> 
+			<tbody> 
+				<tr> 
+					<th style="font-weight: normal;">@{{{ habitatDetails.modified }}}</th>
+				</tr> 
+			</tbody>
+		</table>
+
+		<div class="row">
+			<div class="row c-margin-b-30">
+				<h2 class="c-font-bold" style="margin-left:45px;">Legenda</h2>
+			</div>
+			<div class="row c-margin-b-40" style="margin-left: 14px;">
+				<div class="col-sm-3">
+					<h4 class="c-margin-b-20">Regioni Biogeografiche</h4>
+					<ul class="list-unstyled">
+						<li><span class="c-font-bold">MED</span> = Mediterranea</li>
+						<li><span class="c-font-bold">CON</span> = Continentale</li>
+						<li><span class="c-font-bold">ALP</span> = Alpina</li>
+						<li><span class="c-font-bold">MMED</span> = Marina Mediterranea</li>
+					</ul>			
+				</div>
+				<div class="col-sm-3">
+					<h4 class="c-margin-b-20 h4m">Presenza</h4>
+					<ul class="list-unstyled">
+						<li><span class="c-font-bold">PRE</span> = Presente</li>
+						<li><span class="c-font-bold">OCC</span> = Occasionale</li>
+						<li><span class="c-font-bold">MAR</span> = Marginale</li>
+						<li><span class="c-font-bold">TAX</span> = Tassonomia non definita</li>
+						<li><span class="c-font-bold">EXa</span> = Estinta dopo l'entrata in vigore della DH</li>
+						<li><span class="c-font-bold">EXp</span> = Estinta prima dell'entrata in vigore della DH</li>
+						<li><span class="c-font-bold">NP</span> = Non Presente</li>
+					</ul>	
+				</div>
+				<div class="col-sm-3">
+					<h4 class="c-margin-b-20 h4m">Stato di Conservazione</h4>
+					<ul class="list-unstyled">
+						<li><div class="mimi-legenda-block legenda-green"></div>Favorevole</li>
+						<li><div class="mimi-legenda-block legenda-yellow"></div>Inadeguato</li>
+						<li><div class="mimi-legenda-block legenda-red"></div>Cattivo</li>
+						<li><div class="mimi-legenda-block legenda-grey"></div>Sconosciuto</li>
+					</ul>	
+				</div>
+				<div class="col-sm-3">
+					<h4 class="c-margin-b-20 h4m">Trend</h4>
+					<ul class="list-unstyled">
+						<li><img src="{!! asset('images/green_up.png') !!}" />In miglioramento</li>
+						<li><img src="{!! asset('images/yellow_stable.png') !!}" />Stabile</li>
+						<li><img src="{!! asset('images/red_down.png') !!}" />In peggioramento</li>
+						<li><img src="{!! asset('images/grey_null.png') !!}" />Sconosciuto</li>
+					</ul>	
+				</div>
+			</div>
+		</div>
+
+	</div><!-- New Data Table container ends -->
+		
+
 	
 		<template id="habitat-names-template">
 		    <ul class="list-group">      
