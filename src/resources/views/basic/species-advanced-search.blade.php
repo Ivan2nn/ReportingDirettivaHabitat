@@ -162,43 +162,52 @@
 
 
 
-	        <div class="row" v-if="dataAvailable">
-		        <div class="col-md-6 c-margin-b-30">
-		          <div class="col-sm-12">
-		            <h2 class="c-font-bold c-margin-b-20">Numero di Specie filtrate: @{{ speciesDetails.length }}</h2>
-		          </div>
-	          </div>
-	        </div>
+	        
 
-        </div>
-
-	      <div class="row">
-      		<div class="col-xs-12" style="overflow-x:auto;">
-      	      <multi-species-info-cell :list="speciesDetails"></multi-species-info-cell>
-      		</div>
-	      </div>
-
-		    <div class="row">
-		      <div class="col-md-4" v-if="dataAvailable">
-			      <a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
-	      	</div>
-    		</div>
-  
+        </div>  
       </div>
 
+<!-- here -->
 
-<template id="multi-species-info-cell-template">
+
+</div> <!-- end of 1. container -->
+
+
+<div class="blaablaa bg-light-grey">
+  <div class="container">
+
+    <div class="row" v-if="dataAvailable">
+      <div class="col-md-6 c-margin-b-30">
+        <div class="col-sm-12">
+          <h2 class="c-font-bold c-margin-b-20">Numero di Specie filtrate: @{{ speciesDetails.length }}</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12" style="overflow-x:auto;">
+        <multi-species-info-cell :list="speciesDetails"></multi-species-info-cell>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" v-if="dataAvailable">
+        <a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+      </div>
+    </div>
+  
+
+    <template id="multi-species-info-cell-template">
     <table class="table table-hover table-fixed">
       <thead>
         <tr>
             <th rowspan="2" class="mimi-table-cell-font">Codice</th>
-      			<th rowspan="2" class="mimi-table-cell-font">Nome Specie</th>
-      			<th colspan="4" class="mimi-table-cell-font" style="border-bottom: 2px solid #00B783!important;
-}">Stato di Conservazione / Trend</th>
-          	<!--<th colspan="4" class="mimi-table-cell-font">Trend</th>-->
-          	<th rowspan="2" class="mimi-table-cell-font">Reg. Biog.</th>
+            <th rowspan="2" class="mimi-table-cell-font">Nome Specie</th>
+            <th colspan="4" class="mimi-table-cell-font" style="border-bottom: 2px solid #00B783!important;">Stato di Conservazione / Trend</th>
+            <!--<th colspan="4" class="mimi-table-cell-font">Trend</th>-->
+            <th rowspan="2" class="mimi-table-cell-font">Reg. Biog.</th>
             <th rowspan="2" class="mimi-table-cell-font">Allegati</th>
-          	<th rowspan="2" class="mimi-table-cell-font">Tassonomia</th>
+            <th rowspan="2" class="mimi-table-cell-font">Tassonomia</th>
         </tr>
         <tr>
             <th>ALP</th>
@@ -231,7 +240,7 @@
             </span>
             <div class="pull-left" style="margin-right: 5px;" v-bind:class="itemStatusStyle(spec, 'med')"></div>
           </td>
-	        <td>
+          <td>
             <span>
               <img v-bind:src="itemTrendStyle(spec, 'mmed')" class="trend-image" />
             </span>
@@ -256,7 +265,14 @@
     </table>
 </template>
 
-  </div>
+
+
+  </div> <!-- 2. container ends -->
+</div>
+
+
+
+
 </div>
 
 @endsection
