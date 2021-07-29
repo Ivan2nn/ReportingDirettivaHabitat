@@ -136,12 +136,20 @@
 
 <div class="bg-light-grey">
   <div class="container">
-        <div class="row" v-if="dataAvailable">
-      <div class="col-md-5 c-margin-b-30">
+   <div class="row c-margin-t-40" v-if="dataAvailable">
+      <div class="col-md-6 c-margin-b-30">
         <div class="col-sm-12">
-          <h2 class="c-font-uppercase c-font-bold c-font-26 c-margin-b-20">Numero di Habitat filtrati: @{{ habitatDetails.length }}</h2>
+          <h2 class="c-font-bold c-margin-b-20">Numero di habitat filtrati: @{{ habitatDetails.length }}</h2>
         </div>
       </div>
+      <div class="col-md-6">
+        <a href="#" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+        <a href="#" class="button-link pull-left visible-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+      </div>
+    </div>
+
+
+    <div class="row">
       <div class="col-md-7 c-margin-b-30">
         <ul class="c-works pull-right">
           <li class="c-first mimi-legenda-advanced">
@@ -173,6 +181,7 @@
           </li>
         </ul>
       </div>
+      
     </div>
 
     <div class="row">
