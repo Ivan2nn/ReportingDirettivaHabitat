@@ -193,7 +193,8 @@
         <tr>
             <th rowspan="2" class="mimi-table-cell-font">Codice</th>
       			<th rowspan="2" class="mimi-table-cell-font">Nome Specie</th>
-      			<th colspan="4" class="mimi-table-cell-font">Stato di Conservazione / Trend</th>
+      			<th colspan="4" class="mimi-table-cell-font" style="border-bottom: 2px solid #00B783!important;
+}">Stato di Conservazione / Trend</th>
           	<!--<th colspan="4" class="mimi-table-cell-font">Trend</th>-->
           	<th rowspan="2" class="mimi-table-cell-font">Reg. Biog.</th>
             <th rowspan="2" class="mimi-table-cell-font">Allegati</th>
