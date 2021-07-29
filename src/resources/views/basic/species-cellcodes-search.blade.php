@@ -130,7 +130,9 @@
     </div>
 
     <div class="row">
-      <multi-species-info-cell :list="speciesDetails"></multi-species-info-cell>
+      <div class="col-xs-12" style="overflow-x:auto;">
+        <multi-species-info-cell :list="speciesDetails"></multi-species-info-cell>
+      </div>
     </div>
 
 
@@ -142,6 +144,8 @@
 
 
 </div> <!-- end of the page -->
+
+
 
 <template id="multi-species-info-cell-template">
   <table class="table table-hover table-fixed">
