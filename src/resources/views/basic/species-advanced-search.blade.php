@@ -176,23 +176,21 @@
 <div class="blaablaa bg-light-grey">
   <div class="container">
 
-    <div class="row" v-if="dataAvailable">
+    <div class="row c-margin-t-40" v-if="dataAvailable">
       <div class="col-md-6 c-margin-b-30">
         <div class="col-sm-12">
           <h2 class="c-font-bold c-margin-b-20">Numero di Specie filtrate: @{{ speciesDetails.length }}</h2>
         </div>
+      </div>
+      <div class="col-md-6">
+        <a href="#" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
+        <a href="#" class="button-link pull-left visible-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12" style="overflow-x:auto;">
         <multi-species-info-cell :list="speciesDetails"></multi-species-info-cell>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-4" v-if="dataAvailable">
-        <a href="#" class="btn btn-xlg c-btn-blue c-btn-square c-btn-border-2x" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
       </div>
     </div>
   
