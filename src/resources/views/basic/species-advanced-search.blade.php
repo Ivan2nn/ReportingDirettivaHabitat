@@ -193,17 +193,13 @@
         <tr>
             <th rowspan="2" class="mimi-table-cell-font">Codice</th>
       			<th rowspan="2" class="mimi-table-cell-font">Nome Specie</th>
-      			<th colspan="4" class="mimi-table-cell-font">Stato di Conservazione</th>
-          	<th colspan="4" class="mimi-table-cell-font">Trend</th>
+      			<th colspan="4" class="mimi-table-cell-font">Stato di Conservazione / Trend</th>
+          	<!--<th colspan="4" class="mimi-table-cell-font">Trend</th>-->
           	<th rowspan="2" class="mimi-table-cell-font">Reg. Biog.</th>
             <th rowspan="2" class="mimi-table-cell-font">Allegati</th>
           	<th rowspan="2" class="mimi-table-cell-font">Tassonomia</th>
         </tr>
         <tr>
-            <th>ALP</th>
-            <th>CON</th>
-            <th>MED</th>
-            <th>MMED</th>
             <th>ALP</th>
             <th>CON</th>
             <th>MED</th>
@@ -216,38 +212,29 @@
             <a v-bind:href=" '/species-basic-search/'+spec.species_code" target="_blank" >@{{ spec.species_code }}</a>
           </td>
           <td class="mimi-table-cell-font">@{{ spec.species_name }}</td>
-          <td><div v-bind:class="itemStatusStyle(spec, 'alp')"></div></td>
-          <td><div v-bind:class="itemStatusStyle(spec, 'con')"></div></td>
-          <td><div v-bind:class="itemStatusStyle(spec, 'med')"></div></td>
-	        <td>
-            <div v-bind:class="itemStatusStyle(spec, 'mmed')"></div>
-          </td>
           <td>
-            <div>
-              <span>
+             <span>
                 <img v-bind:src="itemTrendStyle(spec, 'alp')" class="trend-image" />
               </span>
-            </div>
+            <div class="pull-left" style="margin-right: 5px;" v-bind:class="itemStatusStyle(spec, 'alp')"></div>
           </td>
           <td>
-            <div>
-              <span>
+            <span>
                 <img v-bind:src="itemTrendStyle(spec, 'con')" class="trend-image" />
-              </span>
-            </div>
+            </span>
+            <div class="pull-left" style="margin-right: 5px;" v-bind:class="itemStatusStyle(spec, 'con')"></div>
           </td>
           <td>
-            <div>
-              <span>
-                <img v-bind:src="itemTrendStyle(spec, 'med')" class="trend-image" /></span>
-              </div>
+            <span>
+              <img v-bind:src="itemTrendStyle(spec, 'med')" class="trend-image" />
+            </span>
+            <div class="pull-left" style="margin-right: 5px;" v-bind:class="itemStatusStyle(spec, 'med')"></div>
           </td>
 	        <td>
-            <div>
-              <span>
-                <img v-bind:src="itemTrendStyle(spec, 'mmed')" class="trend-image" />
-              </span>
-            </div>
+            <span>
+              <img v-bind:src="itemTrendStyle(spec, 'mmed')" class="trend-image" />
+            </span>
+            <div class="pull-left" style="margin-right: 5px;" v-bind:class="itemStatusStyle(spec, 'mmed')"></div>
           </td>
           <td>
               <div v-for="bioreg in spec.bioregions" class="mimi-table-cell-font">@{{ bioreg }}</div>
