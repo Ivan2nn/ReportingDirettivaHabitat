@@ -161,7 +161,7 @@
 
     </div> <!-- 1. container ends -->
 
-
+    <div class="bg-light-grey">
     <div class="container" v-if="dataAvailable">
         <div class="download-schede">
             <h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
@@ -171,7 +171,7 @@
     </div>
 
 
-    <div class="container animated bounceInRight" v-if="dataAvailable"> <!-- data container starts -->
+    <div class="container" v-if="dataAvailable"> <!-- data container starts -->
 
         <!-- New Data Table -->
     
@@ -329,7 +329,7 @@
             </div>
         </div>
 
-    </div><!-- New Data Table container ends -->
+    </div></div><!-- New Data Table container ends -->
         
 
     
