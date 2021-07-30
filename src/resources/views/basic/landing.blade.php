@@ -108,49 +108,35 @@
 <!-- END: CONTENT/FEATURES/FEATURES-1 -->
 
 
-<!-- BEGIN: CONTENT/TABS/TAB-1 -->
-<div class="c-content-box c-size-md c-no-bottom-padding c-overflow-hide">
-    <div class="c-container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="c-content-tab-2 c-theme c-opt-1">
-                    
-                    <div class="c-tab-content">
-                        <div class="c-bg-img-center1">
-                            <div class="container">
-                                <div class="row">
-                                   <div class="col-md-12">
-                                       <h2 class="c-font-28 c-font-bold c-margin-b-40">REPORTING e MONITORAGGIO della DIRETTIVA HABITAT</h2>
-                                   </div> 
-                                  <div class="col-md-6 hidden-xs">
-                                      <p class="c-font-17">Il sito è finalizzato alla raccolta e messa a disposizione dei dati prodotti dall’Italia per il <b>reporting</b> ex Articolo 17 della Direttiva Habitat 92/43/CEE e della documentazione utile per la realizzazione delle attività di <b>monitoraggio</b> ex Articolo 11 della Direttiva stessa.
-                                        <br><br>
-                                        Nel sito è possibile eseguire ricerche per specie o habitat, visualizzare online i dati di distribuzione (sugriglia standard europea 10km x 10km), lo stato di conservazione e i trend delle specie e degli habitat italiani di interesse comunitario ed effettuare interrogazioni sulle checklist ex Art.17 aggiornate. Sono disponibili i dati relativi al <b>4° RAPPORTO ITALIANO</b> (periodo 2013-2018) trasmesso alla Commissione Europea nell’agosto 2019 e quelli del precedente <b>3° RAPPORTO</b> (periodo 2007-2012),</p>
-                                  </div>
-                                  <div class="col-md-6 hidden-xs">
-                                      <p>trasmesso nel dicembre 2013. Sono visualizzabili e scaricabili (in formato pdf nella sezione download) le <b>SCHEDE DI REPORTING e le MAPPE DI DISTRIBUZIONE</b>, che rappresentano le informazioni richieste a livello europeo nell’ambito della rendicontazione.
-                                                    <br><br>
-                                                    Nel sito sono disponibili anche materiali relativi al monitoraggio quali i <b>Manuali ISPRA</b> e le relative <b>SCHEDE DI MONITORAGGIO</b> con le metodiche e i protocolli operativi da utilizzare nelle attività in campo per ciascuna specie e ciascun habitat italiano di interesse comunitario.
-                                                    </p>
-                                  </div>
-                                  <div class="col-md-12 visible-xs">
-                                      <p class="c-font-17">Il sito è finalizzato alla raccolta e messa a disposizione dei dati prodotti dall’Italia per il <b>reporting</b> ex Articolo 17 della Direttiva Habitat 92/43/CEE e della documentazione utile per la realizzazione delle attività di <b>monitoraggio</b> ex Articolo 11 della Direttiva stessa.
-                                                    <br><br>
-                                                    Nel sito è possibile eseguire ricerche per specie o habitat, visualizzare online i dati di distribuzione (sugriglia standard europea 10km x 10km), lo stato di conservazione e i trend delle specie e degli habitat italiani di interesse comunitario ed effettuare interrogazioni sulle checklist ex Art.17 aggiornate. Sono disponibili i dati relativi al <b>4° RAPPORTO ITALIANO</b> (periodo 2013-2018) trasmesso alla Commissione Europea nell’agosto 2019 e quelli del precedente <b>3° RAPPORTO</b> (periodo 2007-2012), trasmesso nel dicembre 2013. Sono visualizzabili e scaricabili (in formato pdf nella sezione download) le <b>SCHEDE DI REPORTING e le MAPPE DI DISTRIBUZIONE</b>, che rappresentano le informazioni richieste a livello europeo nell’ambito della rendicontazione.
-                                                    <br><br>
-                                                    Nel sito sono disponibili anche materiali relativi al monitoraggio quali i <b>Manuali ISPRA</b> e le relative <b>SCHEDE DI MONITORAGGIO</b> con le metodiche e i protocolli operativi da utilizzare nelle attività in campo per ciascuna specie e ciascun habitat italiano di interesse comunitario.
-                                                    </p>
-                                  </div>
-                                </div>
 
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container">
+    <div class="row">
+       <div class="col-md-12">
+           <h2 class="c-font-28 c-font-bold c-margin-b-40 c-margin-t-40">REPORTING e MONITORAGGIO della DIRETTIVA HABITAT</h2>
+       </div> 
+       <div class="col-md-6 hidden-xs">
+          <p class="c-font-17">Il sito è finalizzato alla raccolta e messa a disposizione dei dati prodotti dall’Italia per il <b>reporting</b> ex Articolo 17 della Direttiva Habitat 92/43/CEE e della documentazione utile per la realizzazione delle attività di <b>monitoraggio</b> ex Articolo 11 della Direttiva stessa.
+          <br><br>
+            Nel sito è possibile eseguire ricerche per specie o habitat, visualizzare online i dati di distribuzione (sugriglia standard europea 10km x 10km), lo stato di conservazione e i trend delle specie e degli habitat italiani di interesse comunitario ed effettuare interrogazioni sulle checklist ex Art.17 aggiornate. Sono disponibili i dati relativi al <b>4° RAPPORTO ITALIANO</b> (periodo 2013-2018) trasmesso alla Commissione Europea nell’agosto 2019 e quelli del precedente <b>3° RAPPORTO</b> (periodo 2007-2012),
+          </p>
+        </div>
+        <div class="col-md-6 hidden-xs">
+          <p>trasmesso nel dicembre 2013. Sono visualizzabili e scaricabili (in formato pdf nella sezione download) le <b>SCHEDE DI REPORTING e le MAPPE DI DISTRIBUZIONE</b>, che rappresentano le informazioni richieste a livello europeo nell’ambito della rendicontazione.
+           <br><br>
+           Nel sito sono disponibili anche materiali relativi al monitoraggio quali i <b>Manuali ISPRA</b> e le relative <b>SCHEDE DI MONITORAGGIO</b> con le metodiche e i protocolli operativi da utilizzare nelle attività in campo per ciascuna specie e ciascun habitat italiano di interesse comunitario.
+          </p>
+        </div>
+        <div class="col-md-12 visible-xs">
+          <p class="c-font-17">Il sito è finalizzato alla raccolta e messa a disposizione dei dati prodotti dall’Italia per il <b>reporting</b> ex Articolo 17 della Direttiva Habitat 92/43/CEE e della documentazione utile per la realizzazione delle attività di <b>monitoraggio</b> ex Articolo 11 della Direttiva stessa.
+          <br><br>
+           Nel sito è possibile eseguire ricerche per specie o habitat, visualizzare online i dati di distribuzione (sugriglia standard europea 10km x 10km), lo stato di conservazione e i trend delle specie e degli habitat italiani di interesse comunitario ed effettuare interrogazioni sulle checklist ex Art.17 aggiornate. Sono disponibili i dati relativi al <b>4° RAPPORTO ITALIANO</b> (periodo 2013-2018) trasmesso alla Commissione Europea nell’agosto 2019 e quelli del precedente <b>3° RAPPORTO</b> (periodo 2007-2012), trasmesso nel dicembre 2013. Sono visualizzabili e scaricabili (in formato pdf nella sezione download) le <b>SCHEDE DI REPORTING e le MAPPE DI DISTRIBUZIONE</b>, che rappresentano le informazioni richieste a livello europeo nell’ambito della rendicontazione.
+           <br><br>
+           Nel sito sono disponibili anche materiali relativi al monitoraggio quali i <b>Manuali ISPRA</b> e le relative <b>SCHEDE DI MONITORAGGIO</b> con le metodiche e i protocolli operativi da utilizzare nelle attività in campo per ciascuna specie e ciascun habitat italiano di interesse comunitario.
+           </p>
         </div>
     </div>
 </div>
-
+                      
+                 
+              
 @endsection
