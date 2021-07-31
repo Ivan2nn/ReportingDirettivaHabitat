@@ -165,7 +165,7 @@
     <div class="container" v-if="dataAvailable">
         <div class="download-schede">
             <h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
-            <a class="c-font-bold text-link" v-bind:href="habitatDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
+            <a class="c-font-bold text-link" v-bind:href="habitatDetails.document" target="_blank" style="margin-right: 30px;">4° Reporting</a>
             <a class="c-font-bold text-link" v-bind:href="habitatDetails.monitoring" target="_blank" class="">Monitoraggio</a>
         </div>
     </div>
@@ -177,7 +177,7 @@
     
         <div class="row c-margin-t-40 c-margin-b-30">
             <div class="col-md-8">
-                <h2 class="c-font-bold">Scheda della @{{ habitatDetails.habitat_name }}</h2>
+                <h2 class="c-font-bold">Scheda: @{{ habitatDetails.habitat_name }}</h2>
             </div>
             <div class="col-md-4">
                 <a href="#" class="button-link c-margin-t-10 hidden-xs pull-right" id="export-csv" v-on:click="getCsv">Esporta CSV</a>

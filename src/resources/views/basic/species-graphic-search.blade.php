@@ -13,7 +13,7 @@
 
 		<div class="row">
 			<div class="c-margin-b-40" style="padding-left: 15px;">
-				<h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Species</h1>
+				<h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Specie</h1>
 				<p>Ricerca dati 4° report (2013-2018) per le specie animali e vegetali</p>
 			</div>
 		</div>
@@ -174,7 +174,7 @@
 	<div class="container" v-if="dataAvailable">
     	<div class="col-sm-8 download-schede">
            	<h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
-           	<a class="c-font-bold text-link" v-bind:href="speciesDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
+           	<a class="c-font-bold text-link" v-bind:href="speciesDetails.document" target="_blank" style="margin-right: 30px;">4° Reporting</a>
             <a class="c-font-bold text-link" v-bind:href="speciesDetails.monitoring" target="_blank" class="">Monitoraggio</a>
 		</div>
 	</div>
@@ -184,7 +184,7 @@
 		
 			<div class="row">
 				<div class="clearfix c-margin-t-40 c-margin-b-30">
-					<h2 class="c-font-bold pull-left" style="margin-left:30px;">Scheda della @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
+					<h2 class="c-font-bold pull-left" style="margin-left:30px;">Scheda: @{{ speciesDetails.species_name }} / @{{ speciesDetails.species_code }} </h2>
 					<a href="#" class="button-link pull-right hidden-xs" id="export-csv" v-on:click="getCsv">Esporta CSV</a>
 				</div>
 				<div class="visible-xs">
