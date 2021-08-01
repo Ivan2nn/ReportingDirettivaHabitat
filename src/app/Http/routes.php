@@ -255,6 +255,10 @@ Route::get('species-cellcodes-search-III-report', array('as' => 'species-cellcod
 	return view('basic.species-cellcodes-search-III-report');
 }));
 
+Route::get('habitat-cellcodes-search', array('as' => 'habitat-cellcodes-search', function() {
+	return view('basic.habitat-cellcodes-search');
+}));
+
 Route::get('habitat-cellcodes-search-III-report', array('as' => 'habitat-cellcodes-search-III-report', function() {
 	return view('basic.habitat-cellcodes-search-III-report');
 }));

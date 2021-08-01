@@ -123,41 +123,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="" href="javascript:;" class="c-link dropdown-toggle">III Report</a> 
-                                    <ul class="dropdown-menu c-menu-type-classic c-pull-left">
-                                        <li class="c-menu-type-classic">
-                                            <a href="javascript:;" class="c-link dropdown-toggle">Specie
-                                                <span class="c-arrow c-toggler"></span>
-                                            </a>
-                                            <ul class="dropdown-menu c-menu-type-classic c-pull-left">
-                                                <li>
-                                                    <a href="{{ route('species-basic-search-III-report') }}">Ricerca Base</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ route('species-advanced-search-III-report') }}">Ricerca Avanzata</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ route('species-cellcodes-search-III-report') }}">Ricerca Cartografica</a>
-                                                </li>                                      
-                                            </ul>
-                                        </li>
-                                        <li class="c-menu-type-classic">
-                                            <a href="javascript:;" class="c-link dropdown-toggle">Habitat
-                                                <span class="c-arrow c-toggler"></span>
-                                            </a>
-                                            <ul class="dropdown-menu c-menu-type-classic c-pull-left">
-                                                <li>
-                                                    <a href="{{ route('habitat-basic-search-III-report') }}">Ricerca Base</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ route('habitat-advanced-search-III-report') }}">Ricerca Avanzata</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ route('habitat-cellcodes-search-III-report') }}">Ricerca Cartografica</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>                
+                                    <a href="" class="c-link">III Report</a>                
                                 </li>
                                  <li>
                                     <a href="{{ route('piano-di-monitoraggio') }}" class="c-link">Piano di monitoraggio</a>                
