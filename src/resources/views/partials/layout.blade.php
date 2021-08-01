@@ -122,40 +122,33 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="" href="javascript:;" class="c-link dropdown-toggle">III Report</a> 
+                                <li class="c-menu-type-classic">
+                                    <a href="javascript:;" class="c-link dropdown-toggle">III Report
+                                    <span class="c-arrow c-toggler"></span></a>
                                     <ul class="dropdown-menu c-menu-type-classic c-pull-left">
-                                        <li class="c-menu-type-classic">
-                                            <a href="javascript:;" class="c-link dropdown-toggle">Specie
-                                                <span class="c-arrow c-toggler"></span>
-                                            </a>
-                                            <ul class="dropdown-menu c-menu-type-classic c-pull-left">
-                                                <li>
-                                                    <a href="{{ route('species-basic-search-III-report') }}">Ricerca Base</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ route('species-advanced-search-III-report') }}">Ricerca Avanzata</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ route('species-cellcodes-search-III-report') }}">Ricerca Cartografica</a>
-                                                </li>                                      
-                                            </ul>
+                                        <li>
+                                            <a href="#">Specie III Report</a>
                                         </li>
-                                        <li class="c-menu-type-classic">
-                                            <a href="javascript:;" class="c-link dropdown-toggle">Habitat
-                                                <span class="c-arrow c-toggler"></span>
-                                            </a>
-                                            <ul class="dropdown-menu c-menu-type-classic c-pull-left">
-                                                <li>
-                                                    <a href="{{ route('habitat-basic-search-III-report') }}">Ricerca Base</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ route('habitat-advanced-search-III-report') }}">Ricerca Avanzata</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ route('habitat-cellcodes-search-III-report') }}">Ricerca Cartografica</a>
-                                                </li>
-                                            </ul>
+                                        <li style="padding-left: 20px;">
+                                            <a href="{{ route('species-basic-search-III-report') }}">Ricerca Base</a>
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            <a href="{{ route('species-advanced-search-III-report') }}">Ricerca Avanzata</a>
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            <a href="{{ route('species-cellcodes-search-III-report') }} ">Ricerca Cartografica</a>
+                                        </li>
+                                        <li class="c-margin-t-20">
+                                            <a href="#">Habitat III Report</a>
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            <a href="{{ route('habitat-basic-search-III-report') }}">Ricerca Base</a>
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            <a href="{{ route('habitat-advanced-search-III-report') }}">Ricerca Avanzata</a>
+                                        </li>
+                                         <li style="padding-left: 20px;">
+                                            <a href="{{ route('habitat-cellcodes-search-III-report') }}">Ricerca Cartografica</a>
                                         </li>
                                     </ul>                
                                 </li>
@@ -201,7 +194,7 @@
             <div class="c-postfooter">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-4">
+                        <div class="col-sm-3">
                             <h4>Specie</h4>
                             <ul class="list-unstyled">
                                 <li>
@@ -215,7 +208,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-sm-3">
                             <h4>Habitat</h4>
                             <ul class="list-unstyled">
                                 <li>
@@ -229,19 +222,46 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-sm-3">
+                            <h4>III Report</h4>
                             <ul class="list-unstyled">
                                 <li>
-                                     <a href="#" class="">III Report</a>
+                                    <p>Specie III Report</p>  
                                 </li>
-                                 <li>
-                                     <a href="{{ route('piano-di-monitoraggio') }}" class="">Piano di monitoraggio</a> 
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('species-basic-search-III-report') }}">Ricerca base</a>  
+                                </li>
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('species-advanced-search-III-report') }}" class="">Ricerca avanzata</a>  
+                                </li>
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('species-cellcodes-search-III-report') }} " class="">Ricerca cartografica</a>  
+                                </li>
+                                <li class="c-margin-t-20">
+                                    <p>Habitat III Report</p>  
+                                </li>
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('habitat-basic-search-III-report') }}">Ricerca base</a>  
+                                </li>
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('habitat-advanced-search-III-report') }}" class="">Ricerca avanzata</a>  
+                                </li>
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('habitat-cellcodes-search-III-report') }}" class="">Ricerca cartografica</a>  
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="{{ route('piano-di-monitoraggio') }}" class="">Piano di monitoraggio</a> 
                                 </li>
                                 <li>
-                                     <a href="{{ route('downloads') }}" class="">Download</a>  
+                                    <a href="{{ route('downloads') }}" class="">Download</a>  
                                 </li>
                                  <li>
-                                     <a href="{{ route('links') }}" class="">Links</a>
+                                    <a href="{{ route('links') }}" class="">Links</a>
                                 </li>
                             </ul>
                         </div>
