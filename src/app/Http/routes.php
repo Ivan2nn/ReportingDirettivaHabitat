@@ -31,10 +31,6 @@ Route::get('/', array('as' => 'home', function () {
 	return view('basic.landing');
 }));
 
-Route::get('/home-III-report', array('as' => 'home-III-report', function () {
-	return view('basic.landing_3_report');
-}));
-
 Route::get('/contesto-riferimento', array('as' => 'contesto-riferimento', function () {
 	return view('basic.reference-context');
 }));
@@ -61,12 +57,28 @@ Route::get('species-basic-search/{code?}', array('as' => 'species-basic-search',
 	return view('basic.species-graphic-search', compact('species'));
 }));
 
+Route::get('species-basic-search-III-report/{code?}', array('as' => 'species-basic-search-III-report', function($code = null) {
+	$species = null;
+	if ($code)  {
+		$species = App\Species::where('species_code',$code)->first();
+	}
+	return view('basic.species-graphic-search-III-report', compact('species'));
+}));
+
 Route::get('habitat-basic-search/{code?}', array('as' => 'habitat-basic-search', function($code = null) {
 	$habitat = null;
 	if ($code) {
 		$habitat = App\Habitat::where('habitat_code',$code)->first();
 	}
 	return view('basic.habitat-graphic-search', compact('habitat'));
+}));
+
+Route::get('habitat-basic-search-III-report/{code?}', array('as' => 'habitat-basic-search-III-report', function($code = null) {
+	$habitat = null;
+	if ($code) {
+		$habitat = App\Habitat::where('habitat_code',$code)->first();
+	}
+	return view('basic.habitat-graphic-search-III-report', compact('habitat'));
 }));
 
 Route::get('habitat', function() {
@@ -211,18 +223,40 @@ Route::get('species-advanced-search', array('as'=>'species-advanced-search', fun
     return view('basic.species-advanced-search', compact('kingdoms','phyla','classes','order','families','genera'));
 }));
 
+Route::get('species-advanced-search-III-report', array('as'=>'species-advanced-search-III-report', function () {
+
+	$kingdoms = App\Kingdom::all();
+	$orders = App\Order::all();
+	$families = App\Family::all();
+	$genera = App\Genus::all();
+	$classes = App\Classis::all();
+	$phyla = App\Phylum::all();
+
+    return view('basic.species-advanced-search-III-report', compact('kingdoms','phyla','classes','order','families','genera'));
+}));
+
 Route::get('habitat-advanced-search', array('as'=>'habitat-advanced-search', function () {
 
 	$macrocategories = App\Macrocategory::all();
     return view('basic.habitat-advanced-search', compact('macrocategories'));
 }));
 
+Route::get('habitat-advanced-search-III-report', array('as'=>'habitat-advanced-search-III-report', function () {
+
+	$macrocategories = App\Macrocategory::all();
+    return view('basic.habitat-advanced-search-III-report', compact('macrocategories'));
+}));
+
 Route::get('species-cellcodes-search', array('as' => 'species-cellcodes-search', function() {
 	return view('basic.species-cellcodes-search');
 }));
 
-Route::get('habitat-cellcodes-search', array('as' => 'habitat-cellcodes-search', function() {
-	return view('basic.habitat-cellcodes-search');
+Route::get('species-cellcodes-search-III-report', array('as' => 'species-cellcodes-search-III-report', function() {
+	return view('basic.species-cellcodes-search-III-report');
+}));
+
+Route::get('habitat-cellcodes-search-III-report', array('as' => 'habitat-cellcodes-search-III-report', function() {
+	return view('basic.habitat-cellcodes-search-III-report');
 }));
 
 
