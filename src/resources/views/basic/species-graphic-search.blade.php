@@ -226,6 +226,7 @@
 							</tr> 
 						</tbody>
 					</table>
+					<p class="c-margin-b-50" style="font-size: 12px;">(*) Per maggiore dettaglio vedere scheda di monitoraggio</p>
 				</div>
 
 				<table class="table table-striped c-margin-b-50"> 

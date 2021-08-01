@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="c-margin-b-40" style="padding-left: 15px;">
 				<h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Specie</h1>
-				<p>Ricerca dati 4° report (2013-2018) per le specie animali e vegetali</p>
+				<p>Ricerca dati 3° report (2003-2008) per le specie animali e vegetali</p>
 			</div>
 		</div>
 		
@@ -226,6 +226,7 @@
 							</tr> 
 						</tbody>
 					</table>
+					<p class="c-margin-b-50" style="font-size: 12px;">(*) Per maggiore dettaglio vedere scheda di monitoraggio</p>
 				</div>
 
 				<table class="table table-striped c-margin-b-50"> 
