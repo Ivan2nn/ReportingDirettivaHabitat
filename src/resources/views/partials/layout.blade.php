@@ -130,25 +130,25 @@
                                             <a href="#">Specie III Report</a>
                                         </li>
                                         <li style="padding-left: 20px;">
-                                            <a href="#">Ricerca Base</a>
+                                            <a href="{{ route('species-basic-search-III-report') }}">Ricerca Base</a>
                                         </li>
                                         <li style="padding-left: 20px;">
-                                            <a href="#">Ricerca Avanzata</a>
+                                            <a href="{{ route('species-advanced-search-III-report') }}">Ricerca Avanzata</a>
                                         </li>
                                          <li style="padding-left: 20px;">
-                                            <a href="#">Ricerca Cartografica</a>
+                                            <a href="{{ route('species-cellcodes-search-III-report') }} ">Ricerca Cartografica</a>
                                         </li>
                                         <li class="c-margin-t-20">
                                             <a href="#">Habitat III Report</a>
                                         </li>
                                         <li style="padding-left: 20px;">
-                                            <a href="#">Ricerca Base</a>
+                                            <a href="{{ route('habitat-basic-search-III-report') }}">Ricerca Base</a>
                                         </li>
                                         <li style="padding-left: 20px;">
-                                            <a href="#">Ricerca Avanzata</a>
+                                            <a href="{{ route('habitat-advanced-search-III-report') }}">Ricerca Avanzata</a>
                                         </li>
                                          <li style="padding-left: 20px;">
-                                            <a href="#">Ricerca Cartografica</a>
+                                            <a href="{{ route('habitat-cellcodes-search-III-report') }}">Ricerca Cartografica</a>
                                         </li>
                                     </ul>                
                                 </li>
