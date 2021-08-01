@@ -194,7 +194,7 @@
             <div class="c-postfooter">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-3">
+                        <div class="col-sm-3">
                             <h4>Specie</h4>
                             <ul class="list-unstyled">
                                 <li>
@@ -208,7 +208,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-sm-3">
                             <h4>Habitat</h4>
                             <ul class="list-unstyled">
                                 <li>
@@ -222,21 +222,37 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-sm-3">
                             <h4>III Report</h4>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="#">Ricerca base</a>  
+                                    <p>Specie III Report</p>  
                                 </li>
-                                 <li>
-                                    <a href="#" class="">Ricerca avanzata</a>  
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('species-basic-search-III-report') }}">Ricerca base</a>  
                                 </li>
-                                <li>
-                                    <a href="#" class="">Ricerca cartografica</a>  
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('species-advanced-search-III-report') }}" class="">Ricerca avanzata</a>  
                                 </li>
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('species-cellcodes-search-III-report') }} " class="">Ricerca cartografica</a>  
+                                </li>
+                                <li class="c-margin-t-20">
+                                    <p>Habitat III Report</p>  
+                                </li>
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('habitat-basic-search-III-report') }}">Ricerca base</a>  
+                                </li>
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('habitat-advanced-search-III-report') }}" class="">Ricerca avanzata</a>  
+                                </li>
+                                <li style="padding-left:20px;">
+                                    <a href="{{ route('habitat-cellcodes-search-III-report') }}" class="">Ricerca cartografica</a>  
+                                </li>
+
                             </ul>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-sm-3">
                             <ul class="list-unstyled">
                                 <li>
                                     <a href="{{ route('piano-di-monitoraggio') }}" class="">Piano di monitoraggio</a> 
