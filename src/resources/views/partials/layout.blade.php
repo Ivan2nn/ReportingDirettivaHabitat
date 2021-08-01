@@ -122,8 +122,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="" class="c-link">III Report
+                                <li class="c-menu-type-classic">
+                                    <a href="javascript:;" class="c-link dropdown-toggle">III Report
                                     <span class="c-arrow c-toggler"></span></a>
                                     <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                         <li>
@@ -135,7 +135,7 @@
                                         <li style="padding-left: 20px;">
                                             <a href="{{ route('species-advanced-search-III-report') }}">Ricerca Avanzata</a>
                                         </li>
-                                         <li style="padding-left: 20px;">
+                                        <li style="padding-left: 20px;">
                                             <a href="{{ route('species-cellcodes-search-III-report') }} ">Ricerca Cartografica</a>
                                         </li>
                                         <li class="c-margin-t-20">
