@@ -13,7 +13,7 @@
         <div class="row c-margin-b-40">
             <div class="col-md-5">
                 <h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Habitat</h1>
-                <p>Ricerca dati 3° report (2003-2008) per gli habitat</p>
+                <p>Ricerca dati 3° report (2007-2012) per gli habitat</p>
             </div>
         </div>
 
@@ -165,7 +165,7 @@
     <div class="container" v-if="dataAvailable">
         <div class="download-schede">
             <h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
-            <a class="c-font-bold text-link" v-bind:href="habitatDetails.document" target="_blank" style="margin-right: 30px;">4° Reporting</a>
+            <a class="c-font-bold text-link" v-bind:href="habitatDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
             <a class="c-font-bold text-link" v-bind:href="habitatDetails.monitoring" target="_blank" class="">Monitoraggio</a>
         </div>
     </div>
@@ -229,14 +229,14 @@
                     <td>@{{ habitatDetails.habitat_presence_mmed }}</td>
                 </tr> 
                 <tr>
-                    <td>Stato di Conservazione complessivo (2013- 2018)</td>
+                    <td>Stato di Conservazione complessivo (2007- 2012)</td>
                     <td><div :class="itemStatusStyle(habitatDetails, 'alp')"></div></td>
                     <td><div :class="itemStatusStyle(habitatDetails, 'con')"></div></td>
                     <td><div :class="itemStatusStyle(habitatDetails, 'med')"></div></td>
                     <td><div :class="itemStatusStyle(habitatDetails, 'mmed')"></div></td>
                 </tr>
                 <tr>
-                    <td>Trends (2013 - 2018)</td>
+                    <td>Trends (2007 - 2012)</td>
                     <td>
                         <div>
                             <span>

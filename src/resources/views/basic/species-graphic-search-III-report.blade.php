@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="c-margin-b-40" style="padding-left: 15px;">
 				<h1 class="c-font-bold c-margin-b-40 c-margin-t-60 c-margin-l-20">Specie</h1>
-				<p>Ricerca dati 3° report (2003-2008) per le specie animali e vegetali</p>
+				<p>Ricerca dati 3° report (2007-2012) per le specie animali e vegetali</p>
 			</div>
 		</div>
 		
@@ -174,7 +174,7 @@
 	<div class="container" v-if="dataAvailable">
     	<div class="col-sm-8 download-schede">
            	<h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
-           	<a class="c-font-bold text-link" v-bind:href="speciesDetails.document" target="_blank" style="margin-right: 30px;">4° Reporting</a>
+           	<a class="c-font-bold text-link" v-bind:href="speciesDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>
             <a class="c-font-bold text-link" v-bind:href="speciesDetails.monitoring" target="_blank" class="">Monitoraggio</a>
 		</div>
 	</div>
@@ -248,7 +248,7 @@
 		    				<td>@{{ speciesDetails.species_presence_mmed }}</td>
 	                    </tr>
 	                    <tr>
-                            <td>Stato di Conservazione complessivo (2013- 2018)</td>
+                            <td>Stato di Conservazione complessivo (2007- 2012)</td>
                             <td>
                             	<div :class="itemStatusStyle(speciesDetails, 'alp')"></div>
                             </td>
@@ -263,7 +263,7 @@
 		    				</td>
 	                    </tr>
 	                    <tr>
-	                        <td>Trend (20013 - 2018)</td>
+	                        <td>Trend (20007 - 2012)</td>
 	                        <td>
 	                        	<div>
 	                        		<span>
