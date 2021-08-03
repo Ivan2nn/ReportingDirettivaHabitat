@@ -146,7 +146,7 @@
     <thead>
       <tr>
           <th rowspan="2" class="mimi-table-cell-font">Codice</th>
-          <th rowspan="2" class="mimi-table-cell-font">Nome Habitat</th>
+          <th rowspan="2" class="mimi-table-cell-font" style="width: 300px;">Nome Habitat</th>
           <th colspan="4" class="mimi-table-cell-font" style="border-bottom: 2px solid #00B783!important;">Stato di Conservazione / Trend</th>
           <th rowspan="2" class="mimi-table-cell-font">Reg. Biog.</th>
       </tr>
