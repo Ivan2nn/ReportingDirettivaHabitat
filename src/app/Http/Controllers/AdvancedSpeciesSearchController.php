@@ -118,7 +118,7 @@ class AdvancedSpeciesSearchController extends Controller
 					'order_name' => $species->taxonomy->tax_order ? $species->taxonomy->tax_order->order_name : ' ',
 					'phylum_name' => $species->taxonomy->tax_phylum ? $species->taxonomy->tax_phylum->phylum_name : ' ',
 					'genus_name' => $species->taxonomy->tax_genus ? $species->taxonomy->tax_genus->genus_name : ' ',
-					'bioregions' => $species->biogeographicregions->pluck('name')->toArray(),
+					'bioregions' => $species->biogeographicregions()->where('report',$report_number)->get()->pluck('name')->toArray(),
 					'annexes' => $species->annexes($report_number)
 				];
 			}

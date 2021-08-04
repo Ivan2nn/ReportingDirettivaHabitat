@@ -5,7 +5,6 @@
 <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
 <div class="c-content-box c-size-md c-bg-white">
     <div class="container">
-        <div class="row">
         	<div class="section-context">
             	<p>
                     La Direttiva Habitat richiede la realizzazione di attività di monitoraggio sull’intero territorio nazionale e le
@@ -40,7 +39,6 @@
                         soggetti con compiti specifici, in un’unitarietà di intenti.</p>
 				
             </div>  
-        </div> 
     </div>
 </div>
 <!-- END: CONTENT/FEATURES/FEATURES-1 -->

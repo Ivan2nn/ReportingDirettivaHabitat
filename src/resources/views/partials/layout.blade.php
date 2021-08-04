@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta content="" name="species - habitat in Italy" />
-        <meta content="" name="Carlo Bernabucci" />
+        <meta content="" name="mimi eDesign" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all' rel='stylesheet' type='text/css'>
              

@@ -29,7 +29,7 @@ Vue.directive('ajax', {
 			instance.vm.speciesDetails = JSON.parse(response.data)['species'];
 			//instance.vm.loadingNames = false;
 			//instance.vm.loadingCodes = false;
-			console.log(response.data);
+			//console.log(response.data);
 			instance.vm.loadingNameCode = false;
 			instance.vm.dataAvailable = true;
 		}, function (response) {

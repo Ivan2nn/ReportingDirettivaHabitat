@@ -18,27 +18,27 @@
                     <div class="c-logos">
                         <div class="row">
                             <div class="col-md-12 col-xs-12 c-logo c-logo-1 p-b-15 p-t-15">
-                                <a href="http://193.206.192.106/portalino/home_it/il-network.php">
+                                <a href="http://193.206.192.106/portalino/home_it/il-network.php" target="_blank">
                                     <img class="c-img-pos mimi-logo-links" src="{!! asset('images/logoNaturaItaliaHome.png') !!}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-12 col-xs-12 c-logo c-logo-2 p-b-15 p-t-15">
-                                <a href="https://www.mite.gov.it/">
+                                <a href="https://www.mite.gov.it/" target="_blank">
                                     <img class="c-img-pos mimi-logo-links" src="{!! asset('images/MiTE_RGB_orizzontale.jpg') !!}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-12 col-xs-12 c-logo c-logo-3 p-b-15 p-t-15">
-                                <a href="https://www.isprambiente.gov.it/it">
+                                <a href="https://www.isprambiente.gov.it/it" target="_blank">
                                     <img class="c-img-pos mimi-logo-links" src="{!! asset('images/logo_ISPRA2.png') !!}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-12 col-xs-12 c-logo c-logo-4 p-b-15 p-t-15">
-                                <a href="https://www.naturaitalia.it/">
+                                <a href="https://www.naturaitalia.it/" target="_blank">
                                     <img class="c-img-pos mimi-logo-links" src="{!! asset('images/logoNaturaitalia.png') !!}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-12 col-xs-12 c-logo c-logo-5 p-b-15 p-t-15">
-                                <a href="https://natura2000.eea.europa.eu/">
+                                <a href="https://natura2000.eea.europa.eu/" target="_blank">
                                     <img class="c-img-pos mimi-logo-links" src="{!! asset('images/logo_Natura2000Network.png') !!}" alt="">
                                 </a>
                             </div>

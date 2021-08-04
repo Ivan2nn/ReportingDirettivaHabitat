@@ -5,7 +5,6 @@
 <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
 <div class="c-content-box c-size-md c-bg-white">
     <div class="container">
-        <div class="row">
         	<div class="section-context">
             	<p>
             	La <a href="http://bd.eionet.europa.eu/activities/Reporting/Article_17">Direttiva Habitat (92/43/CEE)</a> e la <a href="http://bd.eionet.europa.eu/activities/Reporting/Article_12">Direttiva Uccelli (2009/147/CE)</a>, rappresentano i pilastri della politica
@@ -38,7 +37,6 @@
 				
 				
             </div>  
-        </div> 
     </div>
 </div>
 <!-- END: CONTENT/FEATURES/FEATURES-1 -->

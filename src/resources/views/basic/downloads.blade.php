@@ -5,11 +5,10 @@
 <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
 <div class="c-content-box c-size-md c-bg-white">
     <div class="container">
-        <div class="row">
         	<div class="section-context">
 		<h2 class="c-font-uppercase c-font-bold c-font-40 c-margin-b-20 c-margin-t-30">Reporting 2013-2018</h2>
 
-		<p><strong><a href="{!! asset('documents/REP_IV_sch_map/DATI_UFFICIALI_TRASMESSI.zip') !!}" target="_blank">DATI UFFICIALI TRASMESSI</a></strong></p>
+		{{-- <p><strong><a href="{!! asset('documents/REP_IV_sch_map/DATI_UFFICIALI_TRASMESSI.zip') !!}" target="_blank">DATI UFFICIALI TRASMESSI</a></strong></p> --}}
 
 		<p><strong>HABITAT</strong></p>  
                     <ul class="c-content-list-1 c-theme c-separator-dot">
@@ -90,7 +89,6 @@
 			
 		</ul>
             </div>  
-        </div> 
     </div>
 </div>
 <!-- END: CONTENT/FEATURES/FEATURES-1 -->
