@@ -22,7 +22,10 @@ class AdvancedSpeciesSearchController extends Controller
     	$list_of_biogeographicregions_checks = [];
 
     	foreach ($request->get('codes') as $single_genus_code) {
-    		array_push($list_of_species_code, $this->genus_species($single_genus_code,'III'));
+			$list_of_species_from_same_genus = $this->genus_species($single_genus_code);
+			foreach($list_of_species_from_same_genus as $single_species_from_genus) {
+				array_push($list_of_species_code, $single_species_from_genus);
+			}
 		}
 
     	foreach ($request->get('status_checks') as $key => $value)
@@ -90,7 +93,7 @@ class AdvancedSpeciesSearchController extends Controller
     ////////////////// Helpers Section
 
     public function get_species_from_taxonomy($taxonomy, $code) {
-    	return Taxonomy::where($taxonomy . '_code',$code)->pluck('species_code')->first();
+    	return Taxonomy::where($taxonomy . '_code',$code)->pluck('species_code');
 
     	//return $this->get_species_info($taxonomies);
     }

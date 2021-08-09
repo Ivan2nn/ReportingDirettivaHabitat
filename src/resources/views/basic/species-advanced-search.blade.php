@@ -264,7 +264,7 @@
     </table>
 </template>
 
-  @include('partials.legenda');
+  @include('partials.legenda')
 
   </div> <!-- 2. container ends -->
 </div>

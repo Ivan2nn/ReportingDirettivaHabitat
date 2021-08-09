@@ -282,7 +282,7 @@
             </tbody>
         </table>
 
-        @include('partials.legenda');
+        @include('partials.legenda')
 
     </div></div><!-- New Data Table container ends -->
         

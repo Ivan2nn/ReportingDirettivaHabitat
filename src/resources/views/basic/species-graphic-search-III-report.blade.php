@@ -310,7 +310,7 @@
 				</table>
 			</div>
 
-			@include('partials.legenda');
+			@include('partials.legenda')
 			
 		</div>
 

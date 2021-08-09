@@ -331,7 +331,7 @@ new Vue({
 			var status_checks = {"FV" : switchery_status_fv.checked, "U1" : switchery_status_u1.checked, "U2" : switchery_status_u2.checked, "XX" : switchery_status_xx.checked};
 
 			this.dataAvailable = false;
-
+			
 			this.$http.get('/advancedselectiontospecies', {params: { report: vm.report_number, codes: checked_leaves, status_checks: status_checks, radio_buttons_biogeoreg_value: radio_buttons_biogeoreg_value, regbio_checks: regbio_checks } }).then((response) => {
 				// Inside the response data there are also the taxonomy data, but the google map API cna distinguish by itself
 				//console.log(response.data);
