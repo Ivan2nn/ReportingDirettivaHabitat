@@ -140,6 +140,8 @@
                     <input type="hidden" v-model="outHabitatName = '{!! $habitat->habitat_name !!}'">
                 @endif
 
+                <a href="#results" v-if="dataAvailable" class="text-link">Vai ai resultati</a>
+
             </div>
 
             <div class="col-md-7">
@@ -162,7 +164,7 @@
     </div> <!-- 1. container ends -->
 
     <div class="bg-light-grey">
-    <div class="container" v-if="dataAvailable">
+    <div class="container" v-if="dataAvailable" id="results">
         <div class="download-schede">
             <h2 class="c-font-bold c-margin-b-30">Download Schede</h2>
             <a class="c-font-bold text-link" v-bind:href="habitatDetails.document" target="_blank" style="margin-right: 30px;">3° Reporting</a>

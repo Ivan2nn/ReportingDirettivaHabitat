@@ -43,6 +43,8 @@
 
           </div>
         </div>
+        <a href="#results" v-if="dataAvailable" class="text-link">Vai ai resultati</a>
+
       </div>
       <div class="col-md-7">
         <div class="ibox float-e-margins">
@@ -59,14 +61,14 @@
         </div>
       </div>
   	</div>
-
+    
 	</div>
 
 
   </div>
 
   <div class="bg-light-grey">
-    <div class="container">
+    <div class="container" id="results">
      
 
       <div class="row c-margin-t-40" v-if="dataAvailable">
