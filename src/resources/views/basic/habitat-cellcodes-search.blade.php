@@ -43,6 +43,8 @@
 
           </div>
         </div>
+        <a href="#results" v-if="dataAvailable" class="text-link">Link to results</a>
+
       </div>
       <div class="col-md-7">
         <div class="ibox float-e-margins">
@@ -59,8 +61,7 @@
         </div>
       </div>
   	</div>
-    <a href="#results" v-if="dataAvailable" class="text-link">Link to results</a>
-
+    
 	</div>
 
 
