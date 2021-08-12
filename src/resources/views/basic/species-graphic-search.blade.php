@@ -153,7 +153,7 @@
             	<input type="hidden" v-model="outSpeciesName = '{!! $species->species_name !!}'">
             @endif
             
-            <a href="#results" v-if="dataAvailable" class="text-link">Link to results</a>
+            <a href="#results" v-if="dataAvailable" class="text-link">Vai ai resultati</a>
 	    </div>
 
 		<div class="col-md-7">
