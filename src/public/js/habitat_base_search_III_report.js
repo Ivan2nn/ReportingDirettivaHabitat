@@ -362,12 +362,12 @@ new Vue({
 	      	// `this` in event callbacks are automatically bound
 	      	// to the instance that registered it
 	      	// searchedField can be 'names' or 'codes'
-	      	this.selectedOne = childObj;
-	      	this.queryName = childObj.habitat_name;
+			  this.selectedOne = childObj;
 	      	this.queryCode = childObj.habitat_code;
+			this.queryNameCode = childObj.habitat_name;
 	      	this.isSearching = true;
 			this.searchingNameCode = true;
-
+			console.log(this.queryNameCode);
 	      	/* if (searchedField == 'names') {
 	      		this.searchingNames = true;
 	      	}

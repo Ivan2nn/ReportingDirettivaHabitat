@@ -227,6 +227,7 @@ new Vue({
 			this.searchingNames = false;
 			this.searchingCodes = false;
 			this.searchingNameCode= false;
+			this.dataAvailable = false;
 			this.loadingNameCode = false;
 		},
 
