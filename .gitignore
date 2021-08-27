@@ -13,3 +13,5 @@ src/public/documents/Habitat_Approf.zip
 
 nginx/Dockerfile.nginx
 docker_comp.zip
+docker-compose-original.yml
+docker-compose-original
