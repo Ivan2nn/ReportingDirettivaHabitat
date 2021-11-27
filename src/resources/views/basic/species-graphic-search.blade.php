@@ -153,7 +153,7 @@
             	<input type="hidden" v-model="outSpeciesName = '{!! $species->species_name !!}'">
             @endif
             
-            <a href="#results" v-if="dataAvailable" class="text-link">Vai ai resultati</a>
+            <a href="#results" v-if="dataAvailable" class="text-link">Vai ai risultati</a>
 	    </div>
 
 		<div class="col-md-7">
@@ -265,7 +265,7 @@
 		    				</td>
 	                    </tr>
 	                    <tr>
-	                        <td>Trend (20013 - 2018)</td>
+	                        <td>Trend (2013 - 2018)</td>
 	                        <td>
 	                        	<div>
 	                        		<span>

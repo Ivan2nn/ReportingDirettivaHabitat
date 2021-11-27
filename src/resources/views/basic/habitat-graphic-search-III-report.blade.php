@@ -140,7 +140,7 @@
                     <input type="hidden" v-model="outHabitatName = '{!! $habitat->habitat_name !!}'">
                 @endif
 
-                <a href="#results" v-if="dataAvailable" class="text-link">Vai ai resultati</a>
+                <a href="#results" v-if="dataAvailable" class="text-link">Vai ai risultati</a>
 
             </div>
 

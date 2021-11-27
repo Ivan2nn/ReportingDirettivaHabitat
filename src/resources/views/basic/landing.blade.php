@@ -117,11 +117,11 @@
        <div class="col-md-6 hidden-xs">
           <p class="c-font-17">Il sito è finalizzato alla raccolta e messa a disposizione dei dati prodotti dall’Italia per il <b>reporting</b> ex Articolo 17 della Direttiva Habitat 92/43/CEE e della documentazione utile per la realizzazione delle attività di <b>monitoraggio</b> ex Articolo 11 della Direttiva stessa.
           <br><br>
-            Nel sito è possibile eseguire ricerche per specie o habitat, visualizzare online i dati di distribuzione (sugriglia standard europea 10km x 10km), lo stato di conservazione e i trend delle specie e degli habitat italiani di interesse comunitario ed effettuare interrogazioni sulle checklist ex Art.17 aggiornate. Sono disponibili i dati relativi al <b>4° RAPPORTO ITALIANO</b> (periodo 2013-2018) trasmesso alla Commissione Europea nell’agosto 2019 e quelli del precedente <b>3° RAPPORTO</b> (periodo 2007-2012),
+            Nel sito è possibile eseguire ricerche per specie o habitat, visualizzare online i dati di distribuzione (su griglia standard europea 10km x 10km), lo stato di conservazione e i trend delle specie e degli habitat italiani di interesse comunitario ed effettuare interrogazioni sulle checklist ex Art.17 aggiornate. Sono disponibili i dati relativi al <b>4° RAPPORTO ITALIANO</b> (periodo 2013-2018) trasmesso alla Commissione Europea nell’agosto 2019 e quelli del precedente <b>3° RAPPORTO</b> (periodo 2007-2012), trasmesso nel dicembre 2013.
           </p>
         </div>
         <div class="col-md-6 hidden-xs">
-          <p>trasmesso nel dicembre 2013. Sono visualizzabili e scaricabili (in formato pdf nella sezione download) le <b>SCHEDE DI REPORTING e le MAPPE DI DISTRIBUZIONE</b>, che rappresentano le informazioni richieste a livello europeo nell’ambito della rendicontazione.
+          <p>Sono visualizzabili e scaricabili (in formato pdf nella sezione download) le <b>SCHEDE DI REPORTING e le MAPPE DI DISTRIBUZIONE</b>, che rappresentano le informazioni richieste a livello europeo nell’ambito della rendicontazione.
            <br><br>
            Nel sito sono disponibili anche materiali relativi al monitoraggio quali i <b>Manuali ISPRA</b> e le relative <b>SCHEDE DI MONITORAGGIO</b> con le metodiche e i protocolli operativi da utilizzare nelle attività in campo per ciascuna specie e ciascun habitat italiano di interesse comunitario.
           </p>
