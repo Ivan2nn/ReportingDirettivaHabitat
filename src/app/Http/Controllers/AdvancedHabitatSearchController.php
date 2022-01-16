@@ -160,7 +160,7 @@ class AdvancedHabitatSearchController extends Controller
 	                'habitat_trend_alp' => $habitat->getFormattedTrend($report_number,"ALP"),
 	                'habitat_trend_con' => $habitat->getFormattedTrend($report_number,"CON"),
 	                'habitat_trend_med' => $habitat->getFormattedTrend($report_number,"MED"),
-			'habitat_trend_mmed' => $habitat->getFormattedTrend($report_number,"MMED"),
+					'habitat_trend_mmed' => $habitat->getFormattedTrend($report_number,"MMED"),
 					'bioregions' => $habitat->biogeographicregions()->where('report',$report_number)->get()->pluck('name')->toArray(),
 				];
 			}

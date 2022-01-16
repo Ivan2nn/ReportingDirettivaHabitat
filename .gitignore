@@ -1,3 +1,7 @@
+src_27_11_2021/
+postgresql/temp_27_11_2021.sql
+postgresql/temp_old.sql
+
 src/vendor
 src/node_modules
 src/public/storage
@@ -10,8 +14,12 @@ src/public/documents/monitoraggio_IV_report/
 src/public/documents/schede_IV_report/
 src/public/documents/REP_IV_sch_map/
 src/public/documents/Habitat_Approf.zip
+src/public/documents/rapporto-349_2021_direttive_natura_def.pdf
 
 nginx/Dockerfile.nginx
 docker_comp.zip
 docker-compose-original.yml
 docker-compose-original
+docker-compose-05-12-2021.yml
+
+src/General_Instructions

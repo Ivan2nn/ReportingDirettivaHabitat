@@ -12,7 +12,7 @@ function CsvGenerator(dataArray, fileName, separator, addQuotes) {
         var separator = this.separator;
         var addQuotes = this.addQuotes;
 
-        var headers = "Codice Habitat, Nome Habitat, Macrocategoria, Regioni Biogeografiche, Stato di Conservazione ALP, Stato di Conservazione MED, Stato di Conservazione CON, Trend ALP, Trend MED, Trend CON";
+        var headers = "Codice Habitat, Nome Habitat, Macrocategoria, Regioni Biogeografiche, Stato di Conservazione ALP, Stato di Conservazione CON, Stato di Conservazione MED, Stato di Conservazione MMED, Trend ALP, Trend CON, Trend MED, Trend MMED";
 
         if (Array.isArray(this.dataArray)) {
             var rows = this.dataArray.map(function (row) { 
@@ -24,9 +24,11 @@ function CsvGenerator(dataArray, fileName, separator, addQuotes) {
                 columns.push(row.habitat_conservation_alp);
                 columns.push(row.habitat_conservation_con);
                 columns.push(row.habitat_conservation_med);
+                columns.push(row.habitat_conservation_mmed);
                 columns.push(row.habitat_trend_alp);
                 columns.push(row.habitat_trend_con);
                 columns.push(row.habitat_trend_med);
+                columns.push(row.habitat_trend_mmed);
 
                 var columnsData = columns.join(',');
                 return columnsData;
@@ -43,9 +45,11 @@ function CsvGenerator(dataArray, fileName, separator, addQuotes) {
             columns.push(this.dataArray.habitat_conservation_alp);
             columns.push(this.dataArray.habitat_conservation_con);
             columns.push(this.dataArray.habitat_conservation_med);
+            columns.push(this.dataArray.habitat_conservation_mmed);
             columns.push(this.dataArray.habitat_trend_alp);
             columns.push(this.dataArray.habitat_trend_con);
             columns.push(this.dataArray.habitat_trend_med);
+            columns.push(this.dataArray.habitat_trend_mmed);
 
             var data = columns.join(',');
         }

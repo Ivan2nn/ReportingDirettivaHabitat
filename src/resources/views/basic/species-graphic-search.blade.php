@@ -153,7 +153,7 @@
             	<input type="hidden" v-model="outSpeciesName = '{!! $species->species_name !!}'">
             @endif
             
-            <a href="#results" v-if="dataAvailable" class="text-link">Vai ai resultati</a>
+            <a href="#results" v-if="dataAvailable" class="text-link">Vai ai risultati</a>
 	    </div>
 
 		<div class="col-md-7">
@@ -210,7 +210,7 @@
 							<tr> 
 								<th style="font-weight: normal;">@{{ speciesDetails.species_code }}</th> 
 								<td>@{{ speciesDetails.kingdom }}</td> 
-								<td>@{{ speciesDetails.classis }}</td> 
+								<td>@{{ speciesDetails.class }}</td> 
 								<td>
 									<span v-if="speciesDetails.priority">SI</span>
 									<span v-else>No</span>
@@ -265,7 +265,7 @@
 		    				</td>
 	                    </tr>
 	                    <tr>
-	                        <td>Trend (20013 - 2018)</td>
+	                        <td>Trend (2013 - 2018)</td>
 	                        <td>
 	                        	<div>
 	                        		<span>

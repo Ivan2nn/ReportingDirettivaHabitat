@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+    
+    nginx:
+        image: nginx:stable-alpine
+        container_name: nginx
+        ports:
+            - "8080:80"
+        volumes:
+            - ./src:/var/www/html
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+        depends_on: 
+            - php
+            - database
+
+    database:
+        build:
+            context: ./postgresql
+            dockerfile: Dockerfile.db
+        container_name: postgresql
+        environment:
+            - POSTGRES_HOST_AUTH_METHOD=trust
+            - POSTGRES_USER=zcreport_ecouser
+            - POSTGRES_PASSWORD=ecouser.2017
+            - POSTGRES_DB=zcreport_ecost
+        restart: always
+        tty: true
+        ports: 
+            - "5433:5432"
+    php:
+        build:
+            context: ./php
+            dockerfile: Dockerfile
+        container_name: php
+        volumes:
+            - ./src:/var/www/html
+        ports:
+            - "9000:9000"

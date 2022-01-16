@@ -82,7 +82,7 @@ class SpeciesController extends Controller
 	$outputData['species']['species_presence_mmed'] = $selectedSpecies->getFormattedPresence("MMED");
 	$outputData['species']['priority'] = $selectedSpecies->priority;
         $outputData['species']['endemic'] = $selectedSpecies->endemic;
-        $outputData['species']['classis'] = ($selectedSpecies->taxonomy->tax_classis) ? $selectedSpecies->taxonomy->tax_classis->class_name : '';
+        $outputData['species']['class'] = ($selectedSpecies->taxonomy->tax_classis) ? $selectedSpecies->taxonomy->tax_classis->class_name : '';
         $outputData['species']['family'] = ($selectedSpecies->taxonomy->tax_family) ? $selectedSpecies->taxonomy->tax_family->family_name : '';
         $outputData['species']['kingdom'] = ($selectedSpecies->taxonomy->tax_kingdom) ? $selectedSpecies->taxonomy->tax_kingdom->kingdom_name : '';
         $outputData['species']['order'] = ($selectedSpecies->taxonomy->tax_order) ? $selectedSpecies->taxonomy->tax_order->order_name : '';
@@ -90,6 +90,8 @@ class SpeciesController extends Controller
         $outputData['species']['genus'] = ($selectedSpecies->taxonomy->tax_genus) ? $selectedSpecies->taxonomy->tax_genus->genus_name : '';
         $outputData['species']['bioregions'] = $selectedSpecies->biogeographicregions->pluck('name')->toArray();
         $outputData['species']['annexes'] = $selectedSpecies->annexes();
+        $outputData['species']['lri_specs'] = trim($species->specification->lri_category);
+        $outputData['species']['iucn_specs'] = trim($species->specification->iucn_category_global);
         
         /*if ($selectedSpecies->hasSpecification()) {
             $outputData['species']['lri_specs'] = $selectedSpecies->hasSpecificationLRI() ? $selectedSpecies->specification->lri_category . '[' . $selectedSpecies->specification->lri_criterion . ']' : '';
@@ -162,7 +164,7 @@ class SpeciesController extends Controller
                 }
             }
         }
-
+        $outputData['species']['report_number'] = $selectedSpecies;
         $outputData['species']['species_name'] = $selectedSpecies->species_name;
         $outputData['species']['species_code'] = $selectedSpecies->species_code;
         $outputData['species']['species_conservation_alp'] = $selectedSpecies->getFormattedConservation($report_number, "ALP");
@@ -179,13 +181,15 @@ class SpeciesController extends Controller
 	$outputData['species']['species_presence_mmed'] = $selectedSpecies->getFormattedPresence($report_number, "MMED");
 	$outputData['species']['priority'] = $selectedSpecies->priority;
         $outputData['species']['endemic'] = $selectedSpecies->endemic;
-        $outputData['species']['classis'] = ($selectedSpecies->taxonomy->tax_classis) ? $selectedSpecies->taxonomy->tax_classis->class_name : '';
+        $outputData['species']['class'] = ($selectedSpecies->taxonomy->tax_classis) ? $selectedSpecies->taxonomy->tax_classis->class_name : '';
         $outputData['species']['family'] = ($selectedSpecies->taxonomy->tax_family) ? $selectedSpecies->taxonomy->tax_family->family_name : '';
         $outputData['species']['kingdom'] = ($selectedSpecies->taxonomy->tax_kingdom) ? $selectedSpecies->taxonomy->tax_kingdom->kingdom_name : '';
         $outputData['species']['order'] = ($selectedSpecies->taxonomy->tax_order) ? $selectedSpecies->taxonomy->tax_order->order_name : '';
         $outputData['species']['phylum'] = ($selectedSpecies->taxonomy->tax_phylum) ? $selectedSpecies->taxonomy->tax_phylum->phylum_name : '';
         $outputData['species']['genus'] = ($selectedSpecies->taxonomy->tax_genus) ? $selectedSpecies->taxonomy->tax_genus->genus_name : '';
-        $outputData['species']['bioregions'] = $selectedSpecies->biogeographicregions->pluck('name')->toArray();
+        $outputData['species']['bioregions'] = $selectedSpecies->biogeographicregions()->where('report',$report_number)->get()->pluck('name')->toArray();
+        $outputData['species']['lri_specs'] = trim($selectedSpecies->specification->lri_category);
+        $outputData['species']['iucn_specs'] = trim($selectedSpecies->specification->iucn_category_global);
         $outputData['species']['annexes'] = $selectedSpecies->annexes($report_number);
         
         /*if ($selectedSpecies->hasSpecification()) {
@@ -193,10 +197,10 @@ class SpeciesController extends Controller
             $outputData['species']['iucn_specs'] = $selectedSpecies->hasSpecificationIUCN() ? $selectedSpecies->specification->iucn_category . '[' . $selectedSpecies->specification->iucn_criterion . ']' : '';
         }*/
 
-	if ($selectedSpecies->hasSpecification()) {
+	/* if ($selectedSpecies->hasSpecification()) {
             $outputData['species']['lri_specs'] = $selectedSpecies->hasSpecificationLRI() ? $selectedSpecies->specification->lri_category : '';
             $outputData['species']['iucn_specs'] = $selectedSpecies->hasSpecificationIUCN() ? $selectedSpecies->specification->iucn_category : '';
-	}
+	} */
 
         //$outputData['species']['modified'] = $selectedSpecies->isModified() ? $selectedSpecies->handleModifiedSpecies() : '';
 	$tempOutNote = "";        

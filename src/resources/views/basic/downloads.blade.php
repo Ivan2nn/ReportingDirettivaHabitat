@@ -10,6 +10,12 @@
 
 		{{-- <p><strong><a href="{!! asset('documents/REP_IV_sch_map/DATI_UFFICIALI_TRASMESSI.zip') !!}" target="_blank">DATI UFFICIALI TRASMESSI</a></strong></p> --}}
 
+		<h3>RAPPORTO DI SINTESI</h3>
+		<p>Rapporti Direttive Natura (2013-2018) - Sintesi dello stato di conservazione delle specie e degli
+			habitat di interesse comunitario e delle azioni di contrasto alle specie esotiche di rilevanza
+			unionale in Italia. ISPRA, Serie Rapporti, 349/2021</p>
+			<br>
+
 		<p><strong>HABITAT</strong></p>  
                     <ul class="c-content-list-1 c-theme c-separator-dot">
 						<li><a href="{!! asset('/documents/REP_IV_sch_map/HABITAT_DATABASE_access.zip') !!}" target="_blank">Database ufficiale habitat (access)</a></li>

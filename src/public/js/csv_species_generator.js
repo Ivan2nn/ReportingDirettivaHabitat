@@ -12,7 +12,7 @@ function CsvGenerator(dataArray, fileName, separator, addQuotes) {
         var separator = this.separator;
         var addQuotes = this.addQuotes;
 
-        var headers = "Codice Specie, Nome Species, Regioni Biogeografiche, Regno, Phylum, Classe, Ordine, Famiglia, Genere, Stato di Conservazione ALP, Stato di Conservazione MED, Stato di Conservazione CON, Trend ALP, Trend MED, Trend CON, Annexes, Specifiche LRI, Specifiche IUCN, Modifica";
+        var headers = "Codice Specie, Nome Species, Regioni Biogeografiche, Regno, Phylum, Classe, Ordine, Famiglia, Genere, Stato di Conservazione ALP, Stato di Conservazione CON, Stato di Conservazione MED, Stato di Conservazione MMED, Trend ALP, Trend CON, Trend MED, Trend MMED, Annexes, Specifiche LRI, Specifiche IUCN, Priorita, Endemica, Modifica";
 
         if (Array.isArray(this.dataArray)) {
             var rows = this.dataArray.map(function (row) { 
@@ -22,19 +22,23 @@ function CsvGenerator(dataArray, fileName, separator, addQuotes) {
                 columns.push(row.bioregions.join('-'));
                 columns.push(row.kingdom);
                 columns.push(row.phylum);
-                columns.push(row.classis);
+                columns.push(row.class);
                 columns.push(row.order);
                 columns.push(row.family);
                 columns.push(row.genus);
                 columns.push(row.species_conservation_alp);
                 columns.push(row.species_conservation_con);
                 columns.push(row.species_conservation_med);
+                columns.push(row.species_conservation_mmed);
                 columns.push(row.species_trend_alp);
                 columns.push(row.species_trend_con);
                 columns.push(row.species_trend_med);
+                columns.push(row.species_trend_mmed);
                 columns.push(row.annexes.join('-'));
                 columns.push(row.lri_specs);
                 columns.push(row.iucn_specs);
+                columns.push(row.priority);
+                columns.push(row.endemic);
                 columns.push(row.modified);
 
                 var columnsData = columns.join(',');
@@ -50,19 +54,23 @@ function CsvGenerator(dataArray, fileName, separator, addQuotes) {
             columns.push(this.dataArray.bioregions.join('-'));
             columns.push(this.dataArray.kingdom);
             columns.push(this.dataArray.phylum);
-            columns.push(this.dataArray.classis);
+            columns.push(this.dataArray.class);
             columns.push(this.dataArray.order);
             columns.push(this.dataArray.family);
             columns.push(this.dataArray.genus);
             columns.push(this.dataArray.species_conservation_alp);
             columns.push(this.dataArray.species_conservation_con);
             columns.push(this.dataArray.species_conservation_med);
+            columns.push(this.dataArray.species_conservation_mmed);
             columns.push(this.dataArray.species_trend_alp);
             columns.push(this.dataArray.species_trend_con);
             columns.push(this.dataArray.species_trend_med);
+            columns.push(this.dataArray.species_trend_mmed);
             columns.push(this.dataArray.annexes.join('-'));
             columns.push(this.dataArray.lri_specs);
             columns.push(this.dataArray.iucn_specs);
+            columns.push(this.dataArray.priority);
+            columns.push(this.dataArray.endemic);
             columns.push(this.dataArray.modified);
 
             var data = columns.join(',');
@@ -86,7 +94,7 @@ function CsvGenerator(dataArray, fileName, separator, addQuotes) {
         var data = headers + "\n" + data;
         //console.log(headers + "\n" + columnsData);
 
-        var type = 'data:text/csv;charset=utf-8';
+        var type = 'data:text/csv;charset=utf-8,%EF%BB%BF';
         //var data = rows.join('\n');
 
         if (typeof btoa === 'function') {

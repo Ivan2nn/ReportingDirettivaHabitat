@@ -442,6 +442,7 @@ new Vue({
 		},
 		
 		getCsv: function() {
+				console.log(this.speciesDetails);
       			csvGenerator = new CsvGenerator(this.speciesDetails, 'ricerca_avanzata' + '.csv');
     			csvGenerator.download(false);
       		}
