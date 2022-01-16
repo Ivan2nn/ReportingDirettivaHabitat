@@ -115,13 +115,17 @@ class AdvancedSpeciesSearchController extends Controller
 	                'species_trend_con' => $species->getFormattedTrend($report_number, "CON"),
 	                'species_trend_med' => $species->getFormattedTrend($report_number, "MED"),
 			'species_trend_mmed' => $species->getFormattedTrend($report_number, "MMED"),
-					'class_name' => $species->taxonomy->tax_classis ? $species->taxonomy->tax_classis->class_name : ' ',
-					'family_name' => $species->taxonomy->tax_family ? $species->taxonomy->tax_family->family_name : ' ',
-					'kingdom_name' => $species->taxonomy->tax_kingdom ? $species->taxonomy->tax_kingdom->kingdom_name : ' ',
-					'order_name' => $species->taxonomy->tax_order ? $species->taxonomy->tax_order->order_name : ' ',
-					'phylum_name' => $species->taxonomy->tax_phylum ? $species->taxonomy->tax_phylum->phylum_name : ' ',
-					'genus_name' => $species->taxonomy->tax_genus ? $species->taxonomy->tax_genus->genus_name : ' ',
+					'class' => $species->taxonomy->tax_classis ? $species->taxonomy->tax_classis->class_name : ' ',
+					'family' => $species->taxonomy->tax_family ? $species->taxonomy->tax_family->family_name : ' ',
+					'kingdom' => $species->taxonomy->tax_kingdom ? $species->taxonomy->tax_kingdom->kingdom_name : ' ',
+					'order' => $species->taxonomy->tax_order ? $species->taxonomy->tax_order->order_name : ' ',
+					'phylum' => $species->taxonomy->tax_phylum ? $species->taxonomy->tax_phylum->phylum_name : ' ',
+					'genus' => $species->taxonomy->tax_genus ? $species->taxonomy->tax_genus->genus_name : ' ',
 					'bioregions' => $species->biogeographicregions()->where('report',$report_number)->get()->pluck('name')->toArray(),
+					'priority' => $species->priority,
+					'endemic' => $species->endemic,
+					'lri_specs' => trim($species->specification->lri_category),
+					'iucn_specs' => trim($species->specification->iucn_category_global),
 					'annexes' => $species->annexes($report_number)
 				];
 			}

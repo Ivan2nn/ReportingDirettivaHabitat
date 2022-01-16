@@ -210,7 +210,7 @@
 							<tr> 
 								<th style="font-weight: normal;">@{{ speciesDetails.species_code }}</th> 
 								<td>@{{ speciesDetails.kingdom }}</td> 
-								<td>@{{ speciesDetails.classis }}</td> 
+								<td>@{{ speciesDetails.class }}</td> 
 								<td>
 									<span v-if="speciesDetails.priority">SI</span>
 									<span v-else>No</span>
