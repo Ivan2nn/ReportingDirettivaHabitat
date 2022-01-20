@@ -94,7 +94,7 @@ function CsvGenerator(dataArray, fileName, separator, addQuotes) {
         var data = headers + "\n" + data;
         //console.log(headers + "\n" + columnsData);
 
-        var type = 'data:text/csv;charset=utf-8,%EF%BB%BF';
+        var type = 'data:text/csv;charset=utf-8';
         //var data = rows.join('\n');
 
         if (typeof btoa === 'function') {
