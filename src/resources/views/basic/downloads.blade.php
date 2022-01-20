@@ -11,9 +11,9 @@
 		{{-- <p><strong><a href="{!! asset('documents/REP_IV_sch_map/DATI_UFFICIALI_TRASMESSI.zip') !!}" target="_blank">DATI UFFICIALI TRASMESSI</a></strong></p> --}}
 
 		<h3>RAPPORTO DI SINTESI</h3>
-		<p>Rapporti Direttive Natura (2013-2018) - Sintesi dello stato di conservazione delle specie e degli
+		<p><a href="{!! asset('/documents/rapporto-349_2021_direttive_natura_def.pdf') !!}" target="_blank">Rapporti Direttive Natura (2013-2018) - Sintesi dello stato di conservazione delle specie e degli
 			habitat di interesse comunitario e delle azioni di contrasto alle specie esotiche di rilevanza
-			unionale in Italia. ISPRA, Serie Rapporti, 349/2021</p>
+			unionale in Italia. ISPRA, Serie Rapporti, 349/2021</a></p>
 			<br>
 
 		<p><strong>HABITAT</strong></p>  
