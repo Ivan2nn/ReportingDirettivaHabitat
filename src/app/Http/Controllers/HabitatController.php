@@ -93,25 +93,29 @@ class HabitatController extends Controller
 
 	$outputData['habitat']['modified'] = $tempOutNote;
 
-	$files_report = glob(public_path() . '/documents/habitat/*.pdf');
+    $habitat_cards_folder = '/documents/schede_' . $report_number . '_report/habitat/';
+
+	$files = glob(public_path() . $habitat_cards_folder . '*.pdf');
         // iterate through the files and determine 
         // if the filename contains the search string.
-        foreach($files_report as $file) {
+        foreach($files as $file) {
             $name = pathinfo($file, PATHINFO_FILENAME);
-            $is_there = strpos(strtolower($name), (string)$selectedHabitat->habitat_code);
+            $is_there = strpos(strtolower($name), strtolower((string)$selectedHabitat->habitat_code));
             if ($is_there === 0) {
-                $outputData['habitat']['document'] = 'public/documents/habitat/' . $name . '.pdf';
+                $outputData['habitat']['document'] =  $habitat_cards_folder . $name . '.pdf';
             }
         }
 
-        $files_monitoring = glob(public_path() . '/documents/monitoraggio/habitat/*.pdf');
+        $habitat_monitoring_folder = '/documents/monitoraggio_' . $report_number . '_report/habitat/';
+
+        $files_monitoring = glob(public_path() . $habitat_monitoring_folder . '*.pdf');
         // iterate through the files and determine 
         // if the filename contains the search string.
         foreach($files_monitoring as $file) {
             $name = pathinfo($file, PATHINFO_FILENAME);
-            $is_there = strpos(strtolower($name), (string)$selectedHabitat->habitat_code);
+            $is_there = strpos(strtolower($name), strtolower((string)$selectedHabitat->habitat_code));
             if ($is_there === 0) {
-                $outputData['habitat']['monitoring'] = 'public/documents/monitoraggio/habitat/' . $name . '.pdf';
+                $outputData['habitat']['monitoring'] = $habitat_monitoring_folder . $name . '.pdf';
             }
         }
         
@@ -173,7 +177,7 @@ class HabitatController extends Controller
         // if the filename contains the search string.
         foreach($files_report as $file) {
             $name = pathinfo($file, PATHINFO_FILENAME);
-            $is_there = strpos(strtolower($name), (string)$selectedHabitat->habitat_code);
+            $is_there = strpos(strtolower($name), strtolower((string)$selectedHabitat->habitat_code));
             if ($is_there === 0) {
                 $outputData['habitat']['document'] = $habitat_cards_folder . $name . '.pdf';
             }
@@ -186,7 +190,7 @@ class HabitatController extends Controller
         // if the filename contains the search string.
         foreach($files_monitoring as $file) {
             $name = pathinfo($file, PATHINFO_FILENAME);
-            $is_there = strpos(strtolower($name), (string)$selectedHabitat->habitat_code);
+            $is_there = strpos(strtolower($name), strtolower((string)$selectedHabitat->habitat_code));
             if ($is_there === 0) {
                 $outputData['habitat']['monitoring'] = $habitat_monitoring_folder . $name . '.pdf';
             }

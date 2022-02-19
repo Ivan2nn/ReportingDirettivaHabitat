@@ -199,7 +199,7 @@ new Vue({
 				vm = this;
 				searchedNamesCodesValues = [];
 				if (this.queryNameCode) {
-					searchedNamesCodesValues = this.habitats.filter(this.filterQueryNamesCodes(this.queryNameCode));
+					searchedNamesCodesValues = this.habitats.filter(this.filterQueryNamesCodes(this.queryNameCode.toUpperCase()));
 				}
 				return searchedNamesCodesValues;
 			}
@@ -240,7 +240,7 @@ new Vue({
 
 		filterQueryCodes: function(queryString) {
 			return function(element) {
-				return element.habitat_code.toString().startsWith(queryString.toLowerCase());
+				return element.habitat_code.toString().startsWith(queryString);
 			}
 		},
 
@@ -248,11 +248,11 @@ new Vue({
 			return function(element) {
 				if (vm.isLetter(queryString[0])) {
 					vm.isName = true;
-					return element.habitat_name.toLowerCase().startsWith(queryString.toLowerCase());
+					return element.habitat_name.startsWith(queryString);
 				}
 				else {
 					vm.isName = false;
-					return element.habitat_code.toString().startsWith(queryString.toLowerCase());
+					return element.habitat_code.toString().startsWith(queryString);
 				}
 			}
 		},
@@ -260,7 +260,7 @@ new Vue({
 		searchNames: function() {	
 			vm = this;
 			if (this.queryName) {
-				this.searchedNames = this.habitats.filter(this.filterQueryNames(this.queryName)); 
+				this.searchedNames = this.habitats.filter(this.filterQueryNames(this.queryName));
 			} else {
 				this.searchedNames = [];
 			}	
