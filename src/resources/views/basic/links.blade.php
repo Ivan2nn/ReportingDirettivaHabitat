@@ -24,12 +24,12 @@
                             </div>
                             <div class="col-md-12 col-xs-12 c-logo c-logo-2 p-b-15 p-t-15">
                                 <a href="https://www.mite.gov.it/" target="_blank">
-                                    <img class="c-img-pos mimi-logo-links" src="{!! asset('images/MiTE_RGB_orizzontale.jpg') !!}" alt="">
+                                    <img class="c-img-pos mimi-logo-links" src="{!! asset('images/logo-MASE-big.png') !!}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-12 col-xs-12 c-logo c-logo-3 p-b-15 p-t-15">
                                 <a href="https://www.isprambiente.gov.it/it" target="_blank">
-                                    <img class="c-img-pos mimi-logo-links" src="{!! asset('images/logo_ISPRA2.png') !!}" alt="">
+                                    <img class="c-img-pos mimi-logo-links" src="{!! asset('images/logo-ISPRA_SNPA-big.png') !!}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-12 col-xs-12 c-logo c-logo-4 p-b-15 p-t-15">

@@ -26511,8 +26511,17 @@ h1 {
     border-right: 1px solid #edeff0; }
   .c-content-client-logos-1 .c-img-pos {
     position: relative;
-    left: 50%;
+    left: 38%;
     margin-left: -90px; }
+
+    @media (max-width: 991px) {
+      .c-content-client-logos-1 .c-img-pos {
+        position: relative;
+        margin-left: 10px;
+       left: auto;
+       }
+    }
+
 
 @media (max-width: 1199px) {
   /* <= 1199px */
@@ -30146,8 +30155,15 @@ a {
 /* -----------------------------------------*/
 /* ========================================= */
 .mimi-logo-links {
-  max-width: 350px;
+  max-width: 440px;
   height: auto;
+}
+
+@media (max-width: 991px) {
+   .mimi-logo-links {
+    max-width: 340px;
+    height: auto;
+   }
 }
 /* ========================================= */
 /* -----------------------------------------*/
