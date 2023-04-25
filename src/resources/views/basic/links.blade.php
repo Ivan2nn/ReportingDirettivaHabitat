@@ -18,8 +18,8 @@
                     <div class="c-logos">
                         <div class="row">
                             <div class="col-md-12 col-xs-12 c-logo c-logo-1 p-b-15 p-t-15">
-                                <a href="http://193.206.192.106/portalino/home_it/il-network.php" target="_blank">
-                                    <img class="c-img-pos mimi-logo-links" src="{!! asset('images/logoNaturaItaliaHome.png') !!}" alt="">
+                                <a href="https://www.nnb.isprambiente.it/it" target="_blank">
+                                    <img class="c-img-pos mimi-logo-links" src="{!! asset('images/03-LOGO_NNB-b.png') !!}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-12 col-xs-12 c-logo c-logo-2 p-b-15 p-t-15">
