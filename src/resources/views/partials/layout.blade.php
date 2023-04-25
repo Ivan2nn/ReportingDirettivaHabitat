@@ -40,7 +40,7 @@
 
                             <div class="col-md-4 col-xs-6">
                                 <a href="http://www.nnb.isprambiente.it">
-                                    <img src="{!! asset('images/03-LOGO_NNB-b.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                    <img src="{!! asset('images/logo-network-nazionale.jpg') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
                                 </a>
                                 <a href="http://www.isprambiente.gov.it/">
                                     <img src="{!! asset('images/logo-ISPRA_SNPA.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
@@ -49,7 +49,7 @@
                             
                             <div class="col-md-4 col-xs-6">
                                 <a href="http://www.nnb.isprambiente.it">
-                                    <img src="{!! asset('images/03-LOGO_NNB-b.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
+                                    <img src="{!! asset('images/logo-network-nazionale.jpg') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
                                 </a>
                                 <a href="http://www.isprambiente.gov.it/">
                                     <img src="{!! asset('images/logo-ISPRA_SNPA.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
