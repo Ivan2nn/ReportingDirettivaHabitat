@@ -34,7 +34,7 @@
                         <div class="row c-logo">
                             <div class="col-md-4 col-xs-6">
                                 <a href="http://www.minambiente.it/">
-                                    <img src="{!! asset('images/logo-MASE.png') !!}" alt="logo natura" class="img-responsive">
+                                    <img src="{!! asset('images/logo-MASE.png') !!}" alt="logo natura" class="img-responsive" style="margin-top: 18px;">
                                 </a>
                             </div>
 
