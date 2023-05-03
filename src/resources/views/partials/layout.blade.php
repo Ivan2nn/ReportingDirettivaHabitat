@@ -39,9 +39,6 @@
                             </div>
 
                             <div class="col-md-4 col-xs-6">
-                                <a href="http://www.nnb.isprambiente.it">
-                                    <img src="{!! asset('images/logo-network-nazionale.jpg') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
-                                </a>
                                 <a href="http://www.isprambiente.gov.it/">
                                     <img src="{!! asset('images/logo-ISPRA_SNPA.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
                                 </a>
@@ -51,11 +48,21 @@
                                 <a href="http://www.nnb.isprambiente.it">
                                     <img src="{!! asset('images/logo-network-nazionale.jpg') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
                                 </a>
+                            </div>
+                        </div>  
+                        <div class="row c-logo">
+                            <div class="col-md-4 col-xs-6">
                                 <a href="http://www.isprambiente.gov.it/">
-                                    <img src="{!! asset('images/logo-ISPRA_SNPA.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                    <img src="{!! asset('images/logo-ISPRA_SNPA.png') !!}" alt="logo ispra" class="c-mobile-logo img-responsive">
                                 </a>
                             </div>
-                         </div>   
+                            <div class="col-md-4 col-xs-6">
+                                <a href="http://www.nnb.isprambiente.it">
+                                    <img src="{!! asset('images/logo-network-nazionale.jpg') !!}" alt="logo network nazionale bioversita" class="c-mobile-logo img-responsive" style="height: 48px;
+                                    margin-left: -10px;">
+                                </a>
+                            </div>
+                        </div> 
 
                         <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
                             <span class="c-line"></span>
