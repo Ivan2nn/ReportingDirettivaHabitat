@@ -10,7 +10,7 @@
                     La Direttiva Habitat richiede la realizzazione di attività di monitoraggio sull’intero territorio nazionale e le
                     Regioni e Province Autonome sono gli enti responsabili, ma per rispondere adeguatamente alle richieste
                     della Commissione Europea sono necessari programmi di monitoraggio adeguati e di lungo periodo.</p>
-				<p>Per questo, su incarico del MiTE, nel 2015 ISPRA ha avviato un progetto nazionale sul monitoraggio ai sensi
+				    <p>Per questo, su incarico del MiTE, nel 2015 ISPRA ha avviato un progetto nazionale sul monitoraggio ai sensi
                     della Direttiva. Grazie alla collaborazione con le principali Società scientifiche nazionali sono stati prodotti i
                     <b>Manuali ISPRA per il Monitoraggio delle specie animali, vegetali e degli habitat</b> di interesse comunitario
                     (scaricabili nella sezione download). I manuali forniscono gli strumenti metodologici utili per assicurare una
@@ -21,8 +21,9 @@
 				
                 
                     <p>In seguito, nel 2020, è stata avviata dall’ISPRA, in collaborazione con MiTE, Enti Regionali, Società
-                        Scientifiche ed Università, la predisposizione di un <b>Piano Nazionale di Monitoraggio (PNM) ai sensi della
-                        Direttiva</b> che ha lo scopo di supportare le Regioni e le Province Autonome nell’organizzazione e nella
+                        Scientifiche ed Università (per l'Università di Bologna: responsabile scientifico Prof. Alessandro Chiarucci, 
+                        coordinamento Dott. Marco Cervellini), la predisposizione di un <b>Piano Nazionale di Monitoraggio (PNM) 
+                        ai sensi della Direttiva</b> che ha lo scopo di supportare le Regioni e le Province Autonome nell’organizzazione e nella
                         conduzione dei monitoraggi nei loro territori, ottimizzare lo sforzo di campionamento e promuovere
                         l’efficienza dell’aggregazione dei dati a scala biogeografica nazionale.</p>
 				

@@ -2,6 +2,7 @@ src_27_11_2021/
 postgresql/temp_27_11_2021.sql
 postgresql/temp_old.sql
 postgresql/temp_02_02_2022.sql
+temp_pg/
 
 src/vendor
 src/node_modules
