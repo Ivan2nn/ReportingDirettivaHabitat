@@ -21014,15 +21014,7 @@ h1 {
     .c-layout-header.c-layout-header-6 .c-topbar .c-brand > .c-logo {
       display: inline-block;
       position: relative; }
-      .c-layout-header.c-layout-header-6 .c-topbar .c-brand > .c-logo:after {
-        top: -2px;
-        position: absolute;
-        right: -22px;
-        content: "";
-        width: 1px;
-        background: #dfe4e8;
-        height: 32px;
-        display: inline-block; }
+
     .c-layout-header.c-layout-header-6 .c-topbar .c-brand > .c-icons {
       position: relative;
       display: inline-block;
@@ -30517,8 +30509,6 @@ html {
         scroll-behavior: auto!important;
     }
 }
-
-
 
 
 
