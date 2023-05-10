@@ -8,8 +8,8 @@
         	<div class="section-context">
             	<p>
 					La Direttiva Habitat (92/43/CEE) e la Direttiva Uccelli (2009/147/CE) rappresentano i pilastri della politica comunitaria 
-					per la conservazione della natura. La Direttiva Habitat è stata recepita dall’Italia tramite il <a href="https://www.minambiente.it/sites/default/files/archivio/allegati/rete_natura_2000/Regolamento_D.P.R._
-					8_settembre_1997_n._357.PDF" target="_blank">Regolamento D.P.R. n.357 
+					per la conservazione della natura. La Direttiva Habitat è stata recepita dall’Italia tramite il {{-- <a href="https://www.minambiente.it/sites/default/files/archivio/allegati/rete_natura_2000/Regolamento_D.P.R._
+					8_settembre_1997_n._357.PDF" target="_blank"> --}}<a href="http://www.normattiva.it/eli/id/1997/10/23/097G0390/CONSOLIDATED/20220715" target="_blank">Regolamento D.P.R. n.357 
 					dell’8/09/1997</a> e successive modificazioni e integrazioni. In base a tale Regolamento le <b>Regioni e le Province Autonome di Trento e Bolzano</b>
 					devono adottare misure idonee a garantire la salvaguardia e il <b>monitoraggio</b> dello stato di conservazione delle specie e 
 					degli habitat di  interesse comunitario (elencati negli Allegati I, II, IV, V della Direttiva) e 

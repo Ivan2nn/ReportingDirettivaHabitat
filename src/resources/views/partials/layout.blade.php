@@ -34,28 +34,43 @@
                         <div class="row c-logo">
                             <div class="col-md-4 col-xs-6">
                                 <a href="http://www.minambiente.it/">
-                                    <img src="{!! asset('images/MiTE_RGB_orizzontale.jpg') !!}" alt="logo natura" class="img-responsive">
+                                    <img src="{!! asset('images/logo-MASE.png') !!}" alt="logo natura" class="img-responsive" style="margin-top: 18px;">
                                 </a>
                             </div>
 
                             <div class="col-md-4 col-xs-6">
-                                <a href="http://www.nnb.isprambiente.it">
-                                    <img src="{!! asset('images/logoNaturaItaliaHomeNew.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
-                                </a>
                                 <a href="http://www.isprambiente.gov.it/">
-                                    <img src="{!! asset('images/logoISPRA_SNPA.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
+                                    <img src="{!! asset('images/logo-ISPRA_SNPA.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
                                 </a>
                             </div>
                             
                             <div class="col-md-4 col-xs-6">
                                 <a href="http://www.nnb.isprambiente.it">
-                                    <img src="{!! asset('images/logoNaturaItaliaHomeNew.png') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
-                                </a>
-                                <a href="http://www.isprambiente.gov.it/">
-                                    <img src="{!! asset('images/logoISPRA_SNPA.png') !!}" alt="logo natura" class="c-mobile-logo img-responsive">
+                                    <img src="{!! asset('images/logo-network-nazionale.jpg') !!}" alt="logo natura" class="c-desktop-logo img-responsive">
                                 </a>
                             </div>
-                         </div>   
+                        </div>  
+                        <style>
+                            /*Mobile logos visibility*/
+                            @media (min-width: 992px) {  
+                            .c-logo-mobile {
+                                display: none!important;
+                            }
+                            }
+                        </style>
+                        <div class="row c-logo c-logo-mobile">
+                            <div class="col-md-4 col-xs-6">
+                                <a href="http://www.isprambiente.gov.it/">
+                                    <img src="{!! asset('images/logo-ISPRA_SNPA.png') !!}" alt="logo ispra" class="c-mobile-logo img-responsive">
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-xs-6">
+                                <a href="http://www.nnb.isprambiente.it">
+                                    <img src="{!! asset('images/logo-network-nazionale.jpg') !!}" alt="logo network nazionale bioversita" class="c-mobile-logo img-responsive" style="height: 48px;
+                                    margin-left: -10px;">
+                                </a>
+                            </div>
+                        </div> 
 
                         <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
                             <span class="c-line"></span>

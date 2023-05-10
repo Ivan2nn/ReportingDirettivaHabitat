@@ -21014,15 +21014,7 @@ h1 {
     .c-layout-header.c-layout-header-6 .c-topbar .c-brand > .c-logo {
       display: inline-block;
       position: relative; }
-      .c-layout-header.c-layout-header-6 .c-topbar .c-brand > .c-logo:after {
-        top: -2px;
-        position: absolute;
-        right: -22px;
-        content: "";
-        width: 1px;
-        background: #dfe4e8;
-        height: 32px;
-        display: inline-block; }
+
     .c-layout-header.c-layout-header-6 .c-topbar .c-brand > .c-icons {
       position: relative;
       display: inline-block;
@@ -26511,8 +26503,17 @@ h1 {
     border-right: 1px solid #edeff0; }
   .c-content-client-logos-1 .c-img-pos {
     position: relative;
-    left: 50%;
+    left: 38%;
     margin-left: -90px; }
+
+    @media (max-width: 991px) {
+      .c-content-client-logos-1 .c-img-pos {
+        position: relative;
+        margin-left: 10px;
+       left: auto;
+       }
+    }
+
 
 @media (max-width: 1199px) {
   /* <= 1199px */
@@ -30146,8 +30147,15 @@ a {
 /* -----------------------------------------*/
 /* ========================================= */
 .mimi-logo-links {
-  max-width: 350px;
+  max-width: 440px;
   height: auto;
+}
+
+@media (max-width: 991px) {
+   .mimi-logo-links {
+    max-width: 340px;
+    height: auto;
+   }
 }
 /* ========================================= */
 /* -----------------------------------------*/
@@ -30501,8 +30509,6 @@ html {
         scroll-behavior: auto!important;
     }
 }
-
-
 
 
 
