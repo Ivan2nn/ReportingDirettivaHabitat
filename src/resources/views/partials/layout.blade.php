@@ -50,7 +50,15 @@
                                 </a>
                             </div>
                         </div>  
-                        <div class="row c-logo">
+                        <style>
+                            /*Mobile logos visibility*/
+                            @media (min-width: 992px) {  
+                            .c-logo-mobile {
+                                display: none!important;
+                            }
+                            }
+                        </style>
+                        <div class="row c-logo c-logo-mobile">
                             <div class="col-md-4 col-xs-6">
                                 <a href="http://www.isprambiente.gov.it/">
                                     <img src="{!! asset('images/logo-ISPRA_SNPA.png') !!}" alt="logo ispra" class="c-mobile-logo img-responsive">
