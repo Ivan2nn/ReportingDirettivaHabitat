@@ -20,7 +20,7 @@
                     migliorare la coerenza dei dati raccolti sul campo con quanto richiesto dal sistema di reporting.</p>
 				
                 
-                    <p>In seguito, nel 2020, è stata avviata dall’ISPRA, in collaborazione con MiTE, Enti Regionali, Società
+                    <p>In seguito, nel 2020, è stata avviata dall’ISPRA, in collaborazione con MASE, Enti Regionali, Società
                         Scientifiche ed Università (per l'Università di Bologna: responsabile scientifico Prof. Alessandro Chiarucci, coordinamento Dott. Marco Cervellini), la predisposizione di un <b>Piano Nazionale di Monitoraggio (PNM) ai sensi della
                         Direttiva</b> che ha lo scopo di supportare le Regioni e le Province Autonome nell’organizzazione e nella
                         conduzione dei monitoraggi nei loro territori, ottimizzare lo sforzo di campionamento e promuovere
