@@ -21,7 +21,7 @@
 				
                 
                     <p>In seguito, nel 2020, è stata avviata dall’ISPRA, in collaborazione con MiTE, Enti Regionali, Società
-                        Scientifiche ed Università, la predisposizione di un <b>Piano Nazionale di Monitoraggio (PNM) ai sensi della
+                        Scientifiche ed Università (per l'Università di Bologna: responsabile scientifico Prof. Alessandro Chiarucci, coordinamento Dott. Marco Cervellini), la predisposizione di un <b>Piano Nazionale di Monitoraggio (PNM) ai sensi della
                         Direttiva</b> che ha lo scopo di supportare le Regioni e le Province Autonome nell’organizzazione e nella
                         conduzione dei monitoraggi nei loro territori, ottimizzare lo sforzo di campionamento e promuovere
                         l’efficienza dell’aggregazione dei dati a scala biogeografica nazionale.</p>
